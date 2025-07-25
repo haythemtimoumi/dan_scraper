@@ -1,0 +1,13 @@
+ticker,full_name,rule1_score,management_score,moat_score,buy_price,last_price,last_gr,long_gr,guru
+A,Agilent Technologies Inc,68,85,50,$71,N/A,13,6,10 years
+AAPL,Apple Inc,82,100,63,$88,N/A,6,12,16 years
+ABG,Asbury Automotive Group Inc,65,50,80,$157495,N/A,118,17,2 years
+ABNB,Airbnb Inc,68,70,67,$81,N/A,14,0,Infinity years
+ABX,Barrick Mining Corp,41,48,35,$25,N/A,16,7,13 years
+ACDC,ProFrac Holding Corp,38,0,75,$9,N/A,N/A,N/A,N/A
+ACGL,Arch Capital Group Ltd,93,85,100,$387,N/A,23,21,3 years
+ACHC,Acadia Healthcare Co Inc,23,3,44,$5181,N/A,65,0,2 years
+ACI,Albertsons Companies Inc,40,35,45,$226,N/A,43,0,Infinity years
+ACIC,American Coastal Insurance Corp,60,80,40,$179,N/A,396,20,N/A
+ACIW,ACI Worldwide Inc,55,35,75,$852,N/A,41,8,2 years
+ACN,Accenture PLC,82,100,63,N/A,N/A,11,8,N/A

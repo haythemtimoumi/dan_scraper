@@ -1,0 +1,46 @@
+name: Deploy dan_scraper App to VPS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Set up SSH key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Deploy dan_scraper on VPS
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+          set -e                                # Stop on any error
+          cd /root/dan_scraper
+
+          echo "Syncing code..."
+          git fetch --all
+          git reset --hard origin/main         # Force-sync to GitHub
+
+          # Install deps only if requirements.txt changed
+          if git diff --name-only HEAD@{1} HEAD | grep -q "requirements.txt"; then
+            echo "Installing new requirements..."
+            pip install -r requirements.txt
+          else
+            echo "requirements.txt unchanged, skipping pip install"
+          fi
+
+          echo "Running data tasks..."
+          python count_csv_data.py
+          python merge_and_save.py
+
+          echo "Restarting application..."
+          pkill -f "python main.py" || echo "App not running"
+          nohup python main.py > app.log 2>&1 &
+          echo "Deployment finished ✔"
+
+        EOF

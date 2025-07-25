@@ -1,0 +1,1 @@
+# Core module for browser and authentication functionality
