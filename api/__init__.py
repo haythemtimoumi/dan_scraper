@@ -1,1 +1,1 @@
-# API module for stock scraper
+# API package for monthly ticker task service

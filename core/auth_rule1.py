@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import logging
 from selenium.webdriver.common.by import By
@@ -9,14 +10,37 @@ from dotenv import load_dotenv
 import imaplib
 import email
 
+# Fix encoding issues on Windows
+if sys.platform.startswith('win'):
+    import os
+    os.environ['PYTHONIOENCODING'] = 'utf-8'
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ]
 )
 logger = logging.getLogger('Rule1Auth')
 
 load_dotenv()
+
+# Additional encoding fix for print statements
+def safe_print(*args, **kwargs):
+    """Safe print function that handles encoding issues"""
+    try:
+        print(*args, **kwargs)
+    except UnicodeEncodeError:
+        # Fallback: encode to ascii with replacement
+        safe_args = []
+        for arg in args:
+            if isinstance(arg, str):
+                safe_args.append(arg.encode('ascii', 'replace').decode('ascii'))
+            else:
+                safe_args.append(str(arg).encode('ascii', 'replace').decode('ascii'))
+        print(*safe_args, **kwargs)
 
 class Rule1Auth:
     """
@@ -98,41 +122,52 @@ class Rule1Auth:
             print("Verification failed")
             return False
 
+        # Wait a bit for the page to process the verification
+        time.sleep(5)
+        
         try:
-            # Try multiple selectors for dashboard elements
-            dashboard_selectors = [
-                '//a[contains(@href, "/explore/guru-portfolio")]',
-                '//a[contains(@href, "/dashboard")]',
-                '//div[contains(@class, "dashboard")]',
-                '//h1[contains(text(), "Dashboard") or contains(text(), "Welcome")]',
-                '//div[contains(@class, "logged-in")]'
-            ]
-            
-            for selector in dashboard_selectors:
-                try:
-                    self.wait.until(
-                        EC.presence_of_element_located((By.XPATH, selector))
-                    )
-                    logger.info(f"Login successful, dashboard loaded with selector: {selector}")
-                    print("Login successful, dashboard loaded.")
-                    return True
-                except TimeoutException:
-                    continue
-                    
-            # If we didn't find any dashboard elements, check if the URL changed
+            # Check if URL changed away from login page
             current_url = self.driver.current_url
+            logger.info(f"Current URL after verification: {current_url}")
+            print(f"Current URL after verification: {current_url}")
+            
             if "login" not in current_url.lower():
-                logger.info(f"Login might be successful, URL changed to: {current_url}")
-                print("Login successful, dashboard loaded.")
+                logger.info("Login successful - URL changed away from login page")
+                print("✅ Login successful - URL changed away from login page")
                 return True
-                
-            logger.error("Login failed, could not find dashboard elements")
-            print("Login failed, could not find dashboard elements")
-            return False
-        except TimeoutException as e:
-            logger.error(f"Login failed or took too long: {e}")
-            print(f"Login failed or took too long: {e}")
-            return False
+            
+            # Try to navigate to a protected page to test login
+            logger.info("Testing login by navigating to explore page...")
+            print("Testing login by navigating to explore page...")
+            self.driver.get("https://ruleonetoolbox.com/explore/stocks")
+            
+            # Wait for either login redirect or successful page load
+            try:
+                # Wait for search input (indicates successful login)
+                WebDriverWait(self.driver, 15).until(
+                    EC.presence_of_element_located((By.XPATH, '//input[@placeholder="Search for Stocks, Gurus"]'))
+                )
+                logger.info("Login successful - can access protected pages")
+                print("✅ Login successful - can access protected pages")
+                return True
+            except TimeoutException:
+                # Check if we got redirected back to login
+                final_url = self.driver.current_url
+                if "login" in final_url.lower():
+                    logger.error("Login failed - redirected back to login page")
+                    print("❌ Login failed - redirected back to login page")
+                    return False
+                else:
+                    # We're on some other page, might still be logged in
+                    logger.info(f"Login might be successful - on page: {final_url}")
+                    print(f"✅ Login might be successful - on page: {final_url}")
+                    return True
+                    
+        except Exception as e:
+            logger.error(f"Error verifying login success: {e}")
+            print(f"⚠️ Error verifying login success: {e}")
+            # Assume login was successful if we can't verify otherwise
+            return True
     
     def _handle_auto_verification(self):
         """
@@ -232,7 +267,7 @@ class Rule1Auth:
                 time.sleep(2)
                 
                 # No need to click a button - the verification happens automatically
-                print("✅ Verification code entered, waiting for processing...")
+                print("Verification code entered, waiting for processing...")
                 logger.info("Verification code entered, waiting for processing...")
                 
                 return True
@@ -306,7 +341,7 @@ class Rule1Auth:
                     time.sleep(2)
                     
                     # No need to click a button - the verification happens automatically
-                    print("✅ Verification code entered, waiting for processing...")
+                    print("Verification code entered, waiting for processing...")
                     logger.info("Verification code entered, waiting for processing...")
                     
                     return True

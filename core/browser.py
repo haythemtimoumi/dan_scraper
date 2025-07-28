@@ -5,7 +5,7 @@ import undetected_chromedriver as uc
 
 load_dotenv()
 
-def get_driver(headless=True):
+def get_driver(headless=False):
     """
     Initialize and return an undetected Chrome browser instance.
     Uses environment variables for configuration.
@@ -25,13 +25,19 @@ def get_driver(headless=True):
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-gpu")
         options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-web-security")
+        options.add_argument("--allow-running-insecure-content")
+        options.add_argument("--ignore-certificate-errors")
+        options.add_argument("--ignore-ssl-errors")
+        options.add_argument("--ignore-certificate-errors-spki-list")
+        options.add_argument("--ignore-certificate-errors-ssl")
+        options.add_argument("--allow-running-insecure-content")
+        options.add_argument("--disable-features=VizDisplayCompositor")
+        options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
         if headless:
             # Use the appropriate headless mode based on Chrome version
             options.add_argument("--headless")
             options.add_argument("--headless=new")  # For newer Chrome versions
-        options.add_argument("--disable-web-security")
-        options.add_argument("--allow-running-insecure-content")
-        options.add_argument("--disable-features=VizDisplayCompositor")
         options.add_argument("--disable-background-timer-throttling")
         options.add_argument("--disable-backgrounding-occluded-windows")
         options.add_argument("--disable-renderer-backgrounding")
@@ -56,6 +62,7 @@ def get_driver(headless=True):
         binary_path = os.getenv("CHROME_BINARY_PATH")
         if binary_path and isinstance(binary_path, str) and binary_path.strip():
             options.binary_location = binary_path.strip()
+            print(f"Using Chrome binary: {binary_path.strip()}")
 
         # Get driver path and version from .env
         driver_path = os.getenv("CHROME_DRIVER_PATH")

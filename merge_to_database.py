@@ -71,12 +71,12 @@ def merge_and_save_to_db(save_csv_backup=True):
             'Screenshot': 'screenshot'
         })
         
-        # Add today's date to both dataframes if not present
-        today = datetime.now().strftime('%Y-%m-%d')
+        # Add current timestamp to both dataframes if not present
+        current_timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         if 'Date' not in ticker_data.columns:
-            ticker_data['Date'] = today
+            ticker_data['Date'] = current_timestamp
         if 'Date' not in stockscores_data.columns:
-            stockscores_data['Date'] = today
+            stockscores_data['Date'] = current_timestamp
         
         # Get all ticker sources
         ticker_sources = get_all_ticker_sources()

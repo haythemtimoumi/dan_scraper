@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,7 +11,27 @@ from dotenv import load_dotenv
 from core.browser import get_driver
 from core.auth_rule1 import Rule1Auth
 
+# Fix encoding issues on Windows
+if sys.platform.startswith('win'):
+    import os
+    os.environ['PYTHONIOENCODING'] = 'utf-8'
+
 load_dotenv()
+
+# Additional encoding fix for print statements
+def safe_print(*args, **kwargs):
+    """Safe print function that handles encoding issues"""
+    try:
+        print(*args, **kwargs)
+    except UnicodeEncodeError:
+        # Fallback: encode to ascii with replacement
+        safe_args = []
+        for arg in args:
+            if isinstance(arg, str):
+                safe_args.append(arg.encode('ascii', 'replace').decode('ascii'))
+            else:
+                safe_args.append(str(arg).encode('ascii', 'replace').decode('ascii'))
+        print(*safe_args, **kwargs)
 
 class Rule1Scraper:
     """
@@ -18,14 +39,15 @@ class Rule1Scraper:
     Handles scraping operations after authentication.
     """
     
-    def __init__(self, driver=None):
+    def __init__(self, driver=None, headless=True):
         """
         Initialize the Rule1Scraper.
         
         Args:
             driver: Optional Selenium WebDriver instance. If not provided, a new one will be created.
+            headless: Whether to run browser in headless mode (default: True)
         """
-        self.driver = driver if driver else get_driver()
+        self.driver = driver if driver else get_driver(headless=headless)
         self.wait = WebDriverWait(self.driver, 10)
         self.auth = Rule1Auth(self.driver)
         

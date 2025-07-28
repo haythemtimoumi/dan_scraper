@@ -72,7 +72,7 @@ def save_stock_data_to_db(data, source='rule1'):
         return False
     
     cursor = conn.cursor()
-    today = datetime.now().strftime('%Y-%m-%d')
+    current_timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     
     try:
         # Prepare data for batch insert
@@ -85,7 +85,7 @@ def save_stock_data_to_db(data, source='rule1'):
             
             # Map CSV columns to database columns
             db_record = (
-                record.get('Date', today),                      # date
+                record.get('Date', current_timestamp),          # timestamp
                 record.get('ticker', ''),                       # ticker
                 source,                                         # source
                 percentage_upside,                              # pe (now percentage_upside)

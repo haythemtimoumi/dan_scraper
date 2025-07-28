@@ -29,7 +29,7 @@ class TickerSearcher:
             csv_file: Path to CSV file for saving data (default: ticker_data.csv)
         """
         self.driver = driver if driver else get_driver()
-        self.wait = WebDriverWait(self.driver, 30)
+        self.wait = WebDriverWait(self.driver, 15)  # Reduced from 30 to 15 seconds
         self.auth = Rule1Auth(self.driver)
         self.csv_file = csv_file
         
@@ -43,35 +43,71 @@ class TickerSearcher:
         Returns:
             bool: True if already logged in or login successful, False otherwise
         """
+        print("Checking login status...")
+        
         # First check if we're already logged in by looking for dashboard elements
         try:
-            # Try multiple selectors for dashboard elements
+            # Navigate to a known page to check login status
+            current_url = self.driver.current_url
+            if "login" not in current_url.lower():
+                # Try to access the explore page to test if we're logged in
+                self.driver.get("https://ruleonetoolbox.com/explore/stocks")
+                time.sleep(3)
+            
+            # Try multiple selectors for logged-in elements
             dashboard_selectors = [
                 '//a[contains(@href, "/explore/guru-portfolio")]',
-                '//a[contains(@href, "/dashboard")]',
+                '//a[contains(@href, "/dashboard")]', 
+                '//input[@placeholder="Search for Stocks, Gurus"]',
                 '//div[contains(@class, "dashboard")]',
                 '//h1[contains(text(), "Dashboard") or contains(text(), "Welcome")]',
                 '//div[contains(@class, "logged-in")]'
             ]
             
-            for selector in dashboard_selectors:
-                try:
-                    # Use a short timeout for this check
-                    WebDriverWait(self.driver, 2).until(
-                        EC.presence_of_element_located((By.XPATH, selector))
+            # Check if already logged in with single timeout
+            try:
+                WebDriverWait(self.driver, 8).until(
+                    lambda driver: any(
+                        len(driver.find_elements(By.XPATH, selector)) > 0 
+                        for selector in dashboard_selectors
                     )
-                    print("Already logged in, skipping login process")
-                    return True
-                except:
-                    continue
+                )
+                print("✅ Already logged in, skipping login process")
+                return True
+            except TimeoutException:
+                print("⚠️ Not logged in, proceeding with login...")
+                pass
                     
             # If we get here, we're not logged in, so proceed with login
-            return self.auth.login(auto_verify=auto_verify)
+            print("Starting login process...")
+            login_result = self.auth.login(auto_verify=auto_verify)
+            print(f"Auth login result: {login_result}")
+            
+            # Double-check login success by trying to access a protected page
+            if login_result:
+                try:
+                    self.driver.get("https://ruleonetoolbox.com/explore/stocks")
+                    WebDriverWait(self.driver, 10).until(
+                        EC.presence_of_element_located((By.XPATH, '//input[@placeholder="Search for Stocks, Gurus"]'))
+                    )
+                    print("✅ Login verification successful - can access protected pages")
+                    return True
+                except TimeoutException:
+                    print("⚠️ Login may have failed - cannot access protected pages")
+                    return False
+            
+            return login_result
             
         except Exception as e:
-            print(f"Error checking login status: {e}")
+            print(f"⚠️ Error checking login status: {e}")
             # Fall back to regular login
-            return self.auth.login(auto_verify=auto_verify)
+            try:
+                login_result = self.auth.login(auto_verify=auto_verify)
+                print(f"Fallback auth login result: {login_result}")
+                return login_result
+            except Exception as fallback_error:
+                print(f"❌ Fallback login also failed: {fallback_error}")
+                return False
     
     def combine_and_search_tickers(self, input_files=None, output_file="combined_tickers.txt"):
         """
@@ -165,6 +201,9 @@ class TickerSearcher:
             
         print(f"🔍 Starting search for {len(tickers)} tickers...")
         
+        # Store tickers list for navigation logic
+        self._current_tickers = tickers
+        
         success_count = 0
         for ticker in tickers:
             # Process the ticker
@@ -176,7 +215,10 @@ class TickerSearcher:
                     print(f"🔄 All attempts failed for {ticker}. Reloading page before moving to next ticker...")
                     # Navigate to the stock scan page
                     self.driver.get("https://ruleonetoolbox.com/explore/stocks")
-                    time.sleep(5)  # Wait for page to load
+                    # Wait for page to load by checking for search input
+                    WebDriverWait(self.driver, 10).until(
+                        EC.presence_of_element_located((By.XPATH, '//input[contains(@placeholder, "Search for Stocks")]'))
+                    )
                     
                     # Check if we need to log in again
                     try:
@@ -205,26 +247,35 @@ class TickerSearcher:
     
     def _process_single_ticker(self, ticker, max_retries=3):
         """Process a single ticker through search and scrape data"""
+        """Process a single ticker through search and scrape data"""
         for attempt in range(max_retries):
             try:
                 print(f"\n🔍 Processing {ticker} (attempt {attempt+1}/{max_retries})...")
                 
-                # Check if we need to reload the page or navigate to the search page
-                if attempt > 0:
+                # Always navigate to search page for each new ticker
+                if attempt > 0 or (hasattr(self, '_current_tickers') and ticker != self._current_tickers[0]):
                     try:
-                        print("🔄 Reloading page to recover from potential issues...")
+                        print(f"🔄 Navigating to fresh search page for {ticker}...")
                         # Navigate to the stock scan page
                         self.driver.get("https://ruleonetoolbox.com/explore/stocks")
-                        time.sleep(5)  # Wait for page to load
+                        # Wait for search input to be available and page to be fully loaded
+                        WebDriverWait(self.driver, 10).until(
+                            EC.element_to_be_clickable((By.XPATH, '//input[@placeholder="Search for Stocks, Gurus"]'))
+                        )
+                        # Wait for page to be ready
+                        WebDriverWait(self.driver, 5).until(
+                            EC.element_to_be_clickable((By.XPATH, '//input[@placeholder="Search for Stocks, Gurus"]'))
+                        )
+                        print(f"✅ Search page loaded for {ticker}")
                     except Exception as reload_error:
-                        print(f"⚠️ Error reloading page: {reload_error}")
+                        print(f"⚠️ Error navigating to search page: {reload_error}")
                 
-                # Find and clear search input
+                # Find and clear search input using the exact selector
                 try:
-                    search_input = self.wait.until(
+                    search_input = WebDriverWait(self.driver, 8).until(
                         EC.element_to_be_clickable((
                             By.XPATH,
-                            '//span[contains(@class, "p-input-icon-left")]//input[contains(@placeholder, "Search for Stocks")]'
+                            '//input[@placeholder="Search for Stocks, Gurus"]'
                         ))
                     )
                 except TimeoutException:
@@ -234,27 +285,84 @@ class TickerSearcher:
                         print("❌ Failed to log in again")
                         continue
                     # Try to find the search input again
-                    search_input = self.wait.until(
+                    search_input = WebDriverWait(self.driver, 5).until(
                         EC.element_to_be_clickable((
                             By.XPATH,
-                            '//span[contains(@class, "p-input-icon-left")]//input[contains(@placeholder, "Search for Stocks")]'
+                            '//input[@placeholder="Search for Stocks, Gurus"]'
                         ))
                     )
                 
                 search_input.clear()
+                # Wait for input to be cleared
+                WebDriverWait(self.driver, 3).until(
+                    lambda driver: driver.find_element(By.XPATH, '//input[@placeholder="Search for Stocks, Gurus"]').get_attribute('value') == ''
+                )
                 
-                # Enter and submit ticker
+                # Enter ticker and submit
                 search_input.send_keys(ticker)
                 search_input.send_keys(Keys.ENTER)
                 print(f"✅ Search submitted for {ticker}")
                 
-                # Wait for results and get the current URL
-                time.sleep(5)
-                current_url = self.driver.current_url
-                print(f"Current URL after search: {current_url}")
+                # Wait for URL to actually change to the new ticker
+                try:
+                    # Store current URL before search
+                    old_url = self.driver.current_url
+                    
+                    # Wait for URL to change AND contain ticker info
+                    def url_changed_to_ticker(driver):
+                        current = driver.current_url
+                        return ("/ticker/" in current and 
+                               current != old_url and
+                               (ticker.upper() in current.upper() or 
+                                any(exchange in current for exchange in ["NYS:", "NAS:", "AMEX:"])))
+                    
+                    WebDriverWait(self.driver, 15).until(url_changed_to_ticker)
+                    
+                    # Capture the exact URL we get after search
+                    ticker_url = self.driver.current_url
+                    print(f"Captured URL after search: {ticker_url}")
+                    
+                    # Extract the base part (everything before /company/brief or /analysis/)
+                    if '/company/brief' in ticker_url:
+                        base_ticker_url = ticker_url.replace('/company/brief', '')
+                    elif '/analysis/' in ticker_url:
+                        base_ticker_url = ticker_url.split('/analysis/')[0]
+                    else:
+                        base_ticker_url = ticker_url
+                    
+                    print(f"Base ticker URL: {base_ticker_url}")
+                    
+                except TimeoutException:
+                    ticker_url = self.driver.current_url
+                    print(f"⚠️ URL didn't change properly after search: {ticker_url}")
+                    print(f"⚠️ Expected ticker: {ticker}, but URL shows different ticker")
+                    
+                    # Try clicking search button if Enter didn't work
+                    try:
+                        print("🔄 Trying to click search button instead...")
+                        search_button = self.driver.find_element(By.XPATH, '//i[@class="pi pi-search"]')
+                        search_button.click()
+                        time.sleep(3)
+                        
+                        # Check if URL changed now
+                        ticker_url = self.driver.current_url
+                        if "/ticker/" in ticker_url and ticker_url != old_url:
+                            print(f"✅ Search button worked: {ticker_url}")
+                        else:
+                            print(f"⚠️ Search button also failed: {ticker_url}")
+                            if attempt < max_retries - 1:
+                                continue
+                            else:
+                                return False
+                    except Exception as click_error:
+                        print(f"⚠️ Could not click search button: {click_error}")
+                        if attempt < max_retries - 1:
+                            continue
+                        else:
+                            return False
                 
-                # Use the current URL directly instead of additional navigation
-                if "/ticker/" not in current_url:
+                # Validate we have a ticker page
+                if "/ticker/" not in ticker_url:
                     print(f"⚠️ Search did not lead to ticker page for {ticker}")
                     if attempt < max_retries - 1:
                         continue
@@ -271,8 +379,8 @@ class TickerSearcher:
                     else:
                         return False
                 
-                # Get ticker details (last price and buy price)
-                ticker_data = self._get_calculator_data(ticker)
+                # Get ticker details using base URL
+                ticker_data = self._get_calculator_data(ticker, base_ticker_url)
                 if not ticker_data:
                     print(f"⚠️ Failed to get ticker data for {ticker} on attempt {attempt+1}")
                     if attempt < max_retries - 1:
@@ -314,16 +422,17 @@ class TickerSearcher:
     def _scrape_scores(self, ticker):
         """Scrape Rule1, Management, and Moat scores"""
         try:
-            # Wait for scores to be visible
-            time.sleep(5)  # Increased wait time
-            
-            # Find the rule-one-number div container first
+            # Wait for the container and its content to be fully loaded
             try:
-                # Wait for the container to be present
-                container = WebDriverWait(self.driver, 15).until(
+                # Wait for the container to be present with scores loaded
+                WebDriverWait(self.driver, 8).until(
                     EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "rule-one-number")]'))
                 )
-                print(f"✅ Found rule-one-number container for {ticker}")
+                # Brief wait for content to populate
+                WebDriverWait(self.driver, 3).until(
+                    lambda driver: len(driver.find_elements(By.XPATH, '//div[contains(@class, "rule-one-number")]//span[contains(@class, "full-header") or contains(@class, "number-box")]')) > 0
+                )
+                print(f"✅ Found rule-one-number container with content for {ticker}")
             except (TimeoutException, NoSuchElementException):
                 print(f"⚠️ Could not find rule-one-number container for {ticker}")
                 
@@ -340,7 +449,10 @@ class TickerSearcher:
                             ticker_part = parts[1].split("/")[0]
                             # Reload the page
                             self.driver.get(f"https://ruleonetoolbox.com/ticker/{ticker_part}")
-                            time.sleep(5)  # Wait for page to load
+                            # Wait for rule-one-number container to load
+                            WebDriverWait(self.driver, 10).until(
+                                EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "rule-one-number")]'))
+                            )
                             
                             # Try to find the container again
                             try:
@@ -355,78 +467,105 @@ class TickerSearcher:
                     print(f"⚠️ Error during page reload: {reload_error}")
                     container = None
             
-            # Try multiple XPath patterns for Rule1 Score
-            rule1_score = None
+            # Extract all scores immediately without waiting
             rule1_selectors = [
-                # New selectors based on the HTML
                 '//div[contains(@class, "rule-one-number")]//span[contains(@class, "full-header")]',
                 '//div[contains(@class, "rule-one-number")]//span[contains(@class, "compact-header")]/span[1]',
-                # Original selectors as fallback
                 '//span[contains(@class, "full-header") and contains(@class, "text-lg")]',
                 '//span[contains(@class, "rounded-sm") and contains(@class, "py-2") and contains(@class, "px-4")]'
             ]
             
-            for selector in rule1_selectors:
-                try:
-                    rule1_score = WebDriverWait(self.driver, 10).until(
-                        EC.presence_of_element_located((By.XPATH, selector))
-                    ).text.strip()
-                    if rule1_score:
-                        break
-                except:
-                    continue
-            
-            if not rule1_score:
-                raise NoSuchElementException("Could not find Rule1 Score element")
-            
-            # Try multiple XPath patterns for Moat Score
-            moat_score = None
             moat_selectors = [
-                # New selectors based on the HTML
                 '//div[contains(@class, "rule-one-number")]//div[contains(@class, "flex-col")][1]//span[contains(@class, "number-box")]',
                 '//div[contains(@class, "rule-one-number")]//span[text()="Moat"]/preceding-sibling::span',
-                # Original selectors as fallback
                 '//span[contains(@class, "number-box") and contains(@class, "text-lg")][1]',
                 '//div[contains(text(), "Moat")]/preceding-sibling::span[contains(@class, "text-lg")]'
             ]
             
-            for selector in moat_selectors:
-                try:
-                    moat_score = WebDriverWait(self.driver, 10).until(
-                        EC.presence_of_element_located((By.XPATH, selector))
-                    ).text.strip()
-                    if moat_score:
-                        break
-                except:
-                    continue
-            
-            if not moat_score:
-                raise NoSuchElementException("Could not find Moat Score element")
-            
-            # Try multiple XPath patterns for Management Score
-            management_score = None
             management_selectors = [
-                # New selectors based on the HTML
                 '//div[contains(@class, "rule-one-number")]//div[contains(@class, "flex-col")][2]//span[contains(@class, "number-box")]',
                 '//div[contains(@class, "rule-one-number")]//span[text()="Management"]/preceding-sibling::span',
                 '//div[contains(@class, "rule-one-number")]//span[text()="Mgmt"]/preceding-sibling::span',
-                # Original selectors as fallback
                 '//span[contains(@class, "number-box") and contains(@class, "text-lg")][2]',
                 '//div[contains(text(), "Management")]/preceding-sibling::span[contains(@class, "text-lg")]'
             ]
             
-            for selector in management_selectors:
+            # Extract scores immediately
+            rule1_score = None
+            for selector in rule1_selectors:
                 try:
-                    management_score = WebDriverWait(self.driver, 10).until(
-                        EC.presence_of_element_located((By.XPATH, selector))
-                    ).text.strip()
-                    if management_score:
+                    element = self.driver.find_element(By.XPATH, selector)
+                    rule1_score = element.text.strip()
+                    if rule1_score:
                         break
-                except:
+                except NoSuchElementException:
                     continue
             
-            if not management_score:
-                raise NoSuchElementException("Could not find Management Score element")
+            moat_score = None
+            for selector in moat_selectors:
+                try:
+                    element = self.driver.find_element(By.XPATH, selector)
+                    moat_score = element.text.strip()
+                    if moat_score:
+                        break
+                except NoSuchElementException:
+                    continue
+            
+            management_score = None
+            for selector in management_selectors:
+                try:
+                    element = self.driver.find_element(By.XPATH, selector)
+                    management_score = element.text.strip()
+                    if management_score:
+                        break
+                except NoSuchElementException:
+                    continue
+            
+            # If immediate extraction failed, try with brief wait as fallback
+            if not rule1_score or not moat_score or not management_score:
+                print(f"⚠️ Immediate extraction failed, trying with brief wait for {ticker}")
+                
+                # Try Rule1 score with wait if not found
+                if not rule1_score:
+                    for selector in rule1_selectors:
+                        try:
+                            element = WebDriverWait(self.driver, 3).until(
+                                EC.presence_of_element_located((By.XPATH, selector))
+                            )
+                            rule1_score = element.text.strip()
+                            if rule1_score:
+                                break
+                        except (TimeoutException, NoSuchElementException):
+                            continue
+                
+                # Try Moat score with wait if not found
+                if not moat_score:
+                    for selector in moat_selectors:
+                        try:
+                            element = WebDriverWait(self.driver, 3).until(
+                                EC.presence_of_element_located((By.XPATH, selector))
+                            )
+                            moat_score = element.text.strip()
+                            if moat_score:
+                                break
+                        except (TimeoutException, NoSuchElementException):
+                            continue
+                
+                # Try Management score with wait if not found
+                if not management_score:
+                    for selector in management_selectors:
+                        try:
+                            element = WebDriverWait(self.driver, 3).until(
+                                EC.presence_of_element_located((By.XPATH, selector))
+                            )
+                            management_score = element.text.strip()
+                            if management_score:
+                                break
+                        except (TimeoutException, NoSuchElementException):
+                            continue
+                
+                if not rule1_score or not moat_score or not management_score:
+                    raise NoSuchElementException("Could not find one or more score elements")
             
             # Scrape company full name
             full_name = None
@@ -437,13 +576,11 @@ class TickerSearcher:
             
             for selector in name_selectors:
                 try:
-                    name_element = WebDriverWait(self.driver, 10).until(
-                        EC.presence_of_element_located((By.XPATH, selector))
-                    )
+                    name_element = self.driver.find_element(By.XPATH, selector)
                     full_name = name_element.text.strip()
                     if full_name:
                         break
-                except:
+                except NoSuchElementException:
                     continue
             
             if not full_name:
@@ -497,15 +634,14 @@ class TickerSearcher:
                 
             return None
     
-    def _get_calculator_data(self, ticker):
+    def _get_calculator_data(self, ticker, base_ticker_url):
         """Scrape buy price and last price directly from ticker details page"""
         try:
-            # Wait for ticker details to load
-            time.sleep(4)
+            # No unnecessary wait - let WebDriverWait handle timing
             
-            # Navigate to Growth Rate Analysis before scraping buy price
+            # Navigate to Growth Rate Analysis using base ticker URL
             growth_data = {'last_gr': 'N/A', 'long_gr': 'N/A'}
-            if not self._navigate_to_growth_rate_analysis():
+            if not self._navigate_to_growth_rate_analysis(base_ticker_url):
                 print(f"⚠️ Failed to navigate to Growth Rate Analysis for {ticker}")
                 # Continue anyway to try scraping without this step
             else:
@@ -517,27 +653,11 @@ class TickerSearcher:
                 # Now scrape growth rate data after saving (when data is updated)
                 growth_data = self._scrape_growth_rate_data()
             
-            # Navigate to Valuation Calculators (wait after saving growth rate)
-            time.sleep(4)
-            if not self._navigate_to_valuation_calculators():
+            # Navigate to Valuation Calculators using base ticker URL
+            if not self._navigate_to_valuation_calculators(base_ticker_url):
                 print(f"⚠️ Failed to navigate to Valuation Calculators for {ticker}")
-                # Try direct URL navigation again
-                try:
-                    # Extract ticker from current URL
-                    current_url = self.driver.current_url
-                    parts = current_url.split("/ticker/")
-                    if len(parts) > 1:
-                        ticker_part = parts[1].split("/")[0]
-                        # Direct navigation to calculators
-                        calculators_url = f"https://ruleonetoolbox.com/ticker/{ticker_part}/analysis/calculators"
-                        self.driver.get(calculators_url)
-                        print(f"✅ Retry direct navigation to Valuation Calculators: {calculators_url}")
-                        time.sleep(5)
-                except Exception as nav_error:
-                    print(f"⚠️ Error during direct navigation retry: {nav_error}")
             
-            # Select Composite GR and Calculate (wait for page to load)
-            time.sleep(4)
+            # Select Composite GR and Calculate
             if not self._select_composite_gr_and_calculate():
                 print(f"⚠️ Failed to select Composite GR and calculate for {ticker}")
                 # Continue anyway to try scraping without this step
@@ -660,8 +780,10 @@ class TickerSearcher:
                     self.driver.get(ticker_url)
                     print(f"✅ Directly navigated to ticker page: {ticker_url}")
                     
-                    # Wait for page to load and check if we're on the right page
-                    time.sleep(5)
+                    # Wait for ticker page elements to load
+                    WebDriverWait(self.driver, 10).until(
+                        EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "ticker-details")]'))
+                    )
                     
                     # Check if we landed on a valid ticker page
                     if "/ticker/" in self.driver.current_url:
@@ -675,29 +797,19 @@ class TickerSearcher:
             print(f"❌ Failed to navigate to ticker page for {ticker}: {e}")
             return False
     
-    def _navigate_to_growth_rate_analysis(self):
-        """Navigate to Growth Rate Analysis page by directly modifying the URL"""
+    def _navigate_to_growth_rate_analysis(self, base_ticker_url):
+        """Navigate to Growth Rate Analysis page using the base ticker URL"""
         try:
-            # First check if we're on a ticker page
-            current_url = self.driver.current_url
-            if "/ticker/" not in current_url:
-                print("Not on ticker page, skipping Growth Rate Analysis navigation")
-                return False
-                
-            # Extract the ticker part from the URL
-            parts = current_url.split("/ticker/")
-            if len(parts) < 2:
-                print("Could not extract ticker from URL")
-                return False
-                
-            # Get the ticker symbol part
-            ticker_part = parts[1].split("/")[0]
+            # Build growth rates URL from base
+            growth_rates_url = f"{base_ticker_url}/analysis/growth-rates"
             
-            # Directly navigate to the growth rates page by changing the URL
-            growth_rates_url = f"https://ruleonetoolbox.com/ticker/{ticker_part}/analysis/growth-rates"
             self.driver.get(growth_rates_url)
-            print(f"✅ Directly navigated to Growth Rate Analysis: {growth_rates_url}")
-            time.sleep(4)
+            print(f"✅ Navigated to Growth Rate Analysis: {growth_rates_url}")
+            
+            # Wait for Save Composite Growth Rate button
+            WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, '//span[contains(@class, "p-button-label") and contains(text(), "Save Composite Growth Rate")]'))
+            )
             return True
         except Exception as e:
             print(f"❌ Failed to navigate to Growth Rate Analysis: {e}")
@@ -706,55 +818,47 @@ class TickerSearcher:
     def _scrape_growth_rate_data(self):
         """Scrape dividend and cash per share data before saving composite growth rate"""
         try:
-            # Wait for page to load completely
-            time.sleep(5)
+            # No unnecessary wait - WebDriverWait will handle element detection
             
-            # Scrape Last Saved Composite GR with multiple selectors
-            last_gr = "N/A"
+            # Extract growth rates immediately
             dividend_selectors = [
                 '//div[contains(@class, "lastSavedComposite")]//span[contains(@class, "font-bold")]',
                 '//span[contains(text(), "Last Saved Composite GR")]/following-sibling::span[contains(@class, "font-bold")]',
                 '//div[contains(@class, "lastSavedComposite")]//span[contains(@class, "text-xl")]'
             ]
             
-            for selector in dividend_selectors:
-                try:
-                    dividend_element = WebDriverWait(self.driver, 15).until(
-                        EC.presence_of_element_located((By.XPATH, selector))
-                    )
-                    dividend_text = dividend_element.text.strip()
-                    if dividend_text and dividend_text != '':
-                        import re
-                        last_gr = dividend_text.replace('%', '').replace(',', '')
-                        # Convert to integer (remove decimal part)
-                        match = re.search(r'(\d+)(?:\.\d+)?', last_gr)
-                        last_gr = match.group(1) if match else last_gr
-                        break
-                except:
-                    continue
-            
-            # Scrape Analyst Estimated Long-Term GR with multiple selectors
-            long_gr = "N/A"
             cash_selectors = [
                 '//div[contains(@class, "analyst")]//span[contains(@class, "font-bold")]',
                 '//span[contains(text(), "Analyst Estimated Long-Term GR")]/following-sibling::span[contains(@class, "font-bold")]',
                 '//div[contains(@class, "analyst")]//span[contains(@class, "text-xl")]'
             ]
             
+            last_gr = "N/A"
+            for selector in dividend_selectors:
+                try:
+                    element = self.driver.find_element(By.XPATH, selector)
+                    dividend_text = element.text.strip()
+                    if dividend_text:
+                        import re
+                        last_gr = dividend_text.replace('%', '').replace(',', '')
+                        match = re.search(r'(\d+)(?:\.\d+)?', last_gr)
+                        last_gr = match.group(1) if match else last_gr
+                        break
+                except NoSuchElementException:
+                    continue
+            
+            long_gr = "N/A"
             for selector in cash_selectors:
                 try:
-                    cash_element = WebDriverWait(self.driver, 15).until(
-                        EC.presence_of_element_located((By.XPATH, selector))
-                    )
-                    cash_text = cash_element.text.strip()
-                    if cash_text and cash_text != '':
+                    element = self.driver.find_element(By.XPATH, selector)
+                    cash_text = element.text.strip()
+                    if cash_text:
                         import re
                         long_gr = cash_text.replace('%', '').replace(',', '')
-                        # Convert to integer (remove decimal part)
                         match = re.search(r'(\d+)(?:\.\d+)?', long_gr)
                         long_gr = match.group(1) if match else long_gr
                         break
-                except:
+                except NoSuchElementException:
                     continue
             
             print(f"✅ Scraped growth rate data: Last GR={last_gr}, Long GR={long_gr}")
@@ -775,7 +879,10 @@ class TickerSearcher:
             )
             save_button.click()
             print("✅ Clicked Save Composite Growth Rate")
-            time.sleep(1)
+            # Wait briefly for save action to complete
+            WebDriverWait(self.driver, 2).until(
+                lambda driver: True  # Just a brief wait
+            )
             
             # Handle toast notification close button
             try:
@@ -793,29 +900,19 @@ class TickerSearcher:
             print(f"⚠️ Failed to save composite growth rate: {e}")
             return False
     
-    def _navigate_to_valuation_calculators(self):
-        """Navigate to Valuation Calculators page by directly modifying the URL"""
+    def _navigate_to_valuation_calculators(self, base_ticker_url):
+        """Navigate to Valuation Calculators page using the base ticker URL"""
         try:
-            # Check if we're on a ticker page
-            current_url = self.driver.current_url
-            if "/ticker/" not in current_url:
-                print("Not on ticker page, skipping Valuation Calculators navigation")
-                return False
-                
-            # Extract the ticker part from the URL
-            parts = current_url.split("/ticker/")
-            if len(parts) < 2:
-                print("Could not extract ticker from URL")
-                return False
-                
-            # Get the ticker symbol part
-            ticker_part = parts[1].split("/")[0]
+            # Build calculators URL from base
+            calculators_url = f"{base_ticker_url}/analysis/calculators"
             
-            # Directly navigate to the calculators page by changing the URL
-            calculators_url = f"https://ruleonetoolbox.com/ticker/{ticker_part}/analysis/calculators"
             self.driver.get(calculators_url)
-            print(f"✅ Directly navigated to Valuation Calculators: {calculators_url}")
-            time.sleep(5)
+            print(f"✅ Navigated to Valuation Calculators: {calculators_url}")
+            
+            # Wait for Composite GR radio button
+            WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, '//p-radiobutton[@label="Composite GR"]'))
+            )
             return True
         except Exception as e:
             print(f"❌ Failed to navigate to Valuation Calculators: {e}")
@@ -830,7 +927,10 @@ class TickerSearcher:
             )
             composite_radio.click()
             print("✅ Selected Composite GR radio button")
-            time.sleep(1)
+            # Wait for radio button selection to register
+            WebDriverWait(self.driver, 2).until(
+                lambda driver: driver.find_element(By.XPATH, '//p-radiobutton[@label="Composite GR"]//div[contains(@class, "p-radiobutton-box")]').get_attribute('class').find('p-highlight') != -1
+            )
             
             # Click Calculate button
             calculate_button = WebDriverWait(self.driver, 15).until(
@@ -838,7 +938,10 @@ class TickerSearcher:
             )
             calculate_button.click()
             print("✅ Clicked Calculate button")
-            time.sleep(4)
+            # Wait for calculation results to load
+            WebDriverWait(self.driver, 8).until(
+                EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "calculator-results")]'))
+            )
             return True
         except Exception as e:
             print(f"⚠️ Failed to select Composite GR and calculate: {e}")
@@ -852,7 +955,10 @@ class TickerSearcher:
             )
             save_button.click()
             print("✅ Clicked Save Valuations")
-            time.sleep(1)
+            # Wait for save action to complete
+            WebDriverWait(self.driver, 3).until(
+                lambda driver: True  # Brief wait for save
+            )
             return True
         except Exception as e:
             print(f"⚠️ Failed to save valuations: {e}")
