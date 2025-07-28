@@ -34,13 +34,5 @@ jobs:
             echo "requirements.txt unchanged, skipping pip install"
           fi
 
-          echo "Running data tasks..."
-          python count_csv_data.py
-          python merge_and_save.py
-
-          echo "Restarting application..."
-          pkill -f "python main.py" || echo "App not running"
-          nohup python main.py > app.log 2>&1 &
-          echo "Deployment finished ✔"
 
         EOF
