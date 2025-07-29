@@ -1,0 +1,14 @@
+[Unit]
+Description=Dan Watchlist to Database Service
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/root/dan_scraper
+ExecStart=/usr/bin/python3 /root/dan_scraper/dan_watchlist_to_db.py
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

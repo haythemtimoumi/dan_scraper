@@ -7,7 +7,7 @@ def scrape_rule1_list_to_db():
     """
     Login to Rule1Toolbox, navigate to stock scan, configure filters, scrape tickers and save to database
     """
-    scraper = Rule1Scraper()
+    scraper = Rule1Scraper(clear_cache=True)
     
     try:
         # STEP 1: Login to Rule1Toolbox

@@ -22,8 +22,8 @@ class StockScoresScraper:
             self.driver = driver
             self.should_close_driver = False
         else:
-            # Use the browser module from your project
-            self.driver = get_driver()
+            # Use the browser module from your project in headless mode for VPS
+            self.driver = get_driver(headless=True)
             self.should_close_driver = True
             
         self.driver.implicitly_wait(5)

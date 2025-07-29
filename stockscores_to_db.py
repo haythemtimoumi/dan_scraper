@@ -11,7 +11,7 @@ def scrape_stockscores_to_db():
     """
     Scrape tickers from StockScores and save directly to scraper_tasks table
     """
-    driver = get_driver(headless=False)
+    driver = get_driver(headless=True)
     
     try:
         # Login to StockScores

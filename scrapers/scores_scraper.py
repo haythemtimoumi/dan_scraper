@@ -28,7 +28,7 @@ class TickerSearcher:
             driver: Optional Selenium WebDriver instance. If not provided, a new one will be created.
             csv_file: Path to CSV file for saving data (default: ticker_data.csv)
         """
-        self.driver = driver if driver else get_driver()
+        self.driver = driver if driver else get_driver(headless=True)
         self.wait = WebDriverWait(self.driver, 15)  # Reduced from 30 to 15 seconds
         self.auth = Rule1Auth(self.driver)
         self.csv_file = csv_file
@@ -252,23 +252,22 @@ class TickerSearcher:
             try:
                 print(f"\n🔍 Processing {ticker} (attempt {attempt+1}/{max_retries})...")
                 
-                # Always navigate to search page for each new ticker
-                if attempt > 0 or (hasattr(self, '_current_tickers') and ticker != self._current_tickers[0]):
-                    try:
-                        print(f"🔄 Navigating to fresh search page for {ticker}...")
-                        # Navigate to the stock scan page
-                        self.driver.get("https://ruleonetoolbox.com/explore/stocks")
-                        # Wait for search input to be available and page to be fully loaded
-                        WebDriverWait(self.driver, 10).until(
-                            EC.element_to_be_clickable((By.XPATH, '//input[@placeholder="Search for Stocks, Gurus"]'))
-                        )
-                        # Wait for page to be ready
-                        WebDriverWait(self.driver, 5).until(
-                            EC.element_to_be_clickable((By.XPATH, '//input[@placeholder="Search for Stocks, Gurus"]'))
-                        )
-                        print(f"✅ Search page loaded for {ticker}")
-                    except Exception as reload_error:
-                        print(f"⚠️ Error navigating to search page: {reload_error}")
+                # Always navigate to search page for each ticker (except first attempt of first ticker)
+                try:
+                    print(f"🔄 Navigating to fresh search page for {ticker}...")
+                    # Navigate to the stock scan page
+                    self.driver.get("https://ruleonetoolbox.com/explore/stocks")
+                    # Wait for search input to be available and page to be fully loaded
+                    WebDriverWait(self.driver, 10).until(
+                        EC.element_to_be_clickable((By.XPATH, '//input[@placeholder="Search for Stocks, Gurus"]'))
+                    )
+                    # Wait for page to be ready
+                    WebDriverWait(self.driver, 3).until(
+                        EC.element_to_be_clickable((By.XPATH, '//input[@placeholder="Search for Stocks, Gurus"]'))
+                    )
+                    print(f"✅ Search page loaded for {ticker}")
+                except Exception as reload_error:
+                    print(f"⚠️ Error navigating to search page: {reload_error}")
                 
                 # Find and clear search input using the exact selector
                 try:
@@ -335,6 +334,12 @@ class TickerSearcher:
                 except TimeoutException:
                     ticker_url = self.driver.current_url
                     print(f"⚠️ URL didn't change properly after search: {ticker_url}")
+                    
+                    # Check if we're still on scan page - ticker might not exist in Rule1
+                    if "scan-for-stocks" in ticker_url or "explore/stocks" in ticker_url:
+                        print(f"⚠️ {ticker} not found in Rule1Toolbox (staying on scan page)")
+                        return False
+                    
                     print(f"⚠️ Expected ticker: {ticker}, but URL shows different ticker")
                     
                     # Try clicking search button if Enter didn't work
@@ -348,6 +353,9 @@ class TickerSearcher:
                         ticker_url = self.driver.current_url
                         if "/ticker/" in ticker_url and ticker_url != old_url:
                             print(f"✅ Search button worked: {ticker_url}")
+                        elif "scan-for-stocks" in ticker_url:
+                            print(f"⚠️ {ticker} not found in Rule1Toolbox after search button click")
+                            return False
                         else:
                             print(f"⚠️ Search button also failed: {ticker_url}")
                             if attempt < max_retries - 1:

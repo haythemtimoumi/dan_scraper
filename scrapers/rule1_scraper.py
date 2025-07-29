@@ -39,15 +39,16 @@ class Rule1Scraper:
     Handles scraping operations after authentication.
     """
     
-    def __init__(self, driver=None, headless=True):
+    def __init__(self, driver=None, headless=True, clear_cache=False):
         """
         Initialize the Rule1Scraper.
         
         Args:
             driver: Optional Selenium WebDriver instance. If not provided, a new one will be created.
             headless: Whether to run browser in headless mode (default: True)
+            clear_cache: Whether to clear browser cache before starting (default: False)
         """
-        self.driver = driver if driver else get_driver(headless=headless)
+        self.driver = driver if driver else get_driver(headless=headless, clear_cache=clear_cache)
         self.wait = WebDriverWait(self.driver, 10)
         self.auth = Rule1Auth(self.driver)
         

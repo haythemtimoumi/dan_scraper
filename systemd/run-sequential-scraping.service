@@ -1,0 +1,14 @@
+[Unit]
+Description=Run Sequential Scraping Service
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/root/dan_scraper
+ExecStart=/usr/bin/python3 /root/dan_scraper/run_sequential_scraping.py
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Rule1 Guru to Database weekly
+Requires=rule1-guru-to-db.service
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

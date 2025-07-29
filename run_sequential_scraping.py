@@ -30,24 +30,35 @@ def run_sequential_scraping():
         
         print(f"Processing {len(active_tickers)} tickers...\n")
         
-        # Initialize scrapers
+        # Initialize scrapers with error handling
         from scrapers.scores_scraper import TickerSearcher
         from scrapers.stockscores_scraper import StockScoresScraper
         
-        rule1_searcher = TickerSearcher()
-        stockscores_scraper = StockScoresScraper()
+        rule1_searcher = None
+        stockscores_scraper = None
         
-        # Login to Rule1
-        print("Attempting Rule1 login...")
-        login_result = rule1_searcher.login()
-        print(f"Login result: {login_result}")
-        print(f"Current URL after login attempt: {rule1_searcher.driver.current_url}")
-        
-        if not login_result:
-            print("❌ Rule1 login failed")
+        try:
+            # Use single stable browser session for both scrapers
+            from core.browser_stable import get_stable_driver
+            print("Initializing shared browser session...")
+            shared_driver = get_stable_driver(headless=True)
+            
+            rule1_searcher = TickerSearcher(driver=shared_driver)
+            stockscores_scraper = StockScoresScraper(driver=shared_driver)
+            
+            # Login to Rule1 with optimized auto verification
+            print("Attempting Rule1 login...")
+            login_result = rule1_searcher.login(auto_verify=True)
+            
+            if not login_result:
+                print("❌ Rule1 login failed - check credentials and email verification")
+                return 0
+            else:
+                print("✅ Rule1 login successful - starting ticker processing...")
+                
+        except Exception as e:
+            print(f"❌ Error initializing scrapers: {e}")
             return 0
-        else:
-            print("✅ Rule1 login successful")
         
         success_count = 0
         
@@ -55,17 +66,44 @@ def run_sequential_scraping():
             print(f"[{i}/{len(active_tickers)}] Processing {symbol}...")
             
             try:
-                # Get Rule1 data
-                rule1_data = scrape_rule1_data(rule1_searcher, symbol)
-                cursor.execute("UPDATE scraper_tasks SET rule1_scraped_at = %s WHERE id = %s", (current_time, ticker_id))
+                # Get Rule1 data with enhanced error handling and retry
+                rule1_data = None
+                max_rule1_retries = 2
+                for rule1_attempt in range(max_rule1_retries):
+                    try:
+                        rule1_data = scrape_rule1_data(rule1_searcher, symbol)
+                        if rule1_data:
+                            cursor.execute("UPDATE scraper_tasks SET rule1_scraped_at = %s WHERE id = %s", (current_time, ticker_id))
+                            break
+                        else:
+                            print(f"Rule1 attempt {rule1_attempt + 1} returned no data for {symbol}")
+                    except Exception as e:
+                        print(f"Rule1 attempt {rule1_attempt + 1} failed for {symbol}: {e}")
+                    
+                    if rule1_attempt < max_rule1_retries - 1:
+                        print(f"Retrying Rule1 for {symbol} in 2 seconds...")
+                        import time
+                        time.sleep(2)
                 
-                # Get StockScores data
-                signal_score, sentiment_score, screenshot = stockscores_scraper.scrape_scores(symbol)
-                cursor.execute("UPDATE scraper_tasks SET stockscore_scraped_at = %s WHERE id = %s", (current_time, ticker_id))
+                if not rule1_data:
+                    print(f"⚠️ All Rule1 attempts failed for {symbol} - ticker may not exist in Rule1Toolbox (ETF/Index fund?)")
+                    print(f"  → Continuing with StockScores and price data for {symbol}...")
                 
-                # Get Price data
-                price = fetch_price(symbol)
-                cursor.execute("UPDATE scraper_tasks SET last_price_scraped_at = %s WHERE id = %s", (current_time, ticker_id))
+                # Get StockScores data with error handling
+                signal_score, sentiment_score, screenshot = "N/A", "N/A", "N/A"
+                try:
+                    signal_score, sentiment_score, screenshot = stockscores_scraper.scrape_scores(symbol)
+                    cursor.execute("UPDATE scraper_tasks SET stockscore_scraped_at = %s WHERE id = %s", (current_time, ticker_id))
+                except Exception as e:
+                    print(f"Warning: StockScores data failed for {symbol}: {e}")
+                
+                # Get Price data with error handling
+                price = None
+                try:
+                    price = fetch_price(symbol)
+                    cursor.execute("UPDATE scraper_tasks SET last_price_scraped_at = %s WHERE id = %s", (current_time, ticker_id))
+                except Exception as e:
+                    print(f"Warning: Price data failed for {symbol}: {e}")
                 
                 # Create complete record
                 cursor.execute("""
@@ -102,8 +140,14 @@ def run_sequential_scraping():
                 print(f"Error processing {symbol}: {e}")
         
         conn.commit()
-        rule1_searcher.close()
-        stockscores_scraper.close()
+        
+        # Close shared browser session
+        try:
+            if 'shared_driver' in locals():
+                shared_driver.quit()
+                print("✅ Shared browser session closed")
+        except Exception as e:
+            print(f"Warning: Error closing shared browser: {e}")
         
         print(f"\nSequential scraping completed: {success_count}/{len(active_tickers)} complete records created")
         print(f"Each record contains: Rule1 + StockScores + Price data")
@@ -113,23 +157,28 @@ def run_sequential_scraping():
         conn.close()
 
 def scrape_rule1_data(searcher, symbol):
-    """Extract Rule1 data for a ticker"""
+    """Extract Rule1 data for a ticker with detailed logging"""
     try:
+        print(f"  → Processing Rule1 for {symbol}...")
         success = searcher._process_single_ticker(symbol)
         if not success:
+            print(f"  ⚠️ Rule1 processing failed for {symbol}")
             return None
         
         import csv, os
         csv_file = searcher.csv_file
         if not os.path.exists(csv_file):
+            print(f"  ⚠️ CSV file not found: {csv_file}")
             return None
         
         with open(csv_file, 'r') as f:
             reader = csv.DictReader(f)
             rows = list(reader)
         
+        print(f"  → Searching for {symbol} in {len(rows)} CSV rows...")
         for row in reversed(rows):
             if row['ticker'] == symbol:
+                print(f"  ✅ Found Rule1 data for {symbol}")
                 return {
                     'rule1_score': int(row['rule1_score']) if row['rule1_score'] != 'N/A' else None,
                     'management_score': int(row['management_score']) if row['management_score'] != 'N/A' else None,
@@ -140,9 +189,11 @@ def scrape_rule1_data(searcher, symbol):
                     'long_gr': row['long_gr'] if row['long_gr'] != 'N/A' else None,
                     'pbt': row['guru'] if row['guru'] != 'N/A' else None
                 }
+        
+        print(f"  ⚠️ {symbol} not found in CSV data")
         return None
     except Exception as e:
-        print(f"Rule1 data extraction error for {symbol}: {e}")
+        print(f"  ❌ Rule1 data extraction error for {symbol}: {e}")
         return None
 
 def fetch_price(ticker):

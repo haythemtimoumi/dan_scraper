@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Main Scraper monthly
+Requires=main-scraper.service
+
+[Timer]
+OnCalendar=monthly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

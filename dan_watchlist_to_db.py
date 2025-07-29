@@ -4,14 +4,14 @@ import psycopg2
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from core.browser import get_driver
+from core.browser_minimal import get_minimal_driver
 from config.settings import DB_CONFIG
 
 def scrape_dan_watchlist_to_db():
     """
     Login to StockScores, navigate to watchlist creator, scrape tickers and save to database
     """
-    driver = get_driver(headless=False)
+    driver = get_minimal_driver(headless=True)
     
     try:
         # STEP 0: Login to StockScores

@@ -1,1 +1,0 @@
-# API package for monthly ticker task service

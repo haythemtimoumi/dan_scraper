@@ -1,45 +1,58 @@
 #!/usr/bin/env python
 """
-Test script to verify Chrome browser configuration works on Windows
+Simple test script to verify browser functionality
 """
 
-import sys
+import subprocess
 import time
-from core.browser import get_driver
+import undetected_chromedriver as uc
+
+def kill_all_chrome():
+    """Kill all Chrome processes"""
+    subprocess.run(["pkill", "-9", "-f", "chrome"], capture_output=True)
+    subprocess.run(["pkill", "-9", "-f", "chromium"], capture_output=True)
+    subprocess.run(["fuser", "-k", "9222/tcp"], capture_output=True)
+    subprocess.run(["fuser", "-k", "9223/tcp"], capture_output=True)
+    time.sleep(2)
 
 def test_browser():
-    """Test if the browser configuration works properly"""
-    print("Testing Chrome browser configuration...")
+    """Test basic browser functionality"""
+    kill_all_chrome()
     
     try:
-        # Test visible browser
-        print("Testing visible browser...")
-        driver = get_driver(headless=False)
+        print("Testing basic Chrome setup...")
         
-        # Navigate to a test page
-        print("Navigating to test page...")
+        options = uc.ChromeOptions()
+        options.add_argument("--headless=new")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--remote-debugging-port=0")
+        options.add_argument("--disable-extensions")
+        options.add_argument("--disable-plugins")
+        options.add_argument("--disable-images")
+        options.add_argument("--single-process")
+        
+        driver = uc.Chrome(options=options, version_main=138)
+        
+        print("✅ Browser started successfully")
+        
+        # Test basic navigation
         driver.get("https://www.google.com")
+        print(f"✅ Navigation successful: {driver.title}")
         
-        # Wait a bit to see the browser
-        print("Waiting 5 seconds to verify browser is visible...")
-        time.sleep(5)
-        
-        # Get page title
-        title = driver.title
-        print(f"Page title: {title}")
-        
-        # Close browser
         driver.quit()
-        print("Browser test completed successfully!")
+        print("✅ Browser closed successfully")
         
         return True
         
     except Exception as e:
-        print(f"Browser test failed: {e}")
+        print(f"❌ Browser test failed: {e}")
         return False
 
 if __name__ == "__main__":
     success = test_browser()
-    if not success:
-        sys.exit(1)
-    print("All tests passed!")
+    if success:
+        print("🎉 Browser test passed! You can now run your scrapers.")
+    else:
+        print("💥 Browser test failed. Check your Chrome installation.")

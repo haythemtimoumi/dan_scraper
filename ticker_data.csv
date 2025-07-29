@@ -1,194 +1,216 @@
-ticker,full_name,rule1_score,management_score,moat_score,buy_price,last_price,last_gr,long_gr,guru,Signal Score,Sentiment Score,Screenshot
-A,Agilent Technologies Inc,68,85,50,$71,N/A,13,6,10 years,,,
-AAPL,Apple Inc,82,100,63,$88,N/A,6,12,16 years,,,
-ABG,Asbury Automotive Group Inc,65,50,80,$157495,N/A,118,17,2 years,,,
-ABNB,Airbnb Inc,68,70,67,$81,N/A,14,0,Infinity years,,,
-ABX,Barrick Mining Corp,41,48,35,$25,N/A,16,7,13 years,,,
-ACDC,ProFrac Holding Corp,38,0,75,$9,N/A,N/A,N/A,N/A,,,
-ACGL,Arch Capital Group Ltd,93,85,100,$387,N/A,23,21,3 years,,,
-ACHC,Acadia Healthcare Co Inc,23,3,44,$5181,N/A,65,0,2 years,,,
-ACI,Albertsons Companies Inc,40,35,45,$226,N/A,43,0,Infinity years,,,
-ACIC,American Coastal Insurance Corp,60,80,40,$179,N/A,396,20,N/A,,,
-ACIW,ACI Worldwide Inc,55,35,75,$852,N/A,41,8,2 years,,,
-ACN,Accenture PLC,82,100,63,N/A,N/A,11,8,N/A,,,
-WSC,,,,,,,,,,98,74,https://www.stockscores.com/chart.asp?TickerSymbol=WSC&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-VBTX,,,,,,,,,,81,73,https://www.stockscores.com/chart.asp?TickerSymbol=VBTX&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-NEM,,,,,,,,,,98,76,https://www.stockscores.com/chart.asp?TickerSymbol=NEM&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-CE,,,,,,,,,,68,65,https://www.stockscores.com/chart.asp?TickerSymbol=CE&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-RUSHA,,,,,,,,,,92,60,https://www.stockscores.com/chart.asp?TickerSymbol=RUSHA&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-JOE,,,,,,,,,,75,78,https://www.stockscores.com/chart.asp?TickerSymbol=JOE&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-FTLF,,,,,,,,,,57,44,https://www.stockscores.com/chart.asp?TickerSymbol=FTLF&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-DECK,,,,,,,,,,49,37,https://www.stockscores.com/chart.asp?TickerSymbol=DECK&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-NVO,,,,,,,,,,61,41,https://www.stockscores.com/chart.asp?TickerSymbol=NVO&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-SLQD,,,,,,,,,,81,78,https://www.stockscores.com/chart.asp?TickerSymbol=SLQD&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-WBA,,,,,,,,,,98,79,https://www.stockscores.com/chart.asp?TickerSymbol=WBA&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-VNQI,,,,,,,,,,81,77,https://www.stockscores.com/chart.asp?TickerSymbol=VNQI&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-HUN,,,,,,,,,,47,48,https://www.stockscores.com/chart.asp?TickerSymbol=HUN&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-CHH,,,,,,,,,,98,65,https://www.stockscores.com/chart.asp?TickerSymbol=CHH&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-MTD,,,,,,,,,,75,69,https://www.stockscores.com/chart.asp?TickerSymbol=MTD&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-MSCI,,,,,,,,,,50,60,https://www.stockscores.com/chart.asp?TickerSymbol=MSCI&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-BK,,,,,,,,,,79,82,https://www.stockscores.com/chart.asp?TickerSymbol=BK&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-FOXA,,,,,,,,,,89,75,https://www.stockscores.com/chart.asp?TickerSymbol=FOXA&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-MEDP,,,,,,,,,,74,65,https://www.stockscores.com/chart.asp?TickerSymbol=MEDP&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-KNSL,,,,,,,,,,70,71,https://www.stockscores.com/chart.asp?TickerSymbol=KNSL&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-GEHC,,,,,,,,,,79,65,https://www.stockscores.com/chart.asp?TickerSymbol=GEHC&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-JHG,,,,,,,,,,97,87,https://www.stockscores.com/chart.asp?TickerSymbol=JHG&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-GOGL,,,,,,,,,,98,68,https://www.stockscores.com/chart.asp?TickerSymbol=GOGL&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-VTRS,,,,,,,,,,98,73,https://www.stockscores.com/chart.asp?TickerSymbol=VTRS&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-CF,,,,,,,,,,59,64,https://www.stockscores.com/chart.asp?TickerSymbol=CF&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-OLN,,,,,,,,,,58,53,https://www.stockscores.com/chart.asp?TickerSymbol=OLN&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-INMD,,,,,,,,,,61,50,https://www.stockscores.com/chart.asp?TickerSymbol=INMD&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-PLXS,,,,,,,,,,71,69,https://www.stockscores.com/chart.asp?TickerSymbol=PLXS&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-GMAB,,,,,,,,,,75,78,https://www.stockscores.com/chart.asp?TickerSymbol=GMAB&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,59,64,https://www.stockscores.com/chart.asp?TickerSymbol=CF&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-OLN,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,58,53,https://www.stockscores.com/chart.asp?TickerSymbol=OLN&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-INMD,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,61,50,https://www.stockscores.com/chart.asp?TickerSymbol=INMD&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-PLXS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,71,69,https://www.stockscores.com/chart.asp?TickerSymbol=PLXS&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-GOGL,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,98,68,https://www.stockscores.com/chart.asp?TickerSymbol=GOGL&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-VTRS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,98,73,https://www.stockscores.com/chart.asp?TickerSymbol=VTRS&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-GMAB,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,75,78,https://www.stockscores.com/chart.asp?TickerSymbol=GMAB&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-NVO,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,61,41,https://www.stockscores.com/chart.asp?TickerSymbol=NVO&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,59,64,https://www.stockscores.com/chart.asp?TickerSymbol=CF&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-OLN,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,58,53,https://www.stockscores.com/chart.asp?TickerSymbol=OLN&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-INMD,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,61,50,https://www.stockscores.com/chart.asp?TickerSymbol=INMD&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-PLXS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,71,69,https://www.stockscores.com/chart.asp?TickerSymbol=PLXS&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-GOGL,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,98,68,https://www.stockscores.com/chart.asp?TickerSymbol=GOGL&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-VTRS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,98,73,https://www.stockscores.com/chart.asp?TickerSymbol=VTRS&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-GMAB,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,75,78,https://www.stockscores.com/chart.asp?TickerSymbol=GMAB&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-NVO,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years,61,41,https://www.stockscores.com/chart.asp?TickerSymbol=NVO&TimeRange=180&Interval=d&Volume=1&ChartType=CandleStick&Stockscores=1&ChartWidth=1100&ChartHeight=480&LogScale=&Band=&avgType1=&movAvg1=&avgType2=&movAvg2=&Indicator1=None&Indicator2=None&Indicator3=None&Indicator4=None&endDate=&CompareWith=&entryPrice=&stopLossPrice=&candles=redgreen
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,Olin Corp,35,35,35,$18,N/A,2,6,Infinity years
-INMD,InMode Ltd,87,100,74,$537,N/A,41,18,2 years
-PLXS,Plexus Corp,65,73,58,$2201,N/A,44,7,6 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-INMD,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-PLXS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GOGL,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-VTRS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GMAB,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-NVO,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-INMD,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-PLXS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GOGL,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-VTRS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GMAB,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-NVO,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-INMD,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-PLXS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GOGL,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-VTRS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GMAB,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-NVO,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-INMD,CF Industries Holdings Inc,67,90,43,N/A,N/A,30,9,N/A
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-INMD,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-PLXS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GOGL,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-VTRS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GMAB,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-INMD,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-PLXS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GOGL,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-VTRS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GMAB,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-NVO,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-INMD,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-PLXS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GOGL,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-VTRS,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-GMAB,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-NVO,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,Olin Corp,35,35,35,$18,N/A,2,6,Infinity years
-INMD,InMode Ltd,87,100,74,$537,N/A,41,18,2 years
-PLXS,Plexus Corp,65,73,58,$2201,N/A,44,7,6 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,Olin Corp,35,35,35,$18,N/A,2,6,Infinity years
-INMD,InMode Ltd,87,100,74,$537,N/A,41,18,2 years
-PLXS,Plexus Corp,65,73,58,$2201,N/A,44,7,6 years
-GOGL,Golden Ocean Group Ltd,48,28,68,$4394,N/A,104,2,1 years
-VTRS,Viatris Inc,21,0,41,$15,N/A,136,10,N/A
+ticker,full_name,rule1_score,management_score,moat_score,buy_price,last_price,last_gr,long_gr,guru
+ADBE,Adobe Inc,93,100,85,$410,N/A,18,16,7 years
+GOOGL,Alphabet Inc,97,100,93,$262,N/A,19,19,8 years
+GOOG,Alphabet Inc,97,100,93,$263,N/A,19,19,8 years
+AMZN,Amazon.com Inc,88,88,88,$27220,N/A,73,17,3 years
+APH,Amphenol Corp,95,90,100,$31,N/A,14,10,15 years
+AIT,Applied Industrial Technologies Inc,93,93,93,$1538,N/A,33,5,4 years
+AMAT,Applied Materials Inc,97,100,93,$219,N/A,20,15,8 years
+ACGL,Arch Capital Group Ltd,93,85,100,$387,N/A,23,21,3 years
+ANET,Arista Networks Inc,100,100,100,$1502,N/A,48,22,7 years
+ASML,ASML Holding NV,94,100,88,$824,N/A,21,19,9 years
+ATAT,Atour Lifestyle Holdings Ltd,93,95,90,$1982873,N/A,144,0,0 years
+BMI,Badger Meter Inc,99,100,98,$86,N/A,13,13,12 years
+FUFU,BitFuFu Inc,95,90,100,$0,N/A,N/A,N/A,N/A
+BOOT,Boot Barn Holdings Inc,93,95,91,$2002,N/A,45,15,7 years
+CAMT,Camtek Ltd,96,98,95,$55381784,N/A,256,18,3 years
+CVCO,Cavco Industries Inc,100,100,100,$1699,N/A,30,15,6 years
+CMG,Chipotle Mexican Grill Inc,100,100,100,$139,N/A,31,15,7 years
+CTAS,Cintas Corp,92,90,93,$59,N/A,12,8,16 years
+FIX,Comfort Systems USA Inc,99,98,100,$1040,N/A,29,22,8 years
+CPRT,Copart Inc,100,100,100,$61,N/A,22,16,11 years
+COST,Costco Wholesale Corp,88,90,85,$257,N/A,12,11,16 years
+CGTL,Creative Global Technology Holdings Ltd,100,100,100,$0,N/A,N/A,N/A,N/A
+DQ,Daqo New Energy Corp,94,100,88,$0,N/A,14466,34,Infinity years
+DXST,Decent Holding Inc,100,100,100,$0,N/A,N/A,N/A,N/A
+DECK,Deckers Outdoor Corp,100,100,100,$14521,N/A,64,20,2 years
+DLO,DLocal Ltd,100,100,100,$822,N/A,60,0,4 years
+DOCS,Doximity Inc,95,100,90,$6022795,N/A,273,0,2 years
+EME,EMCOR Group Inc,93,93,93,$881,N/A,21,13,7 years
+ENSG,Ensign Group Inc,90,90,90,$217,N/A,23,11,8 years
+PLUS,ePlus Inc,88,90,85,$352,N/A,38,6,7 years
+EXLS,ExlService Holdings Inc,97,95,98,$25,N/A,14,13,10 years
+FN,Fabrinet,100,100,100,$286,N/A,22,13,12 years
+FSS,Federal Signal Corp,94,93,95,$83,N/A,18,9,11 years
+RACE,Ferrari NV,92,90,93,$2429,N/A,41,11,9 years
+FIHL,Fidelis Insurance Holdings Ltd,93,90,95,$55,N/A,258,0,Infinity years
+FTLF,FitLife Brands Inc,93,90,95,$257,N/A,40,24,5 years
+FND,Floor & Decor Holdings Inc,88,90,85,$604,N/A,44,16,12 years
+GRMN,Garmin Ltd,95,100,90,$83,N/A,12,10,14 years
 GMAB,Genmab AS,100,100,100,$20533,N/A,56,40,1 years
+GCT,GigaCloud Technology Inc,95,100,90,$91663,N/A,152,0,1 years
+GIT,Going International Holding Co Ltd,100,100,100,N/A,N/A,N/A,N/A,N/A
+OMAB,Grupo Aeroportuario del Centro Norte SAB de CV,93,90,95,$6266,N/A,25,10,0 years
+ASR,Grupo Aeroportuario del Sureste SAB de CV,100,100,100,$40132,N/A,28,10,0 years
+HAO,Haoxi Health Technology Ltd,100,100,100,$0,N/A,N/A,N/A,N/A
+IDXX,IDEXX Laboratories Inc,90,90,90,$37878,N/A,77,11,5 years
+IESC,IES Holdings Inc,98,95,100,$17601,N/A,66,22,5 years
+IPAR,Interparfums Inc,94,93,95,$138,N/A,19,14,14 years
+INTU,Intuit Inc,99,98,100,$541,N/A,22,17,10 years
+IRMD,iRadimed Corp,100,100,100,$4954,N/A,68,13,4 years
+KSPI,Kaspi.kz JSC,100,100,100,$107527986,N/A,132,0,0 years
+KNSL,Kinsale Capital Group Inc,95,90,100,$4456,N/A,38,38,3 years
+KLAC,KLA Corp,94,90,98,$952,N/A,20,20,9 years
+LNTH,Lantheus Holdings Inc,86,88,85,$17628,N/A,75,19,3 years
+LII,Lennox International Inc,85,85,85,$2135,N/A,35,8,7 years
+LOBO,Lobo EV Technologies Ltd,93,85,100,$0,N/A,N/A,N/A,N/A
+LULU,Lululemon Athletica Inc,100,100,100,$820,N/A,24,23,6 years
+MANH,Manhattan Associates Inc,94,100,88,$60,N/A,10,11,17 years
+MA,Mastercard Inc,99,100,98,$201,N/A,12,13,14 years
+MEDP,Medpace Holdings Inc,100,100,100,$1080,N/A,28,24,8 years
+META,Meta Platforms Inc,100,100,100,$2889,N/A,30,20,7 years
+MSFT,Microsoft Corp,99,100,98,$282,N/A,17,15,11 years
+MPWR,Monolithic Power Systems Inc,100,100,100,$7221,N/A,36,25,5 years
+MNST,Monster Beverage Corp,94,100,88,$23,N/A,14,14,13 years
+MORN,Morningstar Inc,89,85,93,$191,N/A,12,14,10 years
+MPTI,M-Tron Industries Inc,100,100,100,$28,N/A,N/A,N/A,N/A
+NSSC,NAPCO Security Technologies Inc,99,100,98,$142,N/A,31,12,7 years
+NTES,NetEase Inc,98,100,95,$2303,N/A,24,7,1 years
+NYT,New York Times Co,87,85,88,$11211,N/A,77,7,4 years
+NVMI,Nova Ltd,100,100,100,$5370,N/A,58,19,6 years
 NVO,Novo Nordisk AS,97,95,98,$340,N/A,14,17,2 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,Olin Corp,35,35,35,$18,N/A,2,6,Infinity years
-INMD,InMode Ltd,87,100,74,$537,N/A,41,18,2 years
-PLXS,Plexus Corp,65,73,58,$2201,N/A,44,7,6 years
-GOGL,Golden Ocean Group Ltd,48,28,68,$4394,N/A,104,2,1 years
-VTRS,Viatris Inc,21,0,41,$15,N/A,136,10,N/A
-GMAB,Genmab AS,100,100,100,$20533,N/A,56,40,1 years
-NVO,Novo Nordisk AS,97,95,98,$340,N/A,14,17,2 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,Olin Corp,35,35,35,$18,N/A,2,6,Infinity years
-INMD,InMode Ltd,87,100,74,$537,N/A,41,18,2 years
-PLXS,Plexus Corp,65,73,58,$2201,N/A,44,7,6 years
-VTRS,Viatris Inc,21,0,41,$15,N/A,136,10,N/A
-GOGL,Golden Ocean Group Ltd,48,28,68,$4394,N/A,104,2,1 years
-GMAB,Genmab AS,100,100,100,$20533,N/A,56,40,1 years
-NVO,Novo Nordisk AS,97,95,98,$340,N/A,14,17,2 years
-OLN,Olin Corp,35,35,35,$18,N/A,2,6,Infinity years
-INMD,InMode Ltd,87,100,74,$537,N/A,41,18,2 years
-PLXS,Plexus Corp,65,73,58,$2201,N/A,44,7,6 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-OLN,Olin Corp,35,35,35,$18,N/A,2,6,Infinity years
-INMD,InMode Ltd,87,100,74,$537,N/A,41,18,2 years
-PLXS,Plexus Corp,65,73,58,$2201,N/A,44,7,6 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-VTRS,Viatris Inc,21,0,41,$15,N/A,136,10,N/A
-GOGL,Golden Ocean Group Ltd,48,28,68,$4394,N/A,104,2,1 years
-GMAB,Genmab AS,100,100,100,$20533,N/A,56,40,1 years
-NVO,Novo Nordisk AS,97,95,98,$340,N/A,14,17,2 years
-OLN,Olin Corp,35,35,35,$18,N/A,2,6,Infinity years
-INMD,InMode Ltd,87,100,74,$537,N/A,41,18,2 years
-PLXS,Plexus Corp,65,73,58,$2201,N/A,44,7,6 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-VTRS,Viatris Inc,21,0,41,$15,N/A,136,10,N/A
-GOGL,Golden Ocean Group Ltd,48,28,68,$4394,N/A,104,2,1 years
-GMAB,Genmab AS,100,100,100,$20533,N/A,56,40,1 years
-NVO,Novo Nordisk AS,97,95,98,$340,N/A,14,17,2 years
-OLN,Olin Corp,35,35,35,$18,N/A,2,6,Infinity years
-INMD,InMode Ltd,87,100,74,$537,N/A,41,18,2 years
-PLXS,Plexus Corp,65,73,58,$2201,N/A,44,7,6 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-VTRS,Viatris Inc,21,0,41,$15,N/A,136,10,N/A
-GOGL,Golden Ocean Group Ltd,48,28,68,$4394,N/A,104,2,1 years
-GMAB,Genmab AS,100,100,100,$20533,N/A,56,40,1 years
-NVO,Novo Nordisk AS,97,95,98,$340,N/A,14,17,2 years
-OLN,Olin Corp,35,35,35,$18,N/A,2,6,Infinity years
-INMD,InMode Ltd,87,100,74,$537,N/A,41,18,2 years
-PLXS,Plexus Corp,65,73,58,$2201,N/A,44,7,6 years
-CF,CF Industries Holdings Inc,67,90,43,$781,N/A,30,9,3 years
-VTRS,Viatris Inc,21,0,41,$15,N/A,136,10,N/A
-GOGL,Golden Ocean Group Ltd,48,28,68,$4394,N/A,104,2,1 years
-GMAB,Genmab AS,100,100,100,$20533,N/A,56,40,1 years
-NVO,Novo Nordisk AS,97,95,98,$340,N/A,14,17,2 years
-CCCS,CCC Intelligent Solutions Holdings Inc,43,15,70,$3,N/A,51,0,N/A
-GRFS,Grifols SA,23,8,38,$192925611,N/A,448,5,2 years
-DKNG,DraftKings Inc,20,15,25,$3,N/A,841,0,Infinity years
-HEI.A,Heico Corp,70,48,93,$73,N/A,14,13,15 years
+NVDA,NVIDIA Corp,100,100,100,$7444,N/A,64,62,6 years
+ODD,ODDITY Tech Ltd,100,100,100,$29,N/A,N/A,N/A,N/A
+OLLI,Ollie's Bargain Outlet Holdings Inc,88,90,85,$258,N/A,28,11,11 years
+PAYC,Paycom Software Inc,95,90,100,$2666,N/A,42,21,7 years
+PYPL,PayPal Holdings Inc,89,88,90,$106,N/A,15,15,6 years
+PJT,PJT Partners Inc,88,88,88,$202,N/A,26,2,N/A
+POOL,Pool Corp,85,85,85,$510,N/A,23,12,9 years
+PGR,Progressive Corp,93,88,98,$1125,N/A,26,14,3 years
+PHM,PulteGroup Inc,97,100,93,$963,N/A,37,17,4 years
+QLYS,Qualys Inc,97,100,93,$306,N/A,25,16,6 years
+RAY,Raytech Holding Ltd,100,100,100,$5,N/A,N/A,N/A,N/A
+RMD,ResMed Inc,100,100,100,$145,N/A,15,12,11 years
+RSHL,Rise Smart Group Holdings Ltd,100,100,100,N/A,N/A,N/A,N/A,N/A
+RLI,RLI Corp,92,90,93,$90,N/A,19,13,6 years
+ROL,Rollins Inc,98,100,95,$17,N/A,12,11,15 years
+SSD,Simpson Manufacturing Co Inc,97,100,93,$193,N/A,19,16,9 years
+SKX,Skechers USA Inc,88,90,85,$2343,N/A,51,11,6 years
+SFM,Sprouts Farmers Market Inc,89,90,88,$71,N/A,12,9,13 years
+STRL,Sterling Infrastructure Inc,85,85,85,$188,N/A,6,11,16 years
+SNPS,Synopsys Inc,93,98,88,$438,N/A,20,14,9 years
+TSM,Taiwan Semiconductor Manufacturing Co Ltd,100,100,100,$6493,N/A,18,18,1 years
+TGLS,Tecnoglass Inc,94,98,90,$2442,N/A,55,11,6 years
+TXRH,Texas Roadhouse Inc,98,95,100,$1224,N/A,35,15,6 years
+BLD,TopBuild Corp,93,85,100,$1877,N/A,32,17,6 years
+TGS,Transportadora de Gas del Sur SA,90,85,95,$6128490134,N/A,194,0,N/A
+USLM,United States Lime & Minerals Inc,99,100,98,$77,N/A,16,13,11 years
+INHI,Unitrend Entertainment Group Ltd,95,90,100,N/A,N/A,N/A,N/A,N/A
+VCIG,VCI Global Ltd,100,100,100,$2094,N/A,N/A,N/A,N/A
+VEEV,Veeva Systems Inc,100,100,100,$522,N/A,30,19,8 years
+VRTX,Vertex Pharmaceuticals Inc,100,100,100,$0,N/A,48,24,Infinity years
 V,Visa Inc,94,100,88,$150,N/A,12,11,13 years
-GOGL,Golden Ocean Group Ltd,48,28,68,$4394,N/A,104,2,1 years
-VTRS,Viatris Inc,21,0,41,$15,N/A,136,10,N/A
-RKT,Rocket Companies Inc,10,13,6,$0,N/A,50,0,N/A
-LYV,Live Nation Entertainment Inc,54,58,50,$146,N/A,36,13,N/A
-GOGL,Golden Ocean Group Ltd,48,28,68,$4394,N/A,104,2,1 years
-RKT,Rocket Companies Inc,10,13,6,$0,N/A,50,0,N/A
+WSO.B,Watsco Inc,94,100,88,$239,N/A,16,8,11 years
+WSO,Watsco Inc,94,100,88,$239,N/A,16,8,12 years
+WTS,Watts Water Technologies Inc,89,93,85,$129,N/A,11,7,12 years
+XYF,X Financial,87,87,87,$25722585715,N/A,409,8,0 years
+XPEL,XPEL Inc,98,100,95,$2414,N/A,58,29,5 years
+YALA,Yalla Group Ltd,89,93,85,$987233,N/A,181,0,0 years
+ZTS,Zoetis Inc,88,90,85,$84,N/A,15,9,11 years
+ZTO,ZTO Express (Cayman) Inc,95,98,93,$476,N/A,23,12,5 years
+DXST,Decent Holding Inc,100,100,100,$0,N/A,N/A,N/A,N/A
+IRMD,iRadimed Corp,100,100,100,$4954,N/A,68,13,4 years
+GRMN,Garmin Ltd,95,100,90,$83,N/A,12,10,14 years
+GOOG,Alphabet Inc,97,100,93,$263,N/A,19,19,8 years
+RACE,Ferrari NV,92,90,93,$2429,N/A,41,11,9 years
+ZTS,Zoetis Inc,88,90,85,$84,N/A,15,9,11 years
+WSO,Watsco Inc,94,100,88,$239,N/A,16,8,12 years
+DECK,Deckers Outdoor Corp,100,100,100,$14521,N/A,64,20,2 years
+IDXX,IDEXX Laboratories Inc,90,90,90,$37878,N/A,77,11,5 years
+PAYC,Paycom Software Inc,95,90,100,$2666,N/A,42,21,7 years
+DQ,Daqo New Energy Corp,94,100,88,$0,N/A,14466,34,Infinity years
+USLM,United States Lime & Minerals Inc,99,100,98,$77,N/A,16,13,11 years
+CVCO,Cavco Industries Inc,100,100,100,$1699,N/A,30,15,6 years
+RMD,ResMed Inc,100,100,100,$145,N/A,15,12,11 years
+VRTX,Vertex Pharmaceuticals Inc,100,100,100,$0,N/A,48,24,Infinity years
+SNPS,Synopsys Inc,93,98,88,$438,N/A,20,14,9 years
+EXLS,ExlService Holdings Inc,97,95,98,$25,N/A,14,13,10 years
+ATAT,Atour Lifestyle Holdings Ltd,93,95,90,$1982873,N/A,144,0,0 years
+IPAR,Interparfums Inc,94,93,95,$138,N/A,19,14,14 years
+SSD,Simpson Manufacturing Co Inc,97,100,93,$193,N/A,19,16,9 years
+STRL,Sterling Infrastructure Inc,85,85,85,$188,N/A,6,11,16 years
+FIX,Comfort Systems USA Inc,99,98,100,$1040,N/A,29,22,8 years
+GMAB,Genmab AS,100,100,100,$20533,N/A,56,40,1 years
+ACGL,Arch Capital Group Ltd,93,85,100,$387,N/A,23,21,3 years
+FN,Fabrinet,100,100,100,$286,N/A,22,13,12 years
+GOOGL,Alphabet Inc,97,100,93,$262,N/A,19,19,8 years
+SKX,Skechers USA Inc,88,90,85,$2343,N/A,51,11,6 years
+PLUS,ePlus Inc,88,90,85,$352,N/A,38,6,7 years
+APH,Amphenol Corp,95,90,100,$31,N/A,14,10,15 years
+OLLI,Ollie's Bargain Outlet Holdings Inc,88,90,85,$258,N/A,28,11,11 years
+LII,Lennox International Inc,85,85,85,$2135,N/A,35,8,7 years
+MPWR,Monolithic Power Systems Inc,100,100,100,$7221,N/A,36,25,5 years
+FND,Floor & Decor Holdings Inc,88,90,85,$604,N/A,44,16,12 years
+MSFT,Microsoft Corp,99,100,98,$282,N/A,17,15,11 years
+XYF,X Financial,87,87,87,$25722585715,N/A,409,8,0 years
+ZTO,ZTO Express (Cayman) Inc,95,98,93,$476,N/A,23,12,5 years
+ODD,ODDITY Tech Ltd,100,100,100,$29,N/A,N/A,N/A,N/A
+GCT,GigaCloud Technology Inc,95,100,90,$91663,N/A,152,0,1 years
+ADBE,Adobe Inc,93,100,85,$410,N/A,18,16,7 years
+ASR,Grupo Aeroportuario del Sureste SAB de CV,100,100,100,$40132,N/A,28,10,0 years
+NVO,Novo Nordisk AS,97,95,98,$340,N/A,14,17,2 years
+PJT,PJT Partners Inc,88,88,88,$202,N/A,26,2,N/A
+DLO,DLocal Ltd,100,100,100,$822,N/A,60,0,4 years
+PHM,PulteGroup Inc,97,100,93,$963,N/A,37,17,4 years
+MNST,Monster Beverage Corp,94,100,88,$23,N/A,14,14,13 years
+META,Meta Platforms Inc,100,100,100,$2889,N/A,30,20,7 years
+QLYS,Qualys Inc,97,100,93,$306,N/A,25,16,6 years
+YALA,Yalla Group Ltd,89,93,85,$987233,N/A,181,0,0 years
+CMG,Chipotle Mexican Grill Inc,100,100,100,$139,N/A,31,15,7 years
+NVMI,Nova Ltd,100,100,100,$5370,N/A,58,19,6 years
+MORN,Morningstar Inc,89,85,93,$191,N/A,12,14,10 years
+VCIG,VCI Global Ltd,100,100,100,$2094,N/A,N/A,N/A,N/A
+IESC,IES Holdings Inc,98,95,100,$17601,N/A,66,22,5 years
+KNSL,Kinsale Capital Group Inc,95,90,100,$4456,N/A,38,38,3 years
+NVDA,NVIDIA Corp,100,100,100,$7444,N/A,64,62,6 years
+XPEL,XPEL Inc,98,100,95,$2414,N/A,58,29,5 years
+FUFU,BitFuFu Inc,95,90,100,$0,N/A,N/A,N/A,N/A
+AMAT,Applied Materials Inc,97,100,93,$219,N/A,20,15,8 years
+CPRT,Copart Inc,100,100,100,$61,N/A,22,16,11 years
+TGLS,Tecnoglass Inc,94,98,90,$2442,N/A,55,11,6 years
+AMZN,Amazon.com Inc,88,88,88,$27220,N/A,73,17,3 years
+TGS,Transportadora de Gas del Sur SA,90,85,95,$6128490134,N/A,194,0,N/A
+FIHL,Fidelis Insurance Holdings Ltd,93,90,95,$55,N/A,258,0,Infinity years
+ROL,Rollins Inc,98,100,95,$17,N/A,12,11,15 years
+TSM,Taiwan Semiconductor Manufacturing Co Ltd,100,100,100,$6493,N/A,18,18,1 years
+DOCS,Doximity Inc,95,100,90,$6022795,N/A,273,0,2 years
+OMAB,Grupo Aeroportuario del Centro Norte SAB de CV,93,90,95,$6266,N/A,25,10,0 years
+MEDP,Medpace Holdings Inc,100,100,100,$1080,N/A,28,24,8 years
+BOOT,Boot Barn Holdings Inc,93,95,91,$2002,N/A,45,15,7 years
+CAMT,Camtek Ltd,96,98,95,$55381784,N/A,256,18,3 years
+RAY,Raytech Holding Ltd,100,100,100,$5,N/A,N/A,N/A,N/A
+POOL,Pool Corp,85,85,85,$510,N/A,23,12,9 years
+LNTH,Lantheus Holdings Inc,86,88,85,$17628,N/A,75,19,3 years
+PGR,Progressive Corp,93,88,98,$1125,N/A,26,14,3 years
+KSPI,Kaspi.kz JSC,100,100,100,$107527986,N/A,132,0,0 years
+ANET,Arista Networks Inc,100,100,100,$1502,N/A,48,22,7 years
+RLI,RLI Corp,92,90,93,$90,N/A,19,13,6 years
+ASML,ASML Holding NV,94,100,88,$824,N/A,21,19,9 years
+LULU,Lululemon Athletica Inc,100,100,100,$820,N/A,24,23,6 years
+TXRH,Texas Roadhouse Inc,98,95,100,$1224,N/A,35,15,6 years
+FSS,Federal Signal Corp,94,93,95,$83,N/A,18,9,11 years
+BMI,Badger Meter Inc,99,100,98,$86,N/A,13,13,12 years
+NSSC,NAPCO Security Technologies Inc,99,100,98,$142,N/A,31,12,7 years
+PYPL,PayPal Holdings Inc,89,88,90,$106,N/A,15,15,6 years
+V,Visa Inc,94,100,88,$150,N/A,12,11,13 years
+FTLF,FitLife Brands Inc,93,90,95,$257,N/A,40,24,5 years
+AIT,Applied Industrial Technologies Inc,93,93,93,$1538,N/A,33,5,4 years
+SFM,Sprouts Farmers Market Inc,89,90,88,$71,N/A,12,9,13 years
+NYT,New York Times Co,87,85,88,$11211,N/A,77,7,4 years
+COST,Costco Wholesale Corp,88,90,85,$257,N/A,12,11,16 years
+BLD,TopBuild Corp,93,85,100,$1877,N/A,32,17,6 years
+KLAC,KLA Corp,94,90,98,$952,N/A,20,20,9 years
+EME,EMCOR Group Inc,93,93,93,$881,N/A,21,13,7 years
+WSO.B,Watsco Inc,94,100,88,$239,N/A,16,8,11 years
+MPTI,M-Tron Industries Inc,100,100,100,$28,N/A,N/A,N/A,N/A
+NTES,NetEase Inc,98,100,95,$2303,N/A,24,7,1 years
+INTU,Intuit Inc,99,98,100,$541,N/A,22,17,10 years
+VEEV,Veeva Systems Inc,100,100,100,$522,N/A,30,19,8 years
+HAO,Haoxi Health Technology Ltd,100,100,100,$0,N/A,N/A,N/A,N/A
+MANH,Manhattan Associates Inc,94,100,88,$60,N/A,10,11,17 years
+CTAS,Cintas Corp,92,90,93,$59,N/A,12,8,16 years
+MA,Mastercard Inc,99,100,98,$201,N/A,12,13,14 years
+ENSG,Ensign Group Inc,90,90,90,$217,N/A,23,11,8 years
+CGTL,Creative Global Technology Holdings Ltd,100,100,100,$0,N/A,N/A,N/A,N/A
+LOBO,Lobo EV Technologies Ltd,93,85,100,$0,N/A,N/A,N/A,N/A
+WTS,Watts Water Technologies Inc,89,93,85,$129,N/A,11,7,12 years
