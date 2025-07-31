@@ -54,8 +54,13 @@ def get_stable_driver(headless=True):
         # First kill any existing Chrome processes
         kill_chrome_processes()
         
-        # Create options without user-data-dir to avoid conflicts
+        # Create unique temp directory for this session
+        import uuid
+        temp_dir = tempfile.mkdtemp(prefix=f'chrome_{uuid.uuid4().hex[:8]}_')
+        
+        # Create options with unique user data directory
         options = Options()
+        options.add_argument(f"--user-data-dir={temp_dir}")
         options.add_argument("--window-size=1920,1080")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-gpu")
@@ -83,12 +88,9 @@ def get_stable_driver(headless=True):
         options.add_argument(f"--remote-debugging-port={debug_port}")
         options.add_argument("--disable-web-security")
         options.add_argument("--disable-features=VizDisplayCompositor")
-        options.add_argument("--incognito")
         
         if headless:
             options.add_argument("--headless=new")
-        
-        temp_dir = None  # No temp dir needed
         
         # Try multiple driver paths
         driver_paths = [
@@ -109,60 +111,12 @@ def get_stable_driver(headless=True):
         if service is None:
             raise Exception("No valid ChromeDriver found")
         
-        # Try to create driver with retries
-        max_retries = 3
-        for attempt in range(max_retries):
-            try:
-                driver = webdriver.Chrome(service=service, options=options)
-                print("Stable Chrome session started successfully")
-                print(f"Browser version: {driver.capabilities.get('browserVersion', 'Unknown')}")
-                print("Using incognito mode (no user data directory)")
-                return driver
-            except Exception as e:
-                if "user data directory is already in use" in str(e) and attempt < max_retries - 1:
-                    print(f"Attempt {attempt + 1} failed, retrying with new directory...")
-                    # Clean up current temp dir if it exists
-                    if temp_dir and os.path.exists(temp_dir):
-                        shutil.rmtree(temp_dir, ignore_errors=True)
-                    kill_chrome_processes()
-                    time.sleep(2)
-                    
-                    # Create new options object without user-data-dir
-                    options = Options()
-                    options.add_argument("--window-size=1920,1080")
-                    options.add_argument("--no-sandbox")
-                    options.add_argument("--disable-gpu")
-                    options.add_argument("--disable-dev-shm-usage")
-                    options.add_argument("--disable-infobars")
-                    options.add_argument("--disable-browser-side-navigation")
-                    options.add_argument("--disable-background-timer-throttling")
-                    options.add_argument("--disable-backgrounding-occluded-windows")
-                    options.add_argument("--disable-client-side-phishing-detection")
-                    options.add_argument("--disable-default-apps")
-                    options.add_argument("--disable-extensions")
-                    options.add_argument("--disable-hang-monitor")
-                    options.add_argument("--disable-popup-blocking")
-                    options.add_argument("--disable-prompt-on-repost")
-                    options.add_argument("--disable-renderer-backgrounding")
-                    options.add_argument("--disable-sync")
-                    options.add_argument("--metrics-recording-only")
-                    options.add_argument("--no-first-run")
-                    options.add_argument("--safebrowsing-disable-auto-update")
-                    options.add_argument("--enable-automation")
-                    options.add_argument("--password-store=basic")
-                    options.add_argument("--use-mock-keychain")
-                    debug_port = random.randint(9222, 9999)
-                    options.add_argument(f"--remote-debugging-port={debug_port}")
-                    options.add_argument("--disable-web-security")
-                    options.add_argument("--disable-features=VizDisplayCompositor")
-                    options.add_argument("--incognito")
-                    
-                    if headless:
-                        options.add_argument("--headless=new")
-                    
-                    temp_dir = None
-                else:
-                    raise e
+        # Create driver with unique temp directory
+        driver = webdriver.Chrome(service=service, options=options)
+        print("Stable Chrome session started successfully")
+        print(f"Browser version: {driver.capabilities.get('browserVersion', 'Unknown')}")
+        print(f"Using temp directory: {temp_dir}")
+        return driver
         
     except Exception as e:
         print(f"Failed to initialize stable Chrome browser: {e}")

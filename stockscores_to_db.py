@@ -113,13 +113,13 @@ def save_tickers_to_db(tickers):
             VALUES (%s, %s) 
             ON CONFLICT (guru_name) DO NOTHING 
             RETURNING id
-        """, ('stocks_lists', 'StockScores scanner results'))
+        """, ('dan', 'StockScores scanner results'))
         
         guru_result = cursor.fetchone()
         if guru_result:
             guru_id = guru_result[0]
         else:
-            cursor.execute("SELECT id FROM guru WHERE guru_name = %s", ('stocks_lists',))
+            cursor.execute("SELECT id FROM guru WHERE guru_name = %s", ('dan',))
             guru_id = cursor.fetchone()[0]
         
         for ticker in tickers:
@@ -130,10 +130,10 @@ def save_tickers_to_db(tickers):
                 DO UPDATE SET 
                     active = TRUE, 
                     scrape_status = CASE 
-                        WHEN scraper_tasks.list_type = 'stockscore_list' THEN 'pending'
+                        WHEN scraper_tasks.list_type = 'rule1' THEN 'pending'
                         ELSE scraper_tasks.scrape_status
                     END
-            """, (ticker, guru_id, 'stockscore_list', 'monthly', True, 'pending'))
+            """, (ticker, guru_id, 'rule1', 'monthly', True, 'pending'))
         
         conn.commit()
         print(f"Successfully saved {len(tickers)} tickers to database")

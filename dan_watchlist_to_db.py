@@ -112,13 +112,13 @@ def save_dan_watchlist_to_db(tickers):
                 DO UPDATE SET 
                     active = TRUE,
                     scrape_status = CASE 
-                        WHEN scraper_tasks.list_type = 'dan_portfolio_list' THEN 'pending'
+                        WHEN scraper_tasks.list_type = 'rule1' THEN 'pending'
                         ELSE scraper_tasks.scrape_status
                     END
-            """, (ticker, guru_id, 'dan_portfolio_list', 'monthly', True, 'pending'))
+            """, (ticker, guru_id, 'rule1', 'monthly', True, 'pending'))
         
         conn.commit()
-        print(f"Saved {len(tickers)} tickers to database with guru='dan' and list_type='dan_portfolio_list'")
+        print(f"Saved {len(tickers)} tickers to database with guru='dan' and list_type='rule1'")
         
     except Exception as e:
         print(f"Database error: {e}")

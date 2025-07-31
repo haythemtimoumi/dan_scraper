@@ -4815,3 +4815,943 @@
 2025-07-24 20:48:32,146 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fef370a06a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/e2dbe234cb9e228b65e0ec7ad0e9386e/execute/sync
 2025-07-24 20:48:33,080 - undetected_chromedriver.patcher - INFO - patching driver executable /root/.local/share/undetected_chromedriver/undetected_chromedriver
 2025-07-24 20:48:36,093 - botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InvalidColumnReference: there is no unique or exclusion constraint matching the ON CONFLICT specification
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+Traceback (most recent call last):
+  File "/root/dan_scraper/merge_and_save.py", line 97, in merge_and_save
+    cursor.execute("""
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+

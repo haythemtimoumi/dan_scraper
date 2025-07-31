@@ -301,7 +301,7 @@ def main():
             time.sleep(2)
             
             # Initialize driver
-            driver = get_simple_driver(headless=False)
+            driver = get_simple_driver(headless=True)
             
             # Test connection
             driver.get("https://google.com")

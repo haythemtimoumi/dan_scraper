@@ -71,7 +71,7 @@ def run_all_in_one(auto_verify=True, max_retries=3):
             # Step 0: Run StockScores login and scrape tickers
             print("\n📋 STEP 0: Run StockScores login and scrape tickers")
             try:
-                stockscores_driver = login_to_stockscores(headless=False)  # Use visible mode for Windows
+                stockscores_driver = login_to_stockscores(headless=True)  # Use visible mode for Windows
                 if stockscores_driver:
                     print("✅ StockScores login and ticker scraping completed")
                     stockscores_driver.quit()

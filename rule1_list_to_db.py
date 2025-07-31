@@ -63,13 +63,13 @@ def save_rule1_list_to_db(tickers):
             VALUES (%s, %s) 
             ON CONFLICT (guru_name) DO NOTHING 
             RETURNING id
-        """, ('rule1', 'Rule1 filtered stocks'))
+        """, ('dan', 'Rule1 filtered stocks'))
         
         guru_result = cursor.fetchone()
         if guru_result:
             guru_id = guru_result[0]
         else:
-            cursor.execute("SELECT id FROM guru WHERE guru_name = %s", ('rule1',))
+            cursor.execute("SELECT id FROM guru WHERE guru_name = %s", ('dan',))
             guru_id = cursor.fetchone()[0]
         
         for ticker in tickers:
@@ -80,13 +80,13 @@ def save_rule1_list_to_db(tickers):
                 DO UPDATE SET 
                     active = TRUE,
                     scrape_status = CASE 
-                        WHEN scraper_tasks.list_type = 'rule1_list' THEN 'pending'
+                        WHEN scraper_tasks.list_type = 'rule1' THEN 'pending'
                         ELSE scraper_tasks.scrape_status
                     END
-            """, (ticker, guru_id, 'rule1_list', 'monthly', True, 'pending'))
+            """, (ticker, guru_id, 'rule1', 'monthly', True, 'pending'))
         
         conn.commit()
-        print(f"Saved {len(tickers)} tickers to database with guru='rule1' and list_type='rule1_list'")
+        print(f"Saved {len(tickers)} tickers to database with guru='dan' and list_type='rule1'")
         
     except Exception as e:
         print(f"Database error: {e}")

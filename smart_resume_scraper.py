@@ -60,7 +60,7 @@ def get_remaining_tickers(csv_file):
     
     return remaining
 
-def smart_resume_scraper(csv_file="ticker_data_fixed.csv", headless=False):
+def smart_resume_scraper(csv_file="ticker_data_fixed.csv", headless=True):
     """Smart resume scraper that continues from where it left off"""
     
     # Get remaining tickers

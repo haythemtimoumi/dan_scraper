@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 """
-Sequential scraper that creates complete records with:
+Target scraper that creates complete records with:
 1. Fresh Rule1 data
 2. Fresh StockScores data
 3. Fresh Price data
-All combined into single records per ticker
+All combined into single records per ticker (TARGET TICKERS ONLY)
 """
 
 import psycopg2
@@ -12,24 +12,24 @@ from datetime import datetime
 from config.settings import DB_CONFIG
 import re
 
-def run_sequential_scraping():
-    """Run complete scraping creating one record per ticker with all data"""
+def run_target_scraping():
+    """Run complete scraping creating one record per ticker with all data (target tickers only)"""
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    print(f"Starting sequential scraping process at {current_time}...\n")
+    print(f"Starting target scraping process at {current_time}...\n")
     
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
     
     try:
-        # Get active tickers
-        cursor.execute("SELECT id, symbol, guru_id, list_type, last_action, per_portfolio FROM scraper_tasks WHERE active = true AND scrape_status = 'pending'")
-        active_tickers = cursor.fetchall()
+        # Get target tickers
+        cursor.execute("SELECT id, symbol, guru_id, list_type, last_action, per_portfolio FROM scraper_tasks WHERE target = true AND scrape_status = 'pending'")
+        target_tickers = cursor.fetchall()
         
-        if not active_tickers:
-            print("No active tickers found")
+        if not target_tickers:
+            print("No target tickers found")
             return 0
         
-        print(f"Processing {len(active_tickers)} tickers...\n")
+        print(f"Processing {len(target_tickers)} target tickers...\n")
         
         # Initialize scrapers with error handling
         from scrapers.scores_scraper import TickerSearcher
@@ -63,8 +63,8 @@ def run_sequential_scraping():
         
         success_count = 0
         
-        for i, (ticker_id, symbol, guru_id, list_type, last_action, per_portfolio) in enumerate(active_tickers, 1):
-            print(f"[{i}/{len(active_tickers)}] Processing {symbol}...")
+        for i, (ticker_id, symbol, guru_id, list_type, last_action, per_portfolio) in enumerate(target_tickers, 1):
+            print(f"[{i}/{len(target_tickers)}] Processing {symbol}...")
             
             try:
                 # Get Rule1 data with enhanced error handling and retry
@@ -159,7 +159,7 @@ def run_sequential_scraping():
         except Exception as e:
             print(f"Warning: Error closing shared browser: {e}")
         
-        print(f"\nSequential scraping completed: {success_count}/{len(active_tickers)} complete records created")
+        print(f"\nTarget scraping completed: {success_count}/{len(target_tickers)} complete records created")
         print(f"Each record contains: Rule1 + StockScores + Price data")
         
     finally:
@@ -237,4 +237,4 @@ def fetch_price(ticker):
     return None
 
 if __name__ == "__main__":
-    run_sequential_scraping()
+    run_target_scraping()

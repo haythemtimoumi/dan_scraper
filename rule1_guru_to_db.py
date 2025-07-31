@@ -15,7 +15,7 @@ def scrape_rule1_guru_to_db(auto_verify=True):
         # STEP 1: Login to Rule1Toolbox
         print("\nSTEP 1: Login to Rule1Toolbox")
         print("Starting browser in visible mode for debugging...")
-        scraper = Rule1Scraper(headless=False)  # Make browser visible
+        scraper = Rule1Scraper(headless=True)  # Make browser visible
         
         login_success = scraper.login(auto_verify=auto_verify)
         if not login_success:

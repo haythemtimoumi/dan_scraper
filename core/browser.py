@@ -5,7 +5,7 @@ import undetected_chromedriver as uc
 
 load_dotenv()
 
-def get_driver(headless=False, clear_cache=False):
+def get_driver(headless=True, clear_cache=False):
     """
     Initialize and return an undetected Chrome browser instance.
     Uses environment variables for configuration.

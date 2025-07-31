@@ -38,7 +38,7 @@ def clear_chrome_cache():
     except:
         pass
 
-def get_chrome_options(headless=False):
+def get_chrome_options(headless=True):
     """Get fresh Chrome options"""
     options = uc.ChromeOptions()
     options.add_argument("--no-sandbox")
@@ -58,7 +58,7 @@ def get_chrome_options(headless=False):
     
     return options
 
-def get_driver(headless=False, clear_cache=False):
+def get_driver(headless=True, clear_cache=False):
     """Initialize Chrome driver with proper error handling"""
     
     if clear_cache:
