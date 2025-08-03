@@ -1,0 +1,17 @@
+[Unit]
+Description=Dan Scraper API Server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/dan_scraper/pro-api
+Environment=PYTHONPATH=/root/dan_scraper
+ExecStart=/usr/bin/python3 /root/dan_scraper/pro-api/app.py
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

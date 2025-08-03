@@ -1,0 +1,9 @@
+[Unit]
+Description=Daily Scraper Timer
+Requires=daily-scraper.service
+
+[Timer]
+OnCalendar=*-*-* 06:00:00
+
+[Install]
+WantedBy=timers.target

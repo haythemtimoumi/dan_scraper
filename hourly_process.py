@@ -20,7 +20,7 @@ def run_hourly_process():
     
     try:
         # Get active tickers with hourly scrape type
-        cursor.execute("SELECT id, symbol, guru_id, list_type, last_action, per_portfolio FROM scraper_tasks WHERE active = true AND scrape_type = 'hourly'")
+        cursor.execute("SELECT id, symbol, guru_id, list_type, last_action, per_portfolio FROM scraper_tasks WHERE active = true AND target = true")
         active_tickers = cursor.fetchall()
         
         if not active_tickers:

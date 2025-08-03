@@ -52,48 +52,20 @@ def scrape_rule1_list_to_db():
         scraper.close()
 
 def save_rule1_list_to_db(tickers):
-    """Save Rule1 list tickers to scraper_tasks table"""
-    conn = psycopg2.connect(**DB_CONFIG)
-    cursor = conn.cursor()
+    """Save Rule1 list tickers to scraper_tasks table with guru mapping"""
+    from utils.db_helpers import bulk_insert_tickers_with_guru_map
     
-    try:
-        # Get or create guru for rule1
-        cursor.execute("""
-            INSERT INTO guru (guru_name, description) 
-            VALUES (%s, %s) 
-            ON CONFLICT (guru_name) DO NOTHING 
-            RETURNING id
-        """, ('dan', 'Rule1 filtered stocks'))
-        
-        guru_result = cursor.fetchone()
-        if guru_result:
-            guru_id = guru_result[0]
-        else:
-            cursor.execute("SELECT id FROM guru WHERE guru_name = %s", ('dan',))
-            guru_id = cursor.fetchone()[0]
-        
-        for ticker in tickers:
-            cursor.execute("""
-                INSERT INTO scraper_tasks (symbol, guru_id, list_type, scrape_type, active, scrape_status)
-                VALUES (%s, %s, %s, %s, %s, %s)
-                ON CONFLICT (symbol, guru_id, list_type) 
-                DO UPDATE SET 
-                    active = TRUE,
-                    scrape_status = CASE 
-                        WHEN scraper_tasks.list_type = 'rule1' THEN 'pending'
-                        ELSE scraper_tasks.scrape_status
-                    END
-            """, (ticker, guru_id, 'rule1', 'monthly', True, 'pending'))
-        
-        conn.commit()
-        print(f"Saved {len(tickers)} tickers to database with guru='dan' and list_type='rule1'")
-        
-    except Exception as e:
-        print(f"Database error: {e}")
-        conn.rollback()
-    finally:
-        cursor.close()
-        conn.close()
+    tickers_data = [{
+        'symbol': ticker,
+        'guru_name': 'dan',
+        'list_type': 'rule1',
+        'scrape_type': 'monthly',
+        'active': True,
+        'scrape_status': 'pending'
+    } for ticker in tickers]
+    
+    total, new, updated = bulk_insert_tickers_with_guru_map(tickers_data)
+    print(f"Saved {total} tickers with guru='dan' and list_type='rule1': {new} new, {updated} updated")
 
 if __name__ == "__main__":
     scrape_rule1_list_to_db()

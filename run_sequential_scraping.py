@@ -21,7 +21,7 @@ def run_sequential_scraping():
     cursor = conn.cursor()
     
     try:
-        # Get active tickers
+        # Get active tickers (guru_ticker_map ensures proper relationships)
         cursor.execute("SELECT id, symbol, guru_id, list_type, last_action, per_portfolio FROM scraper_tasks WHERE active = true AND scrape_status = 'pending'")
         active_tickers = cursor.fetchall()
         
@@ -111,7 +111,7 @@ def run_sequential_scraping():
                 if rule1_data and rule1_data['buy_price'] and price:
                     try:
                         buy_price = rule1_data['buy_price']
-                        per_upside = (buy_price * 2 - price) / price
+                        per_upside = ((buy_price * 2 - price) / price) * 100
                     except (TypeError, ZeroDivisionError):
                         per_upside = None
                 

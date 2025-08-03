@@ -19,7 +19,7 @@ def run_daily_process():
     cursor = conn.cursor()
     
     try:
-        # Get active tickers with daily scrape type
+        # Get active tickers with daily scrape type (guru_ticker_map ensures proper relationships)
         cursor.execute("SELECT id, symbol, guru_id, list_type, last_action, per_portfolio FROM scraper_tasks WHERE active = true AND scrape_type = 'daily'")
         active_tickers = cursor.fetchall()
         

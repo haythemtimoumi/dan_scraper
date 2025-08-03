@@ -1,0 +1,15 @@
+[Unit]
+Description=Daily Scraper Service
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/root/dan_scraper/pro-api
+Environment=PYTHONPATH=/root/dan_scraper
+ExecStart=/usr/bin/python3 /root/dan_scraper/pro-api/main.py
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

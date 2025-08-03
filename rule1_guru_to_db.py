@@ -88,55 +88,26 @@ def scrape_rule1_guru_to_db(auto_verify=True):
             scraper.close()
 
 def save_guru_data_to_db(guru_data):
-    """Save guru data to scraper_tasks table with proper FK relations"""
+    """Save guru data to scraper_tasks table with guru mapping"""
     if not guru_data:
         print("No guru data to save")
         return
-        
-    conn = psycopg2.connect(**DB_CONFIG)
-    cursor = conn.cursor()
     
-    try:
-        for data in guru_data:
-            # Get or create guru
-            cursor.execute("""
-                INSERT INTO guru (guru_name, description) 
-                VALUES (%s, %s) 
-                ON CONFLICT (guru_name) DO NOTHING 
-                RETURNING id
-            """, (data['guru_name'], f"Portfolio for {data['guru_name']}"))
-            
-            guru_result = cursor.fetchone()
-            if guru_result:
-                guru_id = guru_result[0]
-            else:
-                cursor.execute("SELECT id FROM guru WHERE guru_name = %s", (data['guru_name'],))
-                guru_id = cursor.fetchone()[0]
-            
-            # Insert into scraper_tasks with guru_id FK
-            cursor.execute("""
-                INSERT INTO scraper_tasks (symbol, guru_id, list_type, scrape_type, active, last_action, per_portfolio, scrape_status)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (symbol, guru_id, list_type) 
-                DO UPDATE SET 
-                    active = TRUE, 
-                    last_action = EXCLUDED.last_action, 
-                    per_portfolio = EXCLUDED.per_portfolio,
-                    scrape_status = CASE 
-                        WHEN scraper_tasks.list_type = 'guru_portfolio' THEN 'pending'
-                        ELSE scraper_tasks.scrape_status
-                    END
-            """, (data['ticker'], guru_id, 'guru_portfolio', 'monthly', True, data['last_action'], data['performance'], 'pending'))
-        
-        conn.commit()
-        print(f"Saved {len(guru_data)} guru portfolio entries to database")
-        
-    except Exception as e:
-        print(f"Database error: {e}")
-        conn.rollback()
-    finally:
-        cursor.close()
-        conn.close()
+    from utils.db_helpers import bulk_insert_tickers_with_guru_map
+    
+    tickers_data = [{
+        'symbol': data['ticker'],
+        'guru_name': data['guru_name'],
+        'list_type': 'guru_portfolio',
+        'scrape_type': 'monthly',
+        'active': True,
+        'scrape_status': 'pending',
+        'last_action': data['last_action'],
+        'per_portfolio': data['performance']
+    } for data in guru_data]
+    
+    total, new, updated = bulk_insert_tickers_with_guru_map(tickers_data)
+    print(f"Saved {total} guru portfolio entries: {new} new, {updated} updated")
 
 if __name__ == "__main__":
     import argparse
