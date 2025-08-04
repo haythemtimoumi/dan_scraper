@@ -43,34 +43,35 @@ def insert_ticker_with_guru_map(symbol, guru_name, list_type, scrape_type='month
             # Update existing ticker
             cursor.execute("""
                 UPDATE scraper_tasks 
-                SET active = %s, scrape_status = %s, last_action = %s, per_portfolio = %s
+                SET active = %s, scrape_status = %s
                 WHERE id = %s
-            """, (active, scrape_status, kwargs.get('last_action'), kwargs.get('per_portfolio'), ticker_id))
+            """, (active, scrape_status, ticker_id))
             
-            # Ensure guru_ticker_map entry exists
+            # Update guru_ticker_map with guru-specific data
             cursor.execute("""
-                INSERT INTO guru_ticker_map (guru_id, scraper_task_id)
-                VALUES (%s, %s)
-                ON CONFLICT (guru_id, scraper_task_id) DO NOTHING
-            """, (guru_id, ticker_id))
+                INSERT INTO guru_ticker_map (guru_id, scraper_task_id, last_act, per_port)
+                VALUES (%s, %s, %s, %s)
+                ON CONFLICT (guru_id, scraper_task_id) 
+                DO UPDATE SET last_act = EXCLUDED.last_act, per_port = EXCLUDED.per_port
+            """, (guru_id, ticker_id, kwargs.get('last_action'), kwargs.get('per_portfolio')))
             
             conn.commit()
             return ticker_id, False
         else:
             # Insert new ticker
             cursor.execute("""
-                INSERT INTO scraper_tasks (symbol, guru_id, list_type, scrape_type, active, scrape_status, last_action, per_portfolio)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO scraper_tasks (symbol, guru_id, list_type, scrape_type, active, scrape_status)
+                VALUES (%s, %s, %s, %s, %s, %s)
                 RETURNING id
-            """, (symbol, guru_id, list_type, scrape_type, active, scrape_status, kwargs.get('last_action'), kwargs.get('per_portfolio')))
+            """, (symbol, guru_id, list_type, scrape_type, active, scrape_status))
             
             ticker_id = cursor.fetchone()[0]
             
-            # Insert into guru_ticker_map
+            # Insert into guru_ticker_map with guru-specific data
             cursor.execute("""
-                INSERT INTO guru_ticker_map (guru_id, scraper_task_id)
-                VALUES (%s, %s)
-            """, (guru_id, ticker_id))
+                INSERT INTO guru_ticker_map (guru_id, scraper_task_id, last_act, per_port)
+                VALUES (%s, %s, %s, %s)
+            """, (guru_id, ticker_id, kwargs.get('last_action'), kwargs.get('per_portfolio')))
             
             conn.commit()
             return ticker_id, True

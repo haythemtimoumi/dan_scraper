@@ -21,8 +21,13 @@ def run_sequential_scraping():
     cursor = conn.cursor()
     
     try:
-        # Get active tickers (guru_ticker_map ensures proper relationships)
-        cursor.execute("SELECT id, symbol, guru_id, list_type, last_action, per_portfolio FROM scraper_tasks WHERE active = true AND scrape_status = 'pending'")
+        # Get active tickers with guru-specific data from guru_ticker_map
+        cursor.execute("""
+            SELECT st.id, st.symbol, st.guru_id, st.list_type, gtm.last_act, gtm.per_port 
+            FROM scraper_tasks st 
+            JOIN guru_ticker_map gtm ON st.id = gtm.scraper_task_id 
+            WHERE st.active = true AND st.scrape_status = 'pending'
+        """)
         active_tickers = cursor.fetchall()
         
         if not active_tickers:
