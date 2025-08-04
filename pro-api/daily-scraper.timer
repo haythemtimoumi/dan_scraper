@@ -3,7 +3,7 @@ Description=Daily Scraper Timer
 Requires=daily-scraper.service
 
 [Timer]
-OnCalendar=*-*-* 06:00:00
+OnCalendar=*-*-* 20:05:00
 
 [Install]
 WantedBy=timers.target
