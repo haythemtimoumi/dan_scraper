@@ -1,2 +1,212 @@
 ticker,full_name,rule1_score,management_score,moat_score,buy_price,last_price,last_gr,long_gr,guru
 META,Meta Platforms Inc,100,100,100,$2889,N/A,30,20,7 years
+AIT,Applied Industrial Technologies Inc,93,93,93,$1538,N/A,33,5,4 years
+AMAT,Applied Materials Inc,97,100,93,$219,N/A,20,15,8 years
+AMZN,Amazon.com Inc,88,88,88,$27220,N/A,73,17,3 years
+ANET,Arista Networks Inc,100,100,100,$1502,N/A,48,22,7 years
+ANET,Arista Networks Inc,100,100,100,$1502,N/A,48,22,7 years
+APP,AppLovin Corp,83,75,90,$353,N/A,25,0,8 years
+APP,AppLovin Corp,83,75,90,$353,N/A,25,0,8 years
+ATAT,Atour Lifestyle Holdings Ltd,93,95,90,$1982873,N/A,144,0,0 years
+ATAT,Atour Lifestyle Holdings Ltd,93,95,90,$1982873,N/A,144,0,0 years
+CAMT,Camtek Ltd,96,98,95,$55381784,N/A,256,18,3 years
+CAMT,Camtek Ltd,96,98,95,$55381784,N/A,256,18,3 years
+FIX,Comfort Systems USA Inc,99,98,100,$1040,N/A,29,22,8 years
+FIX,Comfort Systems USA Inc,99,98,100,$1040,N/A,29,22,8 years
+GMAB,Genmab AS,100,100,100,$20533,N/A,56,40,0 years
+GMAB,Genmab AS,100,100,100,$20533,N/A,56,40,0 years
+GOOGL,Alphabet Inc,97,100,93,$262,N/A,19,19,8 years
+GOOGL,Alphabet Inc,97,100,93,$262,N/A,19,19,8 years
+IBKR,Interactive Brokers Group Inc,90,80,100,$1010,N/A,32,20,2 years
+IBKR,Interactive Brokers Group Inc,90,80,100,$1010,N/A,32,20,2 years
+IESC,IES Holdings Inc,98,95,100,$17601,N/A,66,22,5 years
+IESC,IES Holdings Inc,98,95,100,$17601,N/A,66,22,5 years
+KNSL,Kinsale Capital Group Inc,95,90,100,$4456,N/A,38,38,3 years
+KNSL,Kinsale Capital Group Inc,95,90,100,$4456,N/A,38,38,3 years
+NVDA,NVIDIA Corp,100,100,100,$7444,N/A,64,62,6 years
+NVDA,NVIDIA Corp,100,100,100,$7444,N/A,64,62,6 years
+PHM,PulteGroup Inc,97,100,93,$963,N/A,37,17,4 years
+PHM,PulteGroup Inc,97,100,93,$963,N/A,37,17,4 years
+PJT,PJT Partners Inc,88,88,88,$202,N/A,26,2,N/A
+PJT,PJT Partners Inc,88,88,88,$202,N/A,26,2,N/A
+PYPL,PayPal Holdings Inc,89,88,90,$106,N/A,15,15,6 years
+PYPL,PayPal Holdings Inc,89,88,90,$106,N/A,15,15,6 years
+TSM,Taiwan Semiconductor Manufacturing Co Ltd,100,100,100,$6493,N/A,18,18,1 years
+TSM,Taiwan Semiconductor Manufacturing Co Ltd,100,100,100,$6493,N/A,18,18,1 years
+ULTA,Ulta Beauty Inc,85,100,70,$1880,N/A,27,13,6 years
+ULTA,Ulta Beauty Inc,85,100,70,$1880,N/A,27,13,6 years
+UUUU,Energy Fuels Inc,67,40,94,$0,N/A,158,21,N/A
+UUUU,Energy Fuels Inc,67,40,94,$0,N/A,158,21,N/A
+GDRX,GoodRx Holdings Inc,33,30,35,$3,N/A,8,0,Infinity years
+GDRX,GoodRx Holdings Inc,33,30,35,$3,N/A,8,0,Infinity years
+WULF,TeraWulf Inc,25,0,50,$0,N/A,N/A,N/A,N/A
+WULF,TeraWulf Inc,25,0,50,$0,N/A,N/A,N/A,N/A
+COMM,CommScope Holding Co Inc,14,20,8,$4,N/A,75,7,N/A
+COMM,CommScope Holding Co Inc,14,20,8,$4,N/A,75,7,N/A
+WBA,Walgreens Boots Alliance Inc,5,0,9,$32,N/A,7,3,Infinity years
+WBA,Walgreens Boots Alliance Inc,5,0,9,$32,N/A,7,3,Infinity years
+APLD,Applied Digital Corp,0,0,0,$0,N/A,N/A,N/A,N/A
+APLD,Applied Digital Corp,0,0,0,$0,N/A,N/A,N/A,N/A
+VSAT,Viasat Inc,44,0,88,$14,N/A,256,0,Infinity years
+VSAT,Viasat Inc,44,0,88,$14,N/A,256,0,Infinity years
+CNTA,Centessa Pharmaceuticals PLC,20,40,0,$0,N/A,95,0,Infinity years
+CNTA,Centessa Pharmaceuticals PLC,20,40,0,$0,N/A,95,0,Infinity years
+TRMD,TORM PLC,69,70,68,$73350,N/A,92,14,Infinity years
+TRMD,TORM PLC,69,70,68,$73350,N/A,92,14,Infinity years
+AVPT,AvePoint Inc,52,40,63,N/A,N/A,339,0,N/A
+AVPT,AvePoint Inc,52,40,63,$4,N/A,339,0,Infinity years
+INDV,Indivior PLC,19,23,15,$10,N/A,229,7,N/A
+INDV,Indivior PLC,19,23,15,$10,N/A,229,7,N/A
+HUT,Hut 8 Corp,39,20,58,N/A,N/A,2287,0,N/A
+HUT,Hut 8 Corp,39,20,58,$0,N/A,2287,0,N/A
+SOFI,SoFi Technologies Inc,33,15,50,$3554150,N/A,269,0,1 years
+SOFI,SoFi Technologies Inc,33,15,50,$3554150,N/A,269,0,1 years
+PGNY,Progyny Inc,63,80,47,$62747,N/A,126,37,3 years
+PGNY,Progyny Inc,63,80,47,$62747,N/A,126,37,3 years
+ACAD,ACADIA Pharmaceuticals Inc,37,40,33,$285250726,N/A,428,21,1 years
+ACAD,ACADIA Pharmaceuticals Inc,37,40,33,$285250726,N/A,428,21,1 years
+CSX,CSX Corp,43,50,35,N/A,N/A,N/A,N/A,N/A
+CSX,CSX Corp,43,50,35,$24,N/A,6,8,15 years
+SUPN,Supernus Pharmaceuticals Inc,62,70,53,N/A,N/A,113,9,N/A
+SUPN,Supernus Pharmaceuticals Inc,62,70,53,$61484,N/A,113,9,1 years
+RPRX,Royalty Pharma PLC,53,43,63,$278256,N/A,126,0,1 years
+RPRX,Royalty Pharma PLC,53,43,63,N/A,N/A,126,0,N/A
+RNA,Avidity Biosciences Inc,52,40,63,$0,N/A,36,0,N/A
+RNA,Avidity Biosciences Inc,52,40,63,$0,N/A,36,0,N/A
+CGNX,Cognex Corp,55,90,20,$11,N/A,4,3,27 years
+CGNX,Cognex Corp,55,90,20,$11,N/A,4,3,27 years
+FAST,Fastenal Co,88,100,75,$11,N/A,10,7,18 years
+FAST,Fastenal Co,88,100,75,$11,N/A,10,7,18 years
+BBIO,BridgeBio Pharma Inc,37,7,67,$0,N/A,1,39,Infinity years
+BBIO,BridgeBio Pharma Inc,37,7,67,$0,N/A,1,39,Infinity years
+MRCY,Mercury Systems Inc,19,0,38,$22,N/A,5,2,Infinity years
+MRCY,Mercury Systems Inc,19,0,38,$22,N/A,5,2,Infinity years
+INOD,Innodata Inc,57,40,73,$163,N/A,33,14,14 years
+INOD,Innodata Inc,57,40,73,$163,N/A,33,14,14 years
+SYM,Symbotic Inc,45,40,50,$35,N/A,10044,0,Infinity years
+SYM,Symbotic Inc,45,40,50,$35,N/A,10044,0,Infinity years
+AMSC,American Superconductor Corp,39,40,38,$8,N/A,24,13,18 years
+AMSC,American Superconductor Corp,39,40,38,$8,N/A,24,13,18 years
+IRON,Disc Medicine Inc,30,60,0,$0,N/A,N/A,N/A,N/A
+IRON,Disc Medicine Inc,30,60,0,$0,N/A,N/A,N/A,N/A
+HALO,Halozyme Therapeutics Inc,63,60,65,$7504,N/A,62,39,4 years
+HALO,Halozyme Therapeutics Inc,63,60,65,$7504,N/A,62,39,4 years
+LNT,Alliant Energy Corp,35,20,50,$37,N/A,6,0,12 years
+LNT,Alliant Energy Corp,35,20,50,$37,N/A,6,0,12 years
+HOLX,Hologic Inc,69,90,48,$22606669,N/A,232,6,2 years
+HOLX,Hologic Inc,69,90,48,$22606669,N/A,232,6,2 years
+MRUS,Merus NV,49,40,57,$0,N/A,39,16,Infinity years
+MRUS,Merus NV,49,40,57,$0,N/A,39,16,Infinity years
+EVRG,Evergy Inc,35,10,60,$40,N/A,12,3,Infinity years
+EVRG,Evergy Inc,35,10,60,$40,N/A,12,3,Infinity years
+ACLX,Arcellx Inc,20,40,0,$0,N/A,11,0,Infinity years
+ACLX,Arcellx Inc,20,40,0,$0,N/A,11,0,Infinity years
+XEL,Xcel Energy Inc,37,20,53,$13,N/A,7,1,Infinity years
+XEL,Xcel Energy Inc,37,20,53,$13,N/A,7,1,Infinity years
+ZG,Zillow Group Inc,47,40,54,$11,N/A,407,2,N/A
+ZG,Zillow Group Inc,47,40,54,$11,N/A,407,2,N/A
+WDC,Western Digital Corp,4,0,7,$111,N/A,12,3,6 years
+WDC,Western Digital Corp,4,0,7,$111,N/A,12,3,6 years
+Z,Zillow Group Inc,47,40,54,$11,N/A,404,2,N/A
+Z,Zillow Group Inc,47,40,54,$11,N/A,404,2,N/A
+UPST,Upstart Holdings Inc,25,0,50,$12,N/A,207,0,Infinity years
+UPST,Upstart Holdings Inc,25,0,50,$12,N/A,207,0,Infinity years
+SSNC,SS&C Technologies Holdings Inc,44,20,68,$281,N/A,28,5,5 years
+SSNC,SS&C Technologies Holdings Inc,44,20,68,$281,N/A,28,5,5 years
+EBAY,eBay Inc,48,75,20,$7242,N/A,60,10,4 years
+EBAY,eBay Inc,48,75,20,$7242,N/A,60,10,4 years
+ROKU,Roku Inc,54,40,67,$20,N/A,174,25,Infinity years
+ROKU,Roku Inc,54,40,67,$20,N/A,174,25,Infinity years
+AMED,Amedisys Inc,56,68,45,$684,N/A,38,4,Infinity years
+AMED,Amedisys Inc,56,68,45,$684,N/A,38,4,Infinity years
+ORLY,O'Reilly Automotive Inc,68,60,75,$526,N/A,63,17,N/A
+ORLY,O'Reilly Automotive Inc,68,60,75,$526,N/A,63,17,N/A
+PATK,Patrick Industries Inc,59,43,75,$161,N/A,26,10,6 years
+PATK,Patrick Industries Inc,59,43,75,$161,N/A,26,10,6 years
+INSM,Insmed Inc,13,0,25,$0,N/A,37,12,Infinity years
+INSM,Insmed Inc,13,0,25,$0,N/A,37,12,Infinity years
+CHRD,Chord Energy Corp,72,60,85,$726,N/A,25,0,2 years
+CHRD,Chord Energy Corp,72,60,85,$726,N/A,25,0,2 years
+AEP,American Electric Power Co Inc,28,15,41,$25,N/A,8,3,Infinity years
+AEP,American Electric Power Co Inc,28,15,41,$25,N/A,8,3,Infinity years
+LITE,Lumentum Holdings Inc,13,0,25,$15,N/A,17,0,Infinity years
+LITE,Lumentum Holdings Inc,13,0,25,$15,N/A,17,0,Infinity years
+CHRW,C.H. Robinson Worldwide Inc,54,78,30,$3441,N/A,66,5,4 years
+CHRW,C.H. Robinson Worldwide Inc,54,78,30,$3441,N/A,66,5,4 years
+KRYS,Krystal Biotech Inc,30,40,20,$946240,N/A,140,0,Infinity years
+KRYS,Krystal Biotech Inc,30,40,20,$946240,N/A,140,0,Infinity years
+VSEC,VSE Corp,34,5,63,$11,N/A,14,2,Infinity years
+VSEC,VSE Corp,34,5,63,$11,N/A,14,2,Infinity years
+SEZL,Sezzle Inc,43,47,40,$93,N/A,20,0,Infinity years
+SEZL,Sezzle Inc,43,47,40,$93,N/A,20,0,Infinity years
+STX,Seagate Technology Holdings PLC,33,53,13,$65,N/A,7,0,N/A
+STX,Seagate Technology Holdings PLC,33,53,13,$65,N/A,7,0,N/A
+COOP,Mr. Cooper Group Inc,49,35,63,$2447401,N/A,160,141,1 years
+COOP,Mr. Cooper Group Inc,49,35,63,$2447401,N/A,160,141,1 years
+PI,Impinj Inc,29,23,35,$16,N/A,271,10,N/A
+PI,Impinj Inc,29,23,35,$16,N/A,271,10,N/A
+HWKN,Hawkins Inc,84,78,90,$144,N/A,23,12,11 years
+HWKN,Hawkins Inc,84,78,90,$144,N/A,23,12,11 years
+FRHC,Freedom Holding Corp,62,40,83,$1058955417355,N/A,858,77,2 years
+FRHC,Freedom Holding Corp,62,40,83,$1058955417355,N/A,858,77,2 years
+NXST,Nexstar Media Group Inc,60,40,80,$248990,N/A,103,22,1 years
+NXST,Nexstar Media Group Inc,60,40,80,$248990,N/A,103,22,1 years
+PTC,PTC Inc,60,40,80,$2718,N/A,50,12,5 years
+PTC,PTC Inc,60,40,80,$2718,N/A,50,12,5 years
+CTAS,Cintas Corp,92,90,93,$59,N/A,12,7,16 years
+CTAS,Cintas Corp,92,90,93,$59,N/A,12,7,16 years
+LECO,Lincoln Electric Holdings Inc,75,90,60,$124,N/A,10,8,12 years
+LECO,Lincoln Electric Holdings Inc,75,90,60,$124,N/A,10,8,12 years
+MDB,MongoDB Inc,57,55,58,$21,N/A,9374,29,Infinity years
+MDB,MongoDB Inc,57,55,58,$21,N/A,9374,29,Infinity years
+DASH,DoorDash Inc,45,40,50,$149,N/A,53,0,9 years
+DASH,DoorDash Inc,45,40,50,$149,N/A,53,0,9 years
+IDCC,InterDigital Inc,81,93,70,$471,N/A,20,23,5 years
+IDCC,InterDigital Inc,81,93,70,$471,N/A,20,23,5 years
+APPF,AppFolio Inc,83,80,85,$123,N/A,135,24,N/A
+APPF,AppFolio Inc,83,80,85,$123,N/A,135,24,N/A
+CME,CME Group Inc,66,68,65,$136,N/A,9,3,13 years
+CME,CME Group Inc,66,68,65,$136,N/A,9,3,13 years
+ONC,BeOne Medicines Ltd,58,40,75,$0,N/A,283,34,Infinity years
+ONC,BeOne Medicines Ltd,58,40,75,$0,N/A,283,34,Infinity years
+FFIV,F5 Inc,65,95,35,$172,N/A,5,5,12 years
+FFIV,F5 Inc,65,95,35,$172,N/A,5,5,12 years
+CEG,Constellation Energy Corp,38,35,42,$4716,N/A,47,0,2 years
+CEG,Constellation Energy Corp,38,35,42,$4716,N/A,47,0,2 years
+ZBRA,Zebra Technologies Corp,65,70,60,$13767906167,N/A,444,2,1 years
+ZBRA,Zebra Technologies Corp,65,70,60,$13767906167,N/A,444,2,1 years
+ALNY,Alnylam Pharmaceuticals Inc,34,18,50,$0,N/A,6,59,Infinity years
+ALNY,Alnylam Pharmaceuticals Inc,34,18,50,$0,N/A,6,59,Infinity years
+ESLT,Elbit Systems Ltd,57,55,58,$520,N/A,28,8,14 years
+ESLT,Elbit Systems Ltd,57,55,58,$520,N/A,28,8,14 years
+CASY,Casey's General Stores Inc,72,60,83,$231,N/A,14,10,16 years
+CASY,Casey's General Stores Inc,72,60,83,$231,N/A,14,10,16 years
+MSFT,Microsoft Corp,99,100,98,$282,N/A,17,14,11 years
+MSFT,Microsoft Corp,99,100,98,$282,N/A,17,14,11 years
+META,Meta Platforms Inc,100,100,100,$2889,N/A,30,20,7 years
+META,Meta Platforms Inc,100,100,100,$2889,N/A,30,20,7 years
+DECK,Deckers Outdoor Corp,100,100,100,$14521,N/A,64,20,2 years
+DECK,Deckers Outdoor Corp,100,100,100,$14521,N/A,64,20,2 years
+NYT,New York Times Co,87,85,88,$11211,N/A,77,7,4 years
+NYT,New York Times Co,87,85,88,$11211,N/A,77,7,4 years
+XPEL,XPEL Inc,98,100,95,$2414,N/A,58,29,5 years
+XPEL,XPEL Inc,98,100,95,$2414,N/A,58,29,5 years
+FND,Floor & Decor Holdings Inc,88,90,85,$604,N/A,44,16,12 years
+FND,Floor & Decor Holdings Inc,88,90,85,$604,N/A,44,16,12 years
+RLI,RLI Corp,92,90,93,$90,N/A,19,13,6 years
+RLI,RLI Corp,92,90,93,$90,N/A,19,13,6 years
+TGS,Transportadora de Gas del Sur SA,90,85,95,$6128490134,N/A,194,0,N/A
+TGS,Transportadora de Gas del Sur SA,90,85,95,$6128490134,N/A,194,0,N/A
+COST,Costco Wholesale Corp,88,90,85,$257,N/A,12,11,16 years
+COST,Costco Wholesale Corp,88,90,85,$257,N/A,12,11,16 years
+SNPS,Synopsys Inc,93,98,88,$438,N/A,20,14,9 years
+SNPS,Synopsys Inc,93,98,88,$438,N/A,20,14,9 years
+BLD,TopBuild Corp,93,85,100,$1877,N/A,32,17,6 years
+BLD,TopBuild Corp,93,85,100,$1877,N/A,32,17,6 years
+STRL,Sterling Infrastructure Inc,85,85,85,$188,N/A,6,11,17 years
+STRL,Sterling Infrastructure Inc,85,85,85,$188,N/A,6,11,17 years
+MPWR,Monolithic Power Systems Inc,100,100,100,$7221,N/A,36,25,6 years
+MPWR,Monolithic Power Systems Inc,100,100,100,$7221,N/A,36,25,6 years
+BMI,Badger Meter Inc,99,100,98,$86,N/A,13,13,12 years
+BMI,Badger Meter Inc,99,100,98,$86,N/A,13,13,12 years
+IPAR,Interparfums Inc,94,93,95,N/A,N/A,N/A,N/A,N/A
