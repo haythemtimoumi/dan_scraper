@@ -66,6 +66,15 @@ def run_daily_process():
                 # Get fresh Price data
                 price = fetch_price(symbol)
                 
+                # Calculate per_upside
+                per_upside = None
+                if buy_price and price and price > 0:
+                    try:
+                        buy_price_num = float(buy_price)
+                        per_upside = round((2 * buy_price_num - price) / price * 100, 2)
+                    except (ValueError, TypeError):
+                        per_upside = None
+                
                 # Create complete record
                 cursor.execute("""
                     INSERT INTO stock_analysis (
@@ -73,8 +82,8 @@ def run_daily_process():
                         rule1_score, moat_score, management_score, buy_price,
                         full_name, last_gr, long_gr, pbt,
                         signal_score, sentiment_score, screenshot,
-                        last_price, last_action, per_portfolio
-                    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        last_price, last_action, per_portfolio, per_upside
+                    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """, (
                     ticker_id, guru_id, current_time, symbol, list_type,
                     rule1_score, moat_score, management_score, buy_price,
@@ -82,7 +91,7 @@ def run_daily_process():
                     signal_score if signal_score != 'N/A' else None,
                     sentiment_score if sentiment_score != 'N/A' else None,
                     screenshot if screenshot != 'N/A' else None,
-                    price, last_action, per_portfolio
+                    price, last_action, per_portfolio, str(per_upside) if per_upside is not None else None
                 ))
                 
                 success_count += 1
