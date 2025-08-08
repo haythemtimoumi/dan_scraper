@@ -194,18 +194,6 @@ def clean_price_string(price_str):
     except (ValueError, TypeError):
         return None
 
-def is_etf(symbol):
-    """Check if ticker is likely an ETF"""
-    etf_patterns = ['ETF', 'FUND', 'INDEX']
-    etf_suffixes = ['LT', 'FT', 'XT']
-    
-    # Common ETF tickers
-    common_etfs = ['SPY', 'QQQ', 'IWM', 'VTI', 'VOO', 'PPLT', 'GLD', 'SLV', 'TLT', 'HYG']
-    
-    return (symbol in common_etfs or 
-            any(pattern in symbol.upper() for pattern in etf_patterns) or
-            any(symbol.endswith(suffix) for suffix in etf_suffixes))
-
 def fetch_price(ticker):
     """Fetch current price from Yahoo Finance"""
     try:
