@@ -33,9 +33,9 @@ def run_main():
     if script == 'run_sequential_scraping':
         from run_sequential_scraping import run_sequential_scraping
         run_sequential_scraping()
-    elif script == 'daily_process':
-        from daily_process import run_daily_process
-        run_daily_process()
+    elif script == 'scrape_all_active_ticker':
+        from scrape_all_active_ticker import run_active_process
+        run_active_process()
     else:
         print(f"Unknown script: {script}")
         sys.exit(1)
