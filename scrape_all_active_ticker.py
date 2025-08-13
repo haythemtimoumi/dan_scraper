@@ -101,6 +101,15 @@ def run_active_process():
         
         print(f"\nActive ticker process completed: {success_count}/{len(active_tickers)} complete records created")
         
+        # Send email notification
+        from utils.email_notifier import send_completion_email
+        send_completion_email(
+            recipient_email="dan.moore@tundraeng.com",
+            success_count=success_count,
+            total_count=len(active_tickers),
+            process_name="Active Ticker Scraping"
+        )
+        
     finally:
         cursor.close()
         conn.close()

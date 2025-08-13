@@ -40,6 +40,18 @@ class StockScoresScraper:
             print(f"❌ Error reading ticker file: {e}")
             return []
 
+    def _reinitialize_driver(self):
+        """Reinitialize the browser driver"""
+        try:
+            if hasattr(self, 'driver'):
+                self.driver.quit()
+        except:
+            pass
+        self.driver = get_driver(headless=True)
+        self.driver.implicitly_wait(5)
+        self.wait = WebDriverWait(self.driver, 10)
+        print("🔄 Browser reinitialized")
+
     def scrape_scores(self, ticker, retries=3):
         """Scrape StockScores data for a single ticker"""
         attempt = 0
@@ -86,7 +98,14 @@ class StockScoresScraper:
                 return signal, sentiment, chart_url
 
             except Exception as e:
+                error_msg = str(e)
                 print(f"⚠️ Attempt {attempt + 1} failed for {ticker}: {e}")
+                
+                # Check if it's a connection error - reinitialize browser
+                if "Connection refused" in error_msg or "HTTPConnectionPool" in error_msg:
+                    print("🔄 Browser connection lost, reinitializing...")
+                    self._reinitialize_driver()
+                
                 attempt += 1
                 time.sleep(3)
 
