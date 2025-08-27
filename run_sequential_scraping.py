@@ -21,21 +21,21 @@ def run_sequential_scraping():
     cursor = conn.cursor()
     
     try:
-        # Get active tickers with guru-specific data from guru_ticker_map (one per ticker)
+        # Get target tickers with guru-specific data from guru_ticker_map (one per ticker)
         cursor.execute("""
             SELECT DISTINCT ON (st.id) st.id, st.symbol, st.guru_id, st.list_type, gtm.last_act, gtm.per_port 
             FROM scraper_tasks st 
             JOIN guru_ticker_map gtm ON st.id = gtm.scraper_task_id 
-            WHERE st.active = true AND st.scrape_status = 'pending'
+            WHERE st.target = true AND st.scrape_status = 'pending'
             ORDER BY st.id, gtm.id
         """)
-        active_tickers = cursor.fetchall()
+        target_tickers = cursor.fetchall()
         
-        if not active_tickers:
-            print("No active tickers found")
+        if not target_tickers:
+            print("No target tickers found")
             return 0
         
-        print(f"Processing {len(active_tickers)} tickers...\n")
+        print(f"Processing {len(target_tickers)} target tickers...\n")
         
         # Initialize scrapers with error handling
         from scrapers.scores_scraper import TickerSearcher
@@ -69,8 +69,8 @@ def run_sequential_scraping():
         
         success_count = 0
         
-        for i, (ticker_id, symbol, guru_id, list_type, last_action, per_portfolio) in enumerate(active_tickers, 1):
-            print(f"[{i}/{len(active_tickers)}] Processing {symbol}...")
+        for i, (ticker_id, symbol, guru_id, list_type, last_action, per_portfolio) in enumerate(target_tickers, 1):
+            print(f"[{i}/{len(target_tickers)}] Processing {symbol}...")
             
             try:
                 # Get Rule1 data with enhanced error handling and retry
@@ -165,9 +165,25 @@ def run_sequential_scraping():
         except Exception as e:
             print(f"Warning: Error closing shared browser: {e}")
         
-        print(f"\nSequential scraping completed: {success_count}/{len(active_tickers)} complete records created")
+        print(f"\nSequential scraping completed: {success_count}/{len(target_tickers)} complete records created")
         print(f"Each record contains: Rule1 + StockScores + Price data")
         
+        # Send Firebase notification
+        from firebase_notifier import FirebaseNotifier
+        FirebaseNotifier.send_notification(
+            title="Scraper Complete",
+            body=f"Sequential scraper finished: {success_count}/{len(target_tickers)} records",
+            data={"script": "run_sequential_scraping", "success_count": str(success_count), "total_count": str(len(target_tickers)), "timestamp": str(datetime.now())}
+        )
+        
+    except Exception as e:
+        from firebase_notifier import FirebaseNotifier
+        FirebaseNotifier.send_notification(
+            title="Scraper Failed",
+            body=f"Sequential scraper failed: {str(e)}",
+            data={"script": "run_sequential_scraping", "error": str(e), "timestamp": str(datetime.now())}
+        )
+        raise
     finally:
         cursor.close()
         conn.close()

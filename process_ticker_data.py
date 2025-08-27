@@ -23,6 +23,14 @@ def scrape_active_tickers():
     from merge_and_save import merge_and_save
     merge_and_save()
     
+    # Send Firebase notification
+    from firebase_notifier import FirebaseNotifier
+    FirebaseNotifier.send_notification(
+        title="Scraper Complete",
+        body=f"Process ticker data finished: {len(tickers)} tickers processed",
+        data={"script": "process_ticker_data", "ticker_count": str(len(tickers)), "timestamp": str(datetime.now())}
+    )
+    
     cursor.close()
     conn.close()
 

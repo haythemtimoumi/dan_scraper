@@ -233,6 +233,15 @@ def run_all_in_one(auto_verify=True, max_retries=3):
                 print(f"   - Rule1 scraped tickers: scraped_tickers.txt")
                 print(f"   - Guru portfolio tickers: guru_tickers.txt")
                 print(f"   - Manual tickers: config/tickers_rule1.txt")
+                
+                # Send Firebase notification
+                from firebase_notifier import FirebaseNotifier
+                FirebaseNotifier.send_notification(
+                    title="Scraper Complete",
+                    body="All-in-one scraper finished successfully!",
+                    data={"script": "run_all_in_one", "timestamp": str(datetime.now())}
+                )
+                
                 return  # Success, exit the retry loop
                     
             except Exception as e:
@@ -249,6 +258,12 @@ def run_all_in_one(auto_verify=True, max_retries=3):
                     time.sleep(5)
                 else:
                     print("❌ All attempts failed.")
+                    from firebase_notifier import FirebaseNotifier
+                    FirebaseNotifier.send_notification(
+                        title="Scraper Failed",
+                        body="All-in-one scraper failed after all retries",
+                        data={"script": "run_all_in_one", "error": "All attempts failed", "timestamp": str(datetime.now())}
+                    )
                     return
                     
         except Exception as e:

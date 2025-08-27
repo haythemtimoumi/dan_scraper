@@ -101,6 +101,14 @@ def run_active_hourly_process():
         
         print(f"\nActive hourly ticker process completed: {success_count}/{len(active_hourly_tickers)} complete records created")
         
+        # Send Firebase notification
+        from firebase_notifier import FirebaseNotifier
+        FirebaseNotifier.send_notification(
+            title="Scraper Complete",
+            body=f"Active hourly ticker scraper finished: {success_count}/{len(active_hourly_tickers)} records",
+            data={"script": "scrape_all_active_ticker_hourly", "success_count": str(success_count), "total_count": str(len(active_hourly_tickers)), "timestamp": str(datetime.now())}
+        )
+        
     finally:
         cursor.close()
         conn.close()

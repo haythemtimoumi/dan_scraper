@@ -110,6 +110,14 @@ def run_active_process():
             process_name="Active Ticker Scraping"
         )
         
+        # Send Firebase notification
+        from firebase_notifier import FirebaseNotifier
+        FirebaseNotifier.send_notification(
+            title="Scraper Complete",
+            body=f"Active ticker scraper finished: {success_count}/{len(active_tickers)} records",
+            data={"script": "scrape_all_active_ticker", "success_count": str(success_count), "total_count": str(len(active_tickers)), "timestamp": str(datetime.now())}
+        )
+        
     finally:
         cursor.close()
         conn.close()

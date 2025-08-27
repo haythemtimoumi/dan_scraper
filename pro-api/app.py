@@ -518,6 +518,15 @@ def run_manual_scraper():
         return jsonify({'error': 'Invalid script. Must be run_sequential_scraping or scrape_all_active_ticker'}), 400
     
     try:
+        # Send Firebase notification
+        from firebase_notifier import FirebaseNotifier
+        from datetime import datetime
+        FirebaseNotifier.send_notification(
+            title="Scraper Started",
+            body=f"{script} started from mobile app",
+            data={"script": script, "status": "started", "timestamp": str(datetime.now())}
+        )
+        
         if script == 'run_sequential_scraping':
             service_name = 'run-sequential-scraping-manually.service'
         else:

@@ -4,6 +4,7 @@
 import os
 import csv
 import sys
+from datetime import datetime
 from scrapers.scores_scraper import TickerSearcher
 from core.browser import get_driver
 
@@ -147,8 +148,20 @@ if __name__ == "__main__":
         headless=not args.visible
     )
     
+    # Send Firebase notification
+    from firebase_notifier import FirebaseNotifier
     if success:
         print("\n🎉 Smart resume scraping completed successfully!")
+        FirebaseNotifier.send_notification(
+            title="Scraper Complete",
+            body="Smart resume scraper finished successfully!",
+            data={"script": "smart_resume_scraper", "timestamp": str(datetime.now())}
+        )
     else:
         print("\n❌ Smart resume scraping failed!")
+        FirebaseNotifier.send_notification(
+            title="Scraper Failed",
+            body="Smart resume scraper failed!",
+            data={"script": "smart_resume_scraper", "error": "Scraping failed", "timestamp": str(datetime.now())}
+        )
         sys.exit(1)

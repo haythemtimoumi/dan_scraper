@@ -103,6 +103,14 @@ def run_active_process_manually():
         
         print(f"\nManual active ticker process completed: {success_count}/{len(target_tickers)} complete records created")
         
+        # Send Firebase notification
+        from firebase_notifier import FirebaseNotifier
+        FirebaseNotifier.send_notification(
+            title="Scraper Complete",
+            body=f"Manual active ticker scraper finished: {success_count}/{len(target_tickers)} records",
+            data={"script": "scrape_all_active_ticker_manually", "success_count": str(success_count), "total_count": str(len(target_tickers)), "timestamp": str(datetime.now())}
+        )
+        
     finally:
         cursor.close()
         conn.close()

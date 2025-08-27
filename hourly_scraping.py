@@ -168,6 +168,22 @@ def run_hourly_scraping():
         print(f"\nHourly scraping completed: {success_count}/{len(hourly_tickers)} complete records created")
         print(f"Each record contains: Rule1 + StockScores + Price data")
         
+        # Send Firebase notification
+        from firebase_notifier import FirebaseNotifier
+        FirebaseNotifier.send_notification(
+            title="Scraper Complete",
+            body=f"Hourly scraper finished: {success_count}/{len(hourly_tickers)} records",
+            data={"script": "hourly_scraping", "success_count": str(success_count), "total_count": str(len(hourly_tickers)), "timestamp": str(datetime.now())}
+        )
+        
+    except Exception as e:
+        from firebase_notifier import FirebaseNotifier
+        FirebaseNotifier.send_notification(
+            title="Scraper Failed",
+            body=f"Hourly scraper failed: {str(e)}",
+            data={"script": "hourly_scraping", "error": str(e), "timestamp": str(datetime.now())}
+        )
+        raise
     finally:
         cursor.close()
         conn.close()

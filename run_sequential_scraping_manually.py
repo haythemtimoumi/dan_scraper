@@ -168,6 +168,22 @@ def run_sequential_scraping_manually():
         print(f"\nManual sequential scraping completed: {success_count}/{len(target_tickers)} complete records created")
         print(f"Each record contains: Rule1 + StockScores + Price data")
         
+        # Send Firebase notification
+        from firebase_notifier import FirebaseNotifier
+        FirebaseNotifier.send_notification(
+            title="Scraper Complete",
+            body=f"Manual sequential scraper finished: {success_count}/{len(target_tickers)} records",
+            data={"script": "run_sequential_scraping_manually", "success_count": str(success_count), "total_count": str(len(target_tickers)), "timestamp": str(datetime.now())}
+        )
+        
+    except Exception as e:
+        from firebase_notifier import FirebaseNotifier
+        FirebaseNotifier.send_notification(
+            title="Scraper Failed",
+            body=f"Manual sequential scraper failed: {str(e)}",
+            data={"script": "run_sequential_scraping_manually", "error": str(e), "timestamp": str(datetime.now())}
+        )
+        raise
     finally:
         cursor.close()
         conn.close()
