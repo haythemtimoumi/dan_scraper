@@ -9,6 +9,7 @@ import pandas as pd
 import psycopg2
 import json
 import os
+import numpy as np
 from datetime import datetime
 
 # S3 Configuration
@@ -116,14 +117,33 @@ def restore_from_json(json_file):
     total_restored = 0
     for table_name, records in backup['data'].items():
         if records:
-            df = pd.DataFrame(records)
+            print(f"📊 Restoring {table_name}...")
             
-            # Insert data
-            for _, row in df.iterrows():
-                columns = ', '.join(row.index)
-                placeholders = ', '.join(['%s'] * len(row))
-                sql = f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders})"
-                cursor.execute(sql, tuple(row.values))
+            for i, record in enumerate(records):
+                try:
+                    # Clean the record - handle nan, null, and data type issues
+                    cleaned_record = {}
+                    for key, value in record.items():
+                        if pd.isna(value) or value == 'nan' or str(value).lower() == 'nan':
+                            cleaned_record[key] = None
+                        elif isinstance(value, float) and (value != value):  # Check for NaN
+                            cleaned_record[key] = None
+                        else:
+                            cleaned_record[key] = value
+                    
+                    # Skip id column to let auto-increment handle it
+                    if 'id' in cleaned_record:
+                        del cleaned_record['id']
+                    
+                    columns = ', '.join(cleaned_record.keys())
+                    placeholders = ', '.join(['%s'] * len(cleaned_record))
+                    sql = f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders})"
+                    cursor.execute(sql, tuple(cleaned_record.values()))
+                    
+                except Exception as e:
+                    print(f"❌ Error inserting into {table_name}:")
+                    print(f"   Record {i+1}: {e}")
+                    continue
             
             total_restored += len(records)
             print(f"✅ Restored {table_name}: {len(records)} records")
