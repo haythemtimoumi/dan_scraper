@@ -148,6 +148,14 @@ def restore_from_json(json_file):
             total_restored += len(records)
             print(f"✅ Restored {table_name}: {len(records)} records")
     
+    # Reset sequences to avoid ID conflicts
+    print("🔄 Resetting ID sequences...")
+    for table in restore_order:
+        try:
+            cursor.execute(f"SELECT setval(pg_get_serial_sequence('{table}', 'id'), COALESCE(MAX(id), 1)) FROM {table}")
+        except:
+            pass  # Skip if table doesn't have id column
+    
     conn.commit()
     cursor.close()
     conn.close()

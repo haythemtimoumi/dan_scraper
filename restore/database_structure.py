@@ -26,21 +26,17 @@ def create_database_structure():
     # """
     # cursor.execute(drop_tables)
     
-    # Create tables with exact structure
+    # Create tables with exact structure and foreign keys
     create_tables_sql = """
-    -- Comment table
-    CREATE TABLE IF NOT EXISTS comment (
+    -- 1. Users table (no dependencies)
+    CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
-        comment TEXT NOT NULL,
-        user_id INTEGER NOT NULL,
-        ticker_id INTEGER NOT NULL,
-        color VARCHAR(10) DEFAULT 'neutral',
-        date DATE DEFAULT CURRENT_DATE,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        username TEXT NOT NULL,
+        password TEXT NOT NULL,
+        role TEXT NOT NULL
     );
     
-    -- Guru table
+    -- 2. Guru table (no dependencies)
     CREATE TABLE IF NOT EXISTS guru (
         id SERIAL PRIMARY KEY,
         guru_name VARCHAR(100) NOT NULL,
@@ -48,16 +44,38 @@ def create_database_structure():
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
     
-    -- Guru ticker map table
-    CREATE TABLE IF NOT EXISTS guru_ticker_map (
+    -- 3. Scraper tasks table (depends on guru)
+    CREATE TABLE IF NOT EXISTS scraper_tasks (
         id SERIAL PRIMARY KEY,
-        guru_id INTEGER,
-        scraper_task_id INTEGER,
-        per_port TEXT,
-        last_act TEXT
+        symbol TEXT NOT NULL,
+        guru_id INTEGER REFERENCES guru(id),
+        list_type TEXT,
+        scrape_type TEXT NOT NULL,
+        active BOOLEAN DEFAULT false,
+        current_step TEXT DEFAULT 'rule1',
+        scrape_status TEXT DEFAULT 'pending',
+        retry_count INTEGER DEFAULT 0,
+        last_updated_at TIMESTAMP,
+        rule1_scraped_at TIMESTAMP,
+        stockscore_scraped_at TIMESTAMP,
+        last_price_scraped_at TIMESTAMP,
+        last_action TEXT,
+        per_portfolio TEXT,
+        target BOOLEAN DEFAULT false,
+        color VARCHAR(10) DEFAULT 'neutral',
+        business_description TEXT,
+        address TEXT,
+        website TEXT,
+        ir_phone_number TEXT,
+        email_address TEXT,
+        year_established INTEGER,
+        fiscal_year_end DATE,
+        ceo TEXT,
+        number_of_employees INTEGER,
+        sp TEXT
     );
     
-    -- Old stock analysis table
+    -- 4. Old stock analysis table (no foreign keys)
     CREATE TABLE IF NOT EXISTS old_stock_analysis (
         id SERIAL PRIMARY KEY,
         date DATE,
@@ -85,42 +103,11 @@ def create_database_structure():
         pbt TEXT
     );
     
-    -- Scraper tasks table
-    CREATE TABLE IF NOT EXISTS scraper_tasks (
-        id SERIAL PRIMARY KEY,
-        symbol TEXT NOT NULL,
-        guru_id INTEGER,
-        list_type TEXT,
-        scrape_type TEXT NOT NULL,
-        active BOOLEAN DEFAULT false,
-        current_step TEXT DEFAULT 'rule1',
-        scrape_status TEXT DEFAULT 'pending',
-        retry_count INTEGER DEFAULT 0,
-        last_updated_at TIMESTAMP,
-        rule1_scraped_at TIMESTAMP,
-        stockscore_scraped_at TIMESTAMP,
-        last_price_scraped_at TIMESTAMP,
-        last_action TEXT,
-        per_portfolio TEXT,
-        target BOOLEAN DEFAULT false,
-        color VARCHAR(10) DEFAULT 'neutral',
-        business_description TEXT,
-        address TEXT,
-        website TEXT,
-        ir_phone_number TEXT,
-        email_address TEXT,
-        year_established INTEGER,
-        fiscal_year_end DATE,
-        ceo TEXT,
-        number_of_employees INTEGER,
-        sp TEXT
-    );
-    
-    -- Stock analysis table (main table)
+    -- 5. Stock analysis table (depends on guru and scraper_tasks)
     CREATE TABLE IF NOT EXISTS stock_analysis (
         id SERIAL PRIMARY KEY,
-        ticker_id INTEGER,
-        guru_id INTEGER,
+        ticker_id INTEGER REFERENCES scraper_tasks(id),
+        guru_id INTEGER REFERENCES guru(id),
         date TIMESTAMP,
         ticker TEXT,
         source TEXT,
@@ -146,17 +133,33 @@ def create_database_structure():
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
     
-    -- Users table
-    CREATE TABLE IF NOT EXISTS users (
+    -- 6. Guru ticker map table (depends on guru and scraper_tasks)
+    CREATE TABLE IF NOT EXISTS guru_ticker_map (
         id SERIAL PRIMARY KEY,
-        username TEXT NOT NULL,
-        password TEXT NOT NULL,
-        role TEXT NOT NULL
+        guru_id INTEGER REFERENCES guru(id),
+        scraper_task_id INTEGER REFERENCES scraper_tasks(id),
+        per_port TEXT,
+        last_act TEXT
+    );
+    
+    -- 7. Comment table (depends on users and scraper_tasks)
+    CREATE TABLE IF NOT EXISTS comment (
+        id SERIAL PRIMARY KEY,
+        comment TEXT NOT NULL,
+        user_id INTEGER REFERENCES users(id),
+        ticker_id INTEGER REFERENCES scraper_tasks(id),
+        color VARCHAR(10) DEFAULT 'neutral',
+        date DATE DEFAULT CURRENT_DATE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
     """
     
     cursor.execute(create_tables_sql)
     conn.commit()
+    
+    print("✅ Tables created with foreign key constraints")
+    print("📋 Dependency order: users → guru → scraper_tasks → stock_analysis/guru_ticker_map → comment")
     
     # Verify tables created
     cursor.execute("""
