@@ -34,5 +34,9 @@ jobs:
             echo "requirements.txt unchanged, skipping pip install"
           fi
 
+          # Restart pro-api service
+          echo "Restarting pro-api service..."
+          sudo systemctl restart pro-api.service
+          echo "✅ Deployment completed"
 
         EOF

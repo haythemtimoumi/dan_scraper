@@ -42,3 +42,12 @@ def run_main():
 
 if __name__ == "__main__":
     run_main()
+    
+    # Create daily backup to S3 after scraping
+    print("\n🗄️ Creating daily database backup...")
+    try:
+        from daily_backup_to_s3 import daily_backup_to_s3
+        daily_backup_to_s3()
+        print("✅ Daily backup completed")
+    except Exception as e:
+        print(f"❌ Daily backup failed: {e}")
