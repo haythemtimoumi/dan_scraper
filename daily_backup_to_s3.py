@@ -38,9 +38,27 @@ def daily_backup_to_s3():
     total_records = 0
     
     for table in tables:
-        df = pd.read_sql_query(f"SELECT * FROM {table}", conn)
-        backup_data[table] = df.to_dict('records')
-        total_records += len(df)
+        # Use raw SQL to preserve exact data types
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT * FROM {table}")
+        columns = [desc[0] for desc in cursor.description]
+        rows = cursor.fetchall()
+        
+        # Convert to list of dicts while preserving original types
+        table_data = []
+        for row in rows:
+            record = {}
+            for i, value in enumerate(row):
+                # Convert to string if it's a special type to preserve format
+                if isinstance(value, (datetime, type(None))):
+                    record[columns[i]] = str(value) if value is not None else None
+                else:
+                    record[columns[i]] = value
+            table_data.append(record)
+        
+        backup_data[table] = table_data
+        total_records += len(table_data)
+        cursor.close()
     
     conn.close()
     
