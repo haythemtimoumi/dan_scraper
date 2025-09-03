@@ -232,6 +232,11 @@ def visit_all_companies(driver, companies):
                 conn.commit()
                 success_count += 1
                 print(f"  ✅ {rating_data['ticker']} - {rating_data['currency']} {rating_data['price']} - {rating_data['quality']}")
+                print(f"     Category: {rating_data['category']}, Upside: {rating_data['upside']}, Downside: {rating_data['downside']}, Risk: {rating_data['risk']}")
+                print(f"     Cash Flow Growth: {rating_data['cash_flow_growth']}, Free Cash Multiple: {rating_data['free_cash_multiple']}")
+                print(f"     Exchange: {rating_data['exchange']}, Full Symbol: {rating_data['symbol']}")
+                print(f"     Company: {rating_data['company_name']}")
+                print()
                 
             except Exception as e:
                 print(f"  ❌ Error saving {rating_data['ticker']}: {e}")
