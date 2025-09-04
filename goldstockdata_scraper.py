@@ -284,5 +284,4 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Firebase notification failed: {e}")
         
-        input("Press Enter to close browser...")
         driver.quit()
