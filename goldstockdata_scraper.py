@@ -219,13 +219,13 @@ def visit_all_companies(driver, companies):
                 """, (
                     ticker_id, rating_data['company_name'], rating_data['symbol'],
                     rating_data['exchange'], rating_data['currency'],
-                    float(rating_data['price']) if rating_data['price'] else None,
+                    float(rating_data['price'].replace(',', '')) if rating_data['price'] else None,
                     rating_data['category'], 
-                    float(rating_data['upside']) if rating_data['upside'] else None,
-                    float(rating_data['downside']) if rating_data['downside'] else None,
+                    float(rating_data['upside'].replace(',', '')) if rating_data['upside'] else None,
+                    float(rating_data['downside'].replace(',', '')) if rating_data['downside'] else None,
                     rating_data['quality'], rating_data['risk'],
                     rating_data['cash_flow_growth'],
-                    float(rating_data['free_cash_multiple']) if rating_data['free_cash_multiple'] else None,
+                    float(rating_data['free_cash_multiple'].replace(',', '')) if rating_data['free_cash_multiple'] else None,
                     company['url']
                 ))
                 
