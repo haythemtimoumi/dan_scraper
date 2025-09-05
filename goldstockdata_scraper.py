@@ -163,6 +163,22 @@ def scrape_rating_data(driver):
         except:
             pass
         
+        # Get company URL
+        company_url = ""
+        try:
+            company_url_element = driver.find_element(By.CSS_SELECTOR, "span.es-nowrap a[href^='http']")
+            company_url = company_url_element.get_attribute('href')
+        except:
+            pass
+        
+        # Get company email
+        company_email = ""
+        try:
+            company_email_element = driver.find_element(By.CSS_SELECTOR, "span.es-nowrap a[href^='mailto:']")
+            company_email = company_email_element.get_attribute('href').replace('mailto:', '')
+        except:
+            pass
+        
         return {
             'company_name': company_name,
             'category': category,
@@ -176,7 +192,9 @@ def scrape_rating_data(driver):
             'currency': currency,
             'price': price,
             'cash_flow_growth': cash_flow_growth,
-            'free_cash_multiple': free_cash_multiple
+            'free_cash_multiple': free_cash_multiple,
+            'company_url': company_url,
+            'company_email': company_email
         }
     except Exception as e:
         print(f"Error scraping rating data: {e}")
@@ -214,8 +232,9 @@ def visit_all_companies(driver, companies):
                     INSERT INTO company (
                         ticker_id, company_name, full_symbol, exchange, currency,
                         price, category, upside, downside, quality, risk,
-                        cash_flow_growth, free_cash_multiple, source_url
-                    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        cash_flow_growth, free_cash_multiple, source_url,
+                        company_url, company_email
+                    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """, (
                     ticker_id, rating_data['company_name'], rating_data['symbol'],
                     rating_data['exchange'], rating_data['currency'],
@@ -226,7 +245,9 @@ def visit_all_companies(driver, companies):
                     rating_data['quality'], rating_data['risk'],
                     rating_data['cash_flow_growth'],
                     float(rating_data['free_cash_multiple'].replace(',', '')) if rating_data['free_cash_multiple'] else None,
-                    company['url']
+                    company['url'],
+                    rating_data['company_url'],
+                    rating_data['company_email']
                 ))
                 
                 conn.commit()
@@ -236,6 +257,7 @@ def visit_all_companies(driver, companies):
                 print(f"     Cash Flow Growth: {rating_data['cash_flow_growth']}, Free Cash Multiple: {rating_data['free_cash_multiple']}")
                 print(f"     Exchange: {rating_data['exchange']}, Full Symbol: {rating_data['symbol']}")
                 print(f"     Company: {rating_data['company_name']}")
+                print(f"     URL: {rating_data['company_url']}, Email: {rating_data['company_email']}")
                 print()
                 
             except Exception as e:
