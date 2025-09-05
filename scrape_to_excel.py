@@ -224,11 +224,67 @@ def scrape_to_excel():
     except KeyboardInterrupt:
         print(f"\n⚠️  Interrupted by user. Saving {len(data)} companies collected so far...")
     
-    # Save final results
+    # Save final results with enhanced formatting
     if data:
         df = pd.DataFrame(data)
-        df.to_excel('goldstock_contacts.xlsx', index=False)
-        print(f"\n📊 Final results saved to goldstock_contacts.xlsx")
+        
+        # Create Excel writer with xlsxwriter engine for formatting
+        with pd.ExcelWriter('goldstock_contacts.xlsx', engine='xlsxwriter') as writer:
+            df.to_excel(writer, sheet_name='Gold Stock Contacts', index=False)
+            
+            # Get workbook and worksheet objects
+            workbook = writer.book
+            worksheet = writer.sheets['Gold Stock Contacts']
+            
+            # Define formats
+            header_format = workbook.add_format({
+                'bold': True,
+                'text_wrap': True,
+                'valign': 'top',
+                'fg_color': '#4472C4',
+                'font_color': 'white',
+                'border': 1
+            })
+            
+            cell_format = workbook.add_format({
+                'text_wrap': True,
+                'valign': 'top',
+                'border': 1
+            })
+            
+            url_format = workbook.add_format({
+                'text_wrap': True,
+                'valign': 'top',
+                'font_color': 'blue',
+                'underline': True,
+                'border': 1
+            })
+            
+            # Apply header formatting
+            for col_num, value in enumerate(df.columns.values):
+                worksheet.write(0, col_num, value, header_format)
+            
+            # Apply cell formatting
+            for row in range(1, len(df) + 1):
+                for col in range(len(df.columns)):
+                    if col == 3:  # company_url column
+                        worksheet.write(row, col, df.iloc[row-1, col], url_format)
+                    else:
+                        worksheet.write(row, col, df.iloc[row-1, col], cell_format)
+            
+            # Auto-adjust column widths
+            worksheet.set_column('A:A', 25)  # company_name
+            worksheet.set_column('B:B', 15)  # symbol
+            worksheet.set_column('C:C', 20)  # category
+            worksheet.set_column('D:D', 30)  # company_url
+            worksheet.set_column('E:E', 25)  # company_email
+            worksheet.set_column('F:F', 25)  # development_projects
+            worksheet.set_column('G:G', 25)  # production_projects
+            
+            # Freeze header row
+            worksheet.freeze_panes(1, 0)
+        
+        print(f"\n📊 Enhanced Excel file saved to goldstock_contacts.xlsx")
         print(f"   ✅ Successful: {len(data)} companies")
         print(f"   ❌ Failed: {failed_count} companies")
         print(f"   📈 Success rate: {len(data)/(len(data)+failed_count)*100:.1f}%")
