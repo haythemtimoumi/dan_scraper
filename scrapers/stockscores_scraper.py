@@ -42,15 +42,28 @@ class StockScoresScraper:
 
     def _reinitialize_driver(self):
         """Reinitialize the browser driver"""
-        try:
-            if hasattr(self, 'driver'):
-                self.driver.quit()
-        except:
-            pass
-        self.driver = get_driver(headless=True)
-        self.driver.implicitly_wait(5)
-        self.wait = WebDriverWait(self.driver, 10)
-        print("🔄 Browser reinitialized")
+        max_attempts = 3
+        for attempt in range(max_attempts):
+            try:
+                if hasattr(self, 'driver'):
+                    self.driver.quit()
+                    time.sleep(2)  # Wait for cleanup
+            except:
+                pass
+            
+            try:
+                self.driver = get_driver(headless=True)
+                self.driver.implicitly_wait(5)
+                self.wait = WebDriverWait(self.driver, 10)
+                print("🔄 Browser reinitialized")
+                return
+            except Exception as e:
+                print(f"Browser initialization attempt {attempt + 1} failed: {e}")
+                if attempt < max_attempts - 1:
+                    print("Retrying in 3 seconds...")
+                    time.sleep(3)
+                else:
+                    raise Exception("Failed to initialize Chrome browser: [Errno 24] Too many open files\nPlease ensure Chrome and ChromeDriver are properly installed and configured.")
 
     def scrape_scores(self, ticker, retries=3):
         """Scrape StockScores data for a single ticker"""
@@ -61,10 +74,10 @@ class StockScoresScraper:
                 # Navigate directly to the ticker URL
                 self.driver.get(f"https://www.stockscores.com/charts/charts/?ticker={ticker}")
                 
-                # Wait dynamically for the chart to load
+                # Wait for the chart to load with 5 second timeout
                 try:
                     # Wait for chart image to appear
-                    WebDriverWait(self.driver, 15).until(
+                    WebDriverWait(self.driver, 5).until(
                         EC.presence_of_element_located((By.XPATH, '//div[@class="col_full"]/img'))
                     )
                 except TimeoutException:
@@ -102,9 +115,13 @@ class StockScoresScraper:
                 print(f"⚠️ Attempt {attempt + 1} failed for {ticker}: {e}")
                 
                 # Check if it's a connection error - reinitialize browser
-                if "Connection refused" in error_msg or "HTTPConnectionPool" in error_msg:
+                if "Connection refused" in error_msg or "HTTPConnectionPool" in error_msg or "Too many open files" in error_msg:
                     print("🔄 Browser connection lost, reinitializing...")
-                    self._reinitialize_driver()
+                    try:
+                        self._reinitialize_driver()
+                    except Exception as reinit_error:
+                        print(f"Failed to reinitialize browser: {reinit_error}")
+                        return "N/A", "N/A", "N/A"
                 
                 attempt += 1
                 time.sleep(3)

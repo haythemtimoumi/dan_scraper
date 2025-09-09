@@ -6,6 +6,12 @@ import undetected_chromedriver as uc
 load_dotenv()
 
 def get_driver(headless=True, clear_cache=False):
+    # Increase file descriptor limit
+    try:
+        import resource
+        resource.setrlimit(resource.RLIMIT_NOFILE, (65536, 65536))
+    except:
+        pass
     """
     Initialize and return an undetected Chrome browser instance.
     Uses environment variables for configuration.
