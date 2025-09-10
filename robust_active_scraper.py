@@ -7,6 +7,7 @@ import psycopg2
 import time
 import subprocess
 import os
+import shutil
 from datetime import datetime
 from config.settings import DB_CONFIG
 
@@ -15,13 +16,37 @@ class RobustActiveScraper:
         self.driver = None
         self.batch_size = 10  # Smaller batches to prevent resource exhaustion
         self.max_retries = 2  # Reduced retries
+    
+    def check_disk_space(self):
+        """Check available disk space and clean up if needed"""
+        try:
+            total, used, free = shutil.disk_usage("/")
+            free_gb = free // (1024**3)
+            free_percent = (free / total) * 100
+            
+            print(f"Disk space: {free_gb}GB free ({free_percent:.1f}%)")
+            
+            if free_percent < 5:  # Less than 5% free
+                print("⚠️ Low disk space detected, cleaning up...")
+                self.cleanup_browser_processes()
+                # Clean logs older than 1 day
+                subprocess.run(["find", "logs/", "-name", "*.log", "-mtime", "+1", "-delete"], capture_output=True, cwd="/root/dan_scraper")
+                return False
+            return True
+        except:
+            return True
         
     def cleanup_browser_processes(self):
-        """Aggressively cleanup browser processes"""
+        """Aggressively cleanup browser processes and temp files"""
         try:
             subprocess.run(["pkill", "-9", "-f", "chrome"], capture_output=True)
             subprocess.run(["pkill", "-9", "-f", "chromium"], capture_output=True)
             time.sleep(2)
+            
+            # Clean up Chrome temp directories to prevent disk space issues
+            subprocess.run(["find", "/tmp", "-name", "tmp*", "-type", "d", "-mmin", "+30", "-exec", "rm", "-rf", "{}", "+"], capture_output=True)
+            subprocess.run(["find", "/tmp", "-name", ".com.google.Chrome.*", "-type", "d", "-exec", "rm", "-rf", "{}", "+"], capture_output=True)
+            subprocess.run(["find", "/tmp", "-name", ".org.chromium.Chromium.*", "-type", "d", "-exec", "rm", "-rf", "{}", "+"], capture_output=True)
         except:
             pass
     
@@ -29,13 +54,27 @@ class RobustActiveScraper:
         """Initialize browser with proper cleanup"""
         self.cleanup_browser_processes()
         
-        try:
-            from core.browser import get_driver
-            self.driver = get_driver(headless=True, clear_cache=True)
-            return True
-        except Exception as e:
-            print(f"Failed to initialize browser: {e}")
-            return False
+        for attempt in range(3):
+            try:
+                print(f"Initializing undetected Chrome browser...")
+                from core.browser import get_driver
+                self.driver = get_driver(headless=True, clear_cache=True)
+                print("Chrome session started successfully")
+                return True
+            except Exception as e:
+                print(f"Browser initialization attempt {attempt + 1} failed: {e}")
+                if "No space left on device" in str(e):
+                    print("Disk space issue detected, cleaning up...")
+                    self.cleanup_browser_processes()
+                    # Additional cleanup for disk space
+                    subprocess.run(["rm", "-rf", "/tmp/tmp*"], capture_output=True)
+                if attempt < 2:
+                    print("Retrying in 3 seconds...")
+                    time.sleep(3)
+        
+        print("Failed to initialize Chrome browser: No space left on device")
+        print("Please ensure Chrome and ChromeDriver are properly installed and configured.")
+        return False
     
     def close_browser(self):
         """Safely close browser"""
@@ -108,6 +147,11 @@ class RobustActiveScraper:
     def process_batch(self, tickers_batch, conn, cursor):
         """Process a batch of tickers with fresh browser"""
         success_count = 0
+        
+        # Check disk space before processing
+        if not self.check_disk_space():
+            print("❌ Insufficient disk space, skipping batch")
+            return 0
         
         # Initialize browser for this batch
         if not self.init_browser():
@@ -201,11 +245,20 @@ class RobustActiveScraper:
         
         try:
             # Get active tickers
+            print("Querying for active tickers...")
             cursor.execute("SELECT id, symbol, guru_id, list_type, last_action, per_portfolio FROM scraper_tasks WHERE active = true")
             active_tickers = cursor.fetchall()
             
+            print(f"Query returned {len(active_tickers)} active tickers")
+            
             if not active_tickers:
                 print("❌ No active tickers found")
+                # Debug: check if there are any tickers at all
+                cursor.execute("SELECT COUNT(*) FROM scraper_tasks")
+                total_count = cursor.fetchone()[0]
+                cursor.execute("SELECT COUNT(*) FROM scraper_tasks WHERE active = true")
+                active_count = cursor.fetchone()[0]
+                print(f"Debug: Total tickers: {total_count}, Active tickers: {active_count}")
                 return 0
             
             print(f"Processing {len(active_tickers)} active tickers in batches of {self.batch_size}...")
