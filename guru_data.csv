@@ -1,31 +1,1239 @@
 guru_name,guru_id,ticker,performance,last_action
-Fallback,0,AAPL,N/A,Fallback
-Fallback,0,MSFT,N/A,Fallback
-Fallback,0,GOOGL,N/A,Fallback
-Fallback,0,AMZN,N/A,Fallback
-Fallback,0,META,N/A,Fallback
-Fallback,0,BRK.B,N/A,Fallback
-Fallback,0,BRK.A,N/A,Fallback
-Fallback,0,JPM,N/A,Fallback
-Fallback,0,JNJ,N/A,Fallback
-Fallback,0,V,N/A,Fallback
-Fallback,0,PG,N/A,Fallback
-Fallback,0,MA,N/A,Fallback
-Fallback,0,UNH,N/A,Fallback
-Fallback,0,HD,N/A,Fallback
-Fallback,0,BAC,N/A,Fallback
-Fallback,0,NVDA,N/A,Fallback
-Fallback,0,PYPL,N/A,Fallback
-Fallback,0,DIS,N/A,Fallback
-Fallback,0,ADBE,N/A,Fallback
-Fallback,0,CRM,N/A,Fallback
-Fallback,0,NFLX,N/A,Fallback
-Fallback,0,INTC,N/A,Fallback
-Fallback,0,VZ,N/A,Fallback
-Fallback,0,CSCO,N/A,Fallback
-Fallback,0,ABT,N/A,Fallback
-Fallback,0,KO,N/A,Fallback
-Fallback,0,PEP,N/A,Fallback
-Fallback,0,NKE,N/A,Fallback
-Fallback,0,MRK,N/A,Fallback
-Fallback,0,WMT,N/A,Fallback
+Kahn Brothers Advisors,5144,CVX,0.06%,Held
+Kahn Brothers Advisors,5144,PG,0.06%,Increased
+Kahn Brothers Advisors,5144,BMY,5.12%,Decreased
+Kahn Brothers Advisors,5144,IBM,0.09%,Held
+Kahn Brothers Advisors,5144,PNC,0.06%,Held
+Kahn Brothers Advisors,5144,PFE,3.56%,Decreased
+Kahn Brothers Advisors,5144,AR,0.2%,Held
+Kahn Brothers Advisors,5144,MRK,7.8%,Decreased
+Kahn Brothers Advisors,5144,DIS,9.77%,Increased
+Kahn Brothers Advisors,5144,FLG,9.2%,Increased
+Kahn Brothers Advisors,5144,AIG,0.04%,Held
+Kahn Brothers Advisors,5144,CSX,0.27%,Decreased
+Kahn Brothers Advisors,5144,OBT,0.04%,Increased
+Kahn Brothers Advisors,5144,PEP,0.05%,Held
+Kahn Brothers Advisors,5144,FFH,0.37%,Held
+Kahn Brothers Advisors,5144,XOM,0.41%,Increased
+Kahn Brothers Advisors,5144,AGO,0.77%,Decreased
+Kahn Brothers Advisors,5144,GSK,5.09%,Increased
+Kahn Brothers Advisors,5144,SEB,4.95%,Decreased
+Kahn Brothers Advisors,5144,ZDGE,0.07%,Decreased
+Kahn Brothers Advisors,5144,HLN,0.25%,Decreased
+Kahn Brothers Advisors,5144,OGN,6.78%,Increased
+Kahn Brothers Advisors,5144,BAC,0.11%,Decreased
+Kahn Brothers Advisors,5144,JPM,0.16%,Increased
+Kahn Brothers Advisors,5144,CMCSA,0.05%,Increased
+Kahn Brothers Advisors,5144,TOU,0.27%,Increased
+Kahn Brothers Advisors,5144,CI,N/A,Unknown
+Kahn Brothers Advisors,5144,AAPL,0.12%,Increased
+Kahn Brothers Advisors,5144,BP,6.79%,Decreased
+Kahn Brothers Advisors,5144,WBS,0.33%,Decreased
+Kahn Brothers Advisors,5144,PEY,0.09%,Increased
+Kahn Brothers Advisors,5144,AM,0.07%,Held
+Kahn Brothers Advisors,5144,BX,0.05%,Held
+Kahn Brothers Advisors,5144,NVS,0.45%,Decreased
+Kahn Brothers Advisors,5144,PNE,0.05%,Increased
+Kahn Brothers Advisors,5144,VZ,0.07%,Decreased
+Kahn Brothers Advisors,5144,LWAY,N/A,Unknown
+Kahn Brothers Advisors,5144,RFL,0.06%,Decreased
+Kahn Brothers Advisors,5144,GNE,1.07%,Decreased
+Kahn Brothers Advisors,5144,PEG,0.06%,Decreased
+Kahn Brothers Advisors,5144,WEYS,N/A,Unknown
+Kahn Brothers Advisors,5144,SEIC,0.12%,Held
+Kahn Brothers Advisors,5144,C,15.16%,Increased
+Kahn Brothers Advisors,5144,HOLX,N/A,Unknown
+Kahn Brothers Advisors,5144,IDT,5.44%,Increased
+Kahn Brothers Advisors,5144,GOOG,1.32%,Increased
+Kahn Brothers Advisors,5144,NAVI,0.06%,Held
+Kahn Brothers Advisors,5144,MSFT,0.19%,Increased
+Kahn Brothers Advisors,5144,GTX,N/A,Unknown
+Kahn Brothers Advisors,5144,PTEN,2.28%,Decreased
+Kahn Brothers Advisors,5144,COF,N/A,Unknown
+David Rolfe,3225,POOL,1.88%,Increased
+David Rolfe,3225,CPRT,6.14%,Decreased
+David Rolfe,3225,PYPL,6.94%,Increased
+David Rolfe,3225,META,9.24%,Decreased
+David Rolfe,3225,BKNG,6.11%,Decreased
+David Rolfe,3225,V,6.44%,Decreased
+David Rolfe,3225,UNH,0.64%,Decreased
+David Rolfe,3225,SPGI,3.52%,Increased
+David Rolfe,3225,ODFL,2.85%,Increased
+David Rolfe,3225,EW,2.97%,Decreased
+David Rolfe,3225,MSI,4.73%,Increased
+David Rolfe,3225,AAPL,7.06%,Increased
+David Rolfe,3225,TSM,9.29%,Decreased
+David Rolfe,3225,ORLY,3.36%,Increased
+David Rolfe,3225,URI,3.57%,Increased
+David Rolfe,3225,TSCO,4.97%,Increased
+David Rolfe,3225,GOOGL,8.26%,Increased
+David Rolfe,3225,CDW,4.4%,Increased
+David Rolfe,3225,MSFT,7.04%,Increased
+Li Lu,4274,SOC,1.1%,Held
+Li Lu,4274,BRK.B,16.22%,Held
+Li Lu,4274,AAPL,0.84%,Held
+Li Lu,4274,OXY,2.29%,Held
+Li Lu,4274,GOOGL,16.67%,Held
+Li Lu,4274,GOOG,16.17%,Held
+Li Lu,4274,EWBC,10.43%,Held
+Li Lu,4274,PDD,17.93%,Increased
+Li Lu,4274,BAC,18.36%,Decreased
+Michael Burry,3589,MELI,1.36%,Increased
+Michael Burry,3589,REGN,1.36%,Increased
+Michael Burry,3589,EL,2.1%,Decreased
+Michael Burry,3589,BRKR,1.78%,Increased
+Michael Burry,3589,LULU,2.05%,Increased
+Michael Burry,3589,UNH,1.08%,Increased
+David Tepper,3653,META,4.58%,Decreased
+David Tepper,3653,MU,1.58%,Increased
+David Tepper,3653,BIDU,0.83%,Decreased
+David Tepper,3653,UNH,11.85%,Increased
+David Tepper,3653,IQV,0.73%,Increased
+David Tepper,3653,GT,0.14%,Increased
+David Tepper,3653,INTC,2.78%,Increased
+David Tepper,3653,BEKE,0.41%,Decreased
+David Tepper,3653,CZR,0.92%,Decreased
+David Tepper,3653,BABA,12.43%,Decreased
+David Tepper,3653,WYNN,N/A,Unknown
+David Tepper,3653,LRCX,0.6%,Decreased
+David Tepper,3653,LHX,1.36%,Increased
+David Tepper,3653,ET,1.39%,Held
+David Tepper,3653,XYZ,0.68%,Increased
+David Tepper,3653,WHR,0.42%,Increased
+David Tepper,3653,AVGO,N/A,Unknown
+David Tepper,3653,GLW,1.43%,Increased
+David Tepper,3653,UBER,3.98%,Decreased
+David Tepper,3653,PDD,3.25%,Decreased
+David Tepper,3653,ASML,0.87%,Held
+David Tepper,3653,VST,5.41%,Decreased
+David Tepper,3653,MHK,0.11%,Increased
+David Tepper,3653,JD,3.54%,Decreased
+David Tepper,3653,LVS,N/A,Unknown
+David Tepper,3653,NRG,4.93%,Decreased
+David Tepper,3653,TSM,3.6%,Increased
+David Tepper,3653,MPLX,0.46%,Held
+David Tepper,3653,AMZN,9.19%,Increased
+David Tepper,3653,QCOM,0.86%,Held
+David Tepper,3653,UAL,0.68%,Increased
+David Tepper,3653,GOOG,4.13%,Decreased
+David Tepper,3653,NVDA,4.29%,Increased
+David Tepper,3653,ORCL,0.51%,Decreased
+David Tepper,3653,LYFT,1.96%,Decreased
+David Tepper,3653,RTX,1.32%,Increased
+David Tepper,3653,MSFT,3.86%,Decreased
+David Tepper,3653,DAL,0.42%,Increased
+Guy Spier,7098,BABA,1.74%,Held
+Guy Spier,7098,BRK.A,7.06%,Held
+Guy Spier,7098,MCO,4.37%,Held
+Guy Spier,7098,BRK.B,22.04%,Held
+Guy Spier,7098,AMR,0.29%,Held
+Guy Spier,7098,AXP,21.62%,Held
+Guy Spier,7098,MA,11.92%,Held
+Guy Spier,7098,MU,7.96%,Held
+Guy Spier,7098,DJCO,1.57%,Held
+Guy Spier,7098,GOOGL,0.91%,Held
+Guy Spier,7098,SRG,0.5%,Held
+Guy Spier,7098,CNR,0.24%,Increased
+Guy Spier,7098,BAC,11.73%,Held
+Daniel Loeb,398,SN,1.56%,Increased
+Daniel Loeb,398,CRS,2.72%,Decreased
+Daniel Loeb,398,FLYX,0.03%,Held
+Daniel Loeb,398,BN,3.79%,Increased
+Daniel Loeb,398,CSGP,3.26%,Increased
+Daniel Loeb,398,TDS,3.14%,Decreased
+Daniel Loeb,398,J,2.18%,Decreased
+Daniel Loeb,398,META,1.45%,Increased
+Daniel Loeb,398,FTV,0.79%,Decreased
+Daniel Loeb,398,RAL,0.08%,Increased
+Daniel Loeb,398,SDRL,N/A,Unknown
+Daniel Loeb,398,TLN,3%,Increased
+Daniel Loeb,398,HES,N/A,Unknown
+Daniel Loeb,398,WDAY,0.94%,Increased
+Daniel Loeb,398,EQT,N/A,Unknown
+Daniel Loeb,398,ICE,2.29%,Decreased
+Daniel Loeb,398,CASY,2.41%,Increased
+Daniel Loeb,398,PINS,N/A,Unknown
+Daniel Loeb,398,FLUT,4.01%,Increased
+Daniel Loeb,398,COOP,1.81%,Increased
+Daniel Loeb,398,DHR,1.3%,Increased
+Daniel Loeb,398,CTEV,0.02%,Increased
+Daniel Loeb,398,LPLA,3.08%,Held
+Daniel Loeb,398,PCG,9.35%,Held
+Daniel Loeb,398,TTAN,0.02%,Increased
+Daniel Loeb,398,PRMB,2.24%,Increased
+Daniel Loeb,398,RKT,0.88%,Increased
+Daniel Loeb,398,T,N/A,Unknown
+Daniel Loeb,398,VST,3.18%,Increased
+Daniel Loeb,398,CRH,3.12%,Decreased
+Daniel Loeb,398,SHCO,0.5%,Decreased
+Daniel Loeb,398,KVUE,2.34%,Decreased
+Daniel Loeb,398,GTLS,0.46%,Increased
+Daniel Loeb,398,X,N/A,Unknown
+Daniel Loeb,398,TSM,4.25%,Decreased
+Daniel Loeb,398,SABR,0.03%,Increased
+Daniel Loeb,398,CPAY,2.98%,Increased
+Daniel Loeb,398,FIX,1.3%,Increased
+Daniel Loeb,398,LYV,3.92%,Decreased
+Daniel Loeb,398,AUR,0.07%,Held
+Daniel Loeb,398,FLS,0.82%,Increased
+Daniel Loeb,398,AMZN,7.8%,Increased
+Daniel Loeb,398,APO,2.37%,Decreased
+Daniel Loeb,398,NVDA,5.81%,Increased
+Daniel Loeb,398,RBA,0.97%,Decreased
+Daniel Loeb,398,DOCU,0.64%,Increased
+Daniel Loeb,398,ARDT,0.01%,Increased
+Daniel Loeb,398,MSFT,2.61%,Increased
+Daniel Loeb,398,ASIC,0.01%,Increased
+Daniel Loeb,398,COF,5.04%,Decreased
+Daniel Loeb,398,SE,0.1%,Increased
+Mason Hawkins,5395,SN,2.65%,Decreased
+Mason Hawkins,5395,CLW,1.29%,Increased
+Mason Hawkins,5395,IAC,5.52%,Increased
+Mason Hawkins,5395,MLCO,2.33%,Increased
+Mason Hawkins,5395,MAT,7.18%,Increased
+Mason Hawkins,5395,PK,0.69%,Decreased
+Mason Hawkins,5395,ACMR,1.55%,Increased
+Mason Hawkins,5395,PYPL,2.12%,Decreased
+Mason Hawkins,5395,HSIC,0.08%,Increased
+Mason Hawkins,5395,H,2.16%,Decreased
+Mason Hawkins,5395,WEST,0.77%,Decreased
+Mason Hawkins,5395,ENOV,0.06%,Held
+Mason Hawkins,5395,AMG,0.07%,Decreased
+Mason Hawkins,5395,DIS,1.82%,Increased
+Mason Hawkins,5395,PCH,1.85%,Increased
+Mason Hawkins,5395,MGM,3.08%,Decreased
+Mason Hawkins,5395,HDB,0.15%,Decreased
+Mason Hawkins,5395,DINO,3.63%,Decreased
+Mason Hawkins,5395,MSGS,0.04%,Held
+Mason Hawkins,5395,HHH,N/A,Unknown
+Mason Hawkins,5395,GHC,2.05%,Decreased
+Mason Hawkins,5395,TIGO,1.96%,Decreased
+Mason Hawkins,5395,HTHT,1.53%,Decreased
+Mason Hawkins,5395,LAZ,0.06%,Held
+Mason Hawkins,5395,FDX,4.35%,Decreased
+Mason Hawkins,5395,BIO,3.84%,Decreased
+Mason Hawkins,5395,DOLE,1.73%,Increased
+Mason Hawkins,5395,ACI,3.75%,Decreased
+Mason Hawkins,5395,PVH,4.74%,Increased
+Mason Hawkins,5395,OMI,0.06%,Increased
+Mason Hawkins,5395,FIS,3.9%,Decreased
+Mason Hawkins,5395,BATRK,1.58%,Decreased
+Mason Hawkins,5395,KSPI,0.81%,Increased
+Mason Hawkins,5395,REGN,4.25%,Increased
+Mason Hawkins,5395,OSCR,0.95%,Decreased
+Mason Hawkins,5395,TRIP,1.7%,Increased
+Mason Hawkins,5395,RXO,0.04%,Held
+Mason Hawkins,5395,WTM,1.91%,Increased
+Mason Hawkins,5395,CNH,2.46%,Decreased
+Mason Hawkins,5395,ALX,0.72%,Increased
+Mason Hawkins,5395,LYV,0.11%,Held
+Mason Hawkins,5395,XPO,0.1%,Held
+Mason Hawkins,5395,KHC,4.78%,Increased
+Mason Hawkins,5395,SHEN,1.58%,Increased
+Mason Hawkins,5395,ANGI,1.59%,Increased
+Mason Hawkins,5395,CAH,0.09%,Decreased
+Mason Hawkins,5395,GOOG,N/A,Unknown
+Mason Hawkins,5395,CNX,7.58%,Decreased
+Mason Hawkins,5395,FBIN,2.68%,Increased
+Mason Hawkins,5395,SAM,1.02%,Held
+Mason Hawkins,5395,ESRT,1.07%,Increased
+Carl Icahn,1640,BLCO,0.58%,Held
+Carl Icahn,1640,SD,0.66%,Held
+Carl Icahn,1640,IEP,50.47%,Increased
+Carl Icahn,1640,SWX,7.11%,Held
+Carl Icahn,1640,CVI,23.97%,Increased
+Carl Icahn,1640,AEP,1.59%,Held
+Carl Icahn,1640,CTRI,1.82%,Increased
+Carl Icahn,1640,UAN,4.69%,Increased
+Carl Icahn,1640,IFF,3.5%,Held
+Carl Icahn,1640,BHC,2.93%,Held
+Carl Icahn,1640,ILMN,N/A,Unknown
+Carl Icahn,1640,DAN,N/A,Unknown
+Carl Icahn,1640,CZR,0.88%,Held
+Carl Icahn,1640,JBLU,1.8%,Held
+Prem Watsa,2051,CIGI,0.15%,Held
+Prem Watsa,2051,OLA,29.9%,Held
+Prem Watsa,2051,JNJ,0.6%,Held
+Prem Watsa,2051,MU,N/A,Unknown
+Prem Watsa,2051,ATS,4.23%,Held
+Prem Watsa,2051,PFE,0.84%,Held
+Prem Watsa,2051,OXY,13.58%,Increased
+Prem Watsa,2051,TAP,3.13%,Increased
+Prem Watsa,2051,UAA,2.3%,Held
+Prem Watsa,2051,MRK,0.73%,Held
+Prem Watsa,2051,KKR,0.14%,Held
+Prem Watsa,2051,HP,0.79%,Increased
+Prem Watsa,2051,FNV,0.15%,Held
+Prem Watsa,2051,MX,0.03%,Held
+Prem Watsa,2051,MGM,N/A,Unknown
+Prem Watsa,2051,BRK.A,0.04%,Held
+Prem Watsa,2051,ATHM,0.07%,Held
+Prem Watsa,2051,CPRI,0.07%,Held
+Prem Watsa,2051,CVS,9.99%,Held
+Prem Watsa,2051,CLF,6.05%,Held
+Prem Watsa,2051,TSM,1.13%,Decreased
+Prem Watsa,2051,KW,4.83%,Held
+Prem Watsa,2051,LWAY,0.04%,Increased
+Prem Watsa,2051,BB,9.98%,Decreased
+Prem Watsa,2051,GNTX,N/A,Unknown
+Prem Watsa,2051,KHC,6.74%,Increased
+Prem Watsa,2051,GM,0.99%,Held
+Prem Watsa,2051,PENN,0.05%,Increased
+Prem Watsa,2051,BNS,1.06%,Held
+Prem Watsa,2051,GTX,0.17%,Held
+Christ Bloomstran,5167,CVX,0.13%,Increased
+Christ Bloomstran,5167,SYF,0.04%,Held
+Christ Bloomstran,5167,SMHI,0.15%,Held
+Christ Bloomstran,5167,MRK,0.5%,Held
+Christ Bloomstran,5167,DIS,2.52%,Increased
+Christ Bloomstran,5167,DG,14.91%,Increased
+Christ Bloomstran,5167,COST,0.52%,Decreased
+Christ Bloomstran,5167,GE,0.34%,Decreased
+Christ Bloomstran,5167,GEV,0.26%,Decreased
+Christ Bloomstran,5167,XOM,0.86%,Increased
+Christ Bloomstran,5167,VLO,3.76%,Increased
+Christ Bloomstran,5167,BRK.A,11.9%,Held
+Christ Bloomstran,5167,DINO,2.02%,Increased
+Christ Bloomstran,5167,CMI,1.85%,Held
+Christ Bloomstran,5167,DECK,3.05%,Increased
+Christ Bloomstran,5167,NXPI,0.42%,Held
+Christ Bloomstran,5167,AXP,0.2%,Held
+Christ Bloomstran,5167,ALK,2.59%,Increased
+Christ Bloomstran,5167,OLN,2.25%,Increased
+Christ Bloomstran,5167,DLTR,7.06%,Increased
+Christ Bloomstran,5167,FLEX,0.04%,Increased
+Christ Bloomstran,5167,EQNR,1.8%,Increased
+Christ Bloomstran,5167,AAPL,0.12%,Held
+Christ Bloomstran,5167,NKE,N/A,Unknown
+Christ Bloomstran,5167,TRV,0.72%,Decreased
+Christ Bloomstran,5167,K,6.79%,Decreased
+Christ Bloomstran,5167,FIVE,5.96%,Increased
+Christ Bloomstran,5167,NEM,5.56%,Increased
+Christ Bloomstran,5167,BRK.B,16.86%,Increased
+Christ Bloomstran,5167,SHEL,0.05%,Held
+Christ Bloomstran,5167,OVV,0.09%,Held
+Christ Bloomstran,5167,GEHC,0.05%,Held
+Christ Bloomstran,5167,SBUX,3.08%,Increased
+Christ Bloomstran,5167,KO,0.16%,Decreased
+Nelson Peltz,276,UHAL,0.56%,Decreased
+Nelson Peltz,276,SOLV,16.93%,Held
+Nelson Peltz,276,JHG,32.64%,Held
+Nelson Peltz,276,IVZ,6.08%,Decreased
+Nelson Peltz,276,GEHC,0.01%,Held
+Nelson Peltz,276,WEN,9.17%,Increased
+Nelson Peltz,276,ALL,0.53%,Decreased
+Nelson Peltz,276,GE,27.36%,Held
+Chris Hohn,3090,MCO,13.1%,Increased
+Chris Hohn,3090,SPGI,11.53%,Increased
+Chris Hohn,3090,V,13.35%,Increased
+Chris Hohn,3090,GOOGL,1.1%,Decreased
+Chris Hohn,3090,GOOG,4.54%,Decreased
+Chris Hohn,3090,CNR,4.72%,Decreased
+Chris Hohn,3090,MSFT,17.23%,Increased
+Chris Hohn,3090,GE,24.12%,Decreased
+Chris Hohn,3090,CP,8.26%,Decreased
+Warren Buffett,5378,CVX,6.79%,Increased
+Warren Buffett,5378,POOL,0.39%,Increased
+Warren Buffett,5378,LLYVK,0.34%,Held
+Warren Buffett,5378,MCO,4.81%,Held
+Warren Buffett,5378,V,1.14%,Held
+Warren Buffett,5378,UNH,0.61%,Increased
+Warren Buffett,5378,OXY,4.32%,Held
+Warren Buffett,5378,DEO,0.01%,Held
+Warren Buffett,5378,LILAK,N/A,Unknown
+Warren Buffett,5378,LEN.B,0.01%,Increased
+Warren Buffett,5378,LEN,0.3%,Increased
+Warren Buffett,5378,AXP,18.78%,Held
+Warren Buffett,5378,SIRI,1.07%,Held
+Warren Buffett,5378,CB,3.04%,Held
+Warren Buffett,5378,AON,0.57%,Held
+Warren Buffett,5378,BAC,11.12%,Decreased
+Warren Buffett,5378,BATRK,N/A,Unknown
+Warren Buffett,5378,LLYVA,0.15%,Held
+Warren Buffett,5378,HEI.A,0.13%,Increased
+Warren Buffett,5378,AAPL,22.31%,Decreased
+Warren Buffett,5378,MA,0.87%,Held
+Warren Buffett,5378,NUE,0.33%,Increased
+Warren Buffett,5378,CHTR,0.17%,Decreased
+Warren Buffett,5378,ALLY,0.44%,Held
+Warren Buffett,5378,NVR,0.03%,Held
+Warren Buffett,5378,KHC,3.26%,Held
+Warren Buffett,5378,LILA,0.01%,Held
+Warren Buffett,5378,TMUS,N/A,Unknown
+Warren Buffett,5378,ALLE,0.04%,Increased
+Warren Buffett,5378,VRSN,1.49%,Held
+Warren Buffett,5378,JEF,0.01%,Held
+Warren Buffett,5378,DHI,0.07%,Decreased
+Warren Buffett,5378,DPZ,0.46%,Increased
+Warren Buffett,5378,AMZN,0.85%,Held
+Warren Buffett,5378,LAMR,0.06%,Increased
+Warren Buffett,5378,DVA,1.87%,Decreased
+Warren Buffett,5378,LPX,0.19%,Held
+Warren Buffett,5378,STZ,0.85%,Increased
+Warren Buffett,5378,KO,10.99%,Held
+Warren Buffett,5378,COF,0.59%,Held
+Warren Buffett,5378,KR,1.39%,Held
+Bruce Berkowitz,1357,BRK.A,0.06%,Held
+Bruce Berkowitz,1357,BRK.B,1.92%,Decreased
+Bruce Berkowitz,1357,AAPL,0.04%,Held
+Bruce Berkowitz,1357,WRB,1.57%,Held
+Bruce Berkowitz,1357,EOG,0.02%,Held
+Bruce Berkowitz,1357,JOE,78.54%,Decreased
+Bruce Berkowitz,1357,ET,0.25%,Held
+Bruce Berkowitz,1357,OXY,0.24%,Increased
+Bruce Berkowitz,1357,OZK,3.52%,Increased
+Bruce Berkowitz,1357,CNR,0.03%,Held
+Bruce Berkowitz,1357,FANG,0.04%,Held
+Bruce Berkowitz,1357,EPD,13.77%,Held
+Bill Ackman,3145,QSR,11.11%,Held
+Bill Ackman,3145,HLT,5.88%,Increased
+Bill Ackman,3145,BN,18.54%,Increased
+Bill Ackman,3145,HHH,9.27%,Held
+Bill Ackman,3145,AMZN,9.31%,Increased
+Bill Ackman,3145,GOOGL,6.88%,Increased
+Bill Ackman,3145,GOOG,8.17%,Held
+Bill Ackman,3145,SEG,0.68%,Held
+Bill Ackman,3145,CMG,8.81%,Held
+Bill Ackman,3145,UBER,20.59%,Held
+Bill Ackman,3145,HTZ,0.76%,Increased
+Bill Ackman,3145,CP,N/A,Unknown
+Michael Larson,5149,CPNG,0.58%,Held
+Michael Larson,5149,CAT,5.97%,Held
+Michael Larson,5149,DE,3.79%,Held
+Michael Larson,5149,WM,15.44%,Held
+Michael Larson,5149,CNR,11.94%,Held
+Michael Larson,5149,ECL,2.94%,Held
+Michael Larson,5149,SDGR,0.29%,Held
+Michael Larson,5149,WCN,0.84%,Held
+Michael Larson,5149,MCD,0.2%,Held
+Michael Larson,5149,PCAR,0.2%,Held
+Michael Larson,5149,ONON,0.05%,Held
+Michael Larson,5149,MSGS,0.26%,Held
+Michael Larson,5149,DHR,0.15%,Held
+Michael Larson,5149,MSFT,27.27%,Decreased
+Michael Larson,5149,FDX,1.21%,Held
+Michael Larson,5149,WMT,1.86%,Held
+Michael Larson,5149,HRL,0.14%,Held
+Michael Larson,5149,WST,0.2%,Held
+Michael Larson,5149,KHC,0.14%,Held
+Michael Larson,5149,BRK.B,24.53%,Increased
+Michael Larson,5149,BUD,0.24%,Held
+Michael Larson,5149,VLTO,0.03%,Held
+Michael Larson,5149,KOF,1.26%,Held
+Michael Larson,5149,CCI,0.31%,Held
+Michael Larson,5149,UPS,0.16%,Held
+Jeffrey Ubben,5214,LLYVK,5.79%,Increased
+Jeffrey Ubben,5214,SSD,3.9%,Increased
+Jeffrey Ubben,5214,RDFN,1.16%,Increased
+Jeffrey Ubben,5214,META,8.22%,Decreased
+Jeffrey Ubben,5214,V,7.89%,Decreased
+Jeffrey Ubben,5214,EXPE,0.84%,Decreased
+Jeffrey Ubben,5214,CRM,14.12%,Held
+Jeffrey Ubben,5214,DIS,11.27%,Decreased
+Jeffrey Ubben,5214,NU,N/A,Unknown
+Jeffrey Ubben,5214,COOP,2.41%,Increased
+Jeffrey Ubben,5214,CCCS,0.48%,Increased
+Jeffrey Ubben,5214,CBRE,1.47%,Increased
+Jeffrey Ubben,5214,RKT,3.83%,Increased
+Jeffrey Ubben,5214,RBLX,8.89%,Decreased
+Jeffrey Ubben,5214,NSIT,7.06%,Decreased
+Jeffrey Ubben,5214,LLYVA,2.52%,Increased
+Jeffrey Ubben,5214,LYV,2.39%,Held
+Jeffrey Ubben,5214,MDB,2.59%,Increased
+Jeffrey Ubben,5214,AMZN,15.17%,Increased
+Jeffrey Ubben,5214,TOST,N/A,Unknown
+Stephen Mandel,3228,BN,2.47%,Increased
+Stephen Mandel,3228,META,8.75%,Decreased
+Stephen Mandel,3228,BKNG,2.47%,Increased
+Stephen Mandel,3228,CVNA,4.23%,Decreased
+Stephen Mandel,3228,UNH,3.76%,Increased
+Stephen Mandel,3228,TLN,2.25%,Held
+Stephen Mandel,3228,ARES,N/A,Unknown
+Stephen Mandel,3228,KKR,4.94%,Increased
+Stephen Mandel,3228,CRM,3.62%,Increased
+Stephen Mandel,3228,EQT,3.12%,Increased
+Stephen Mandel,3228,LPLA,5%,Increased
+Stephen Mandel,3228,WIX,2.44%,Increased
+Stephen Mandel,3228,WING,N/A,Unknown
+Stephen Mandel,3228,TOL,N/A,Unknown
+Stephen Mandel,3228,ASML,3.23%,Decreased
+Stephen Mandel,3228,VST,8.92%,Increased
+Stephen Mandel,3228,PM,3.57%,Decreased
+Stephen Mandel,3228,TSM,5.54%,Decreased
+Stephen Mandel,3228,CDNS,N/A,Unknown
+Stephen Mandel,3228,LLY,N/A,Unknown
+Stephen Mandel,3228,AMZN,7.86%,Increased
+Stephen Mandel,3228,INTU,4.33%,Decreased
+Stephen Mandel,3228,SBUX,3.63%,Decreased
+Stephen Mandel,3228,MSFT,6.57%,Decreased
+Stephen Mandel,3228,FLUT,3.79%,Decreased
+Stephen Mandel,3228,COF,4.66%,Decreased
+Stephen Mandel,3228,APP,3.14%,Decreased
+David Einhorn,8420,DHT,3.54%,Increased
+David Einhorn,8420,GANX,0.04%,Held
+David Einhorn,8420,PTON,0.05%,Decreased
+David Einhorn,8420,SDRL,1.79%,Held
+David Einhorn,8420,KD,5.97%,Decreased
+David Einhorn,8420,GRBK,25.59%,Held
+David Einhorn,8420,CNR,6.46%,Decreased
+David Einhorn,8420,GPK,4.26%,Increased
+David Einhorn,8420,SNX,0.19%,Decreased
+David Einhorn,8420,LBTYA,2.25%,Held
+David Einhorn,8420,ACHC,0.84%,Increased
+David Einhorn,8420,ROIV,2.21%,Decreased
+David Einhorn,8420,WFRD,2.08%,Increased
+David Einhorn,8420,DLTR,N/A,Unknown
+David Einhorn,8420,VSCO,0.71%,Increased
+David Einhorn,8420,NUVB,N/A,Unknown
+David Einhorn,8420,VTRS,N/A,Unknown
+David Einhorn,8420,CI,1.33%,Increased
+David Einhorn,8420,CPRI,2.65%,Held
+David Einhorn,8420,CNC,1.96%,Increased
+David Einhorn,8420,FLR,8.42%,Increased
+David Einhorn,8420,CNH,4.39%,Decreased
+David Einhorn,8420,GPRO,0.09%,Held
+David Einhorn,8420,COYA,0.41%,Held
+David Einhorn,8420,PENN,5.76%,Increased
+David Einhorn,8420,TEVA,2.72%,Increased
+David Einhorn,8420,BHF,6.38%,Decreased
+David Einhorn,8420,ALIT,N/A,Unknown
+David Einhorn,8420,SHC,0.11%,Increased
+David Einhorn,8420,HPQ,3.17%,Held
+David Einhorn,8420,GLPG,0.58%,Held
+Greg Alexander,1278,LAD,21.98%,Held
+Greg Alexander,1278,NBIS,5.04%,Held
+Greg Alexander,1278,RMNI,2.9%,Held
+Greg Alexander,1278,GPI,32.31%,Held
+Greg Alexander,1278,SDHC,1.26%,Increased
+Greg Alexander,1278,EQH,36.51%,Held
+Alex Roepers,4438,WCC,3.07%,Held
+Alex Roepers,4438,BLDR,7.09%,Increased
+Alex Roepers,4438,DAR,N/A,Unknown
+Alex Roepers,4438,GTLS,23.08%,Increased
+Alex Roepers,4438,EMN,5.13%,Decreased
+Alex Roepers,4438,ASH,7.6%,Increased
+Alex Roepers,4438,WFRD,16.62%,Increased
+Alex Roepers,4438,GT,4.84%,Increased
+Alex Roepers,4438,APTV,12.22%,Decreased
+Alex Roepers,4438,OSK,12.11%,Decreased
+Alex Roepers,4438,PVH,4.55%,Increased
+Alex Roepers,4438,TEX,3.69%,Held
+Chuck Akre,616,BN,11.64%,Increased
+Chuck Akre,616,CPRT,0.58%,Increased
+Chuck Akre,616,CSGP,7.33%,Decreased
+Chuck Akre,616,MCO,11.33%,Decreased
+Chuck Akre,616,AMT,1.98%,Decreased
+Chuck Akre,616,V,11.04%,Held
+Chuck Akre,616,KKR,11.53%,Held
+Chuck Akre,616,ABNB,4.5%,Increased
+Chuck Akre,616,DHR,3.43%,Held
+Chuck Akre,616,CCCS,1.36%,Increased
+Chuck Akre,616,VRSK,0.03%,Decreased
+Chuck Akre,616,GSHD,0.38%,Held
+Chuck Akre,616,ROP,7.99%,Decreased
+Chuck Akre,616,MA,18.14%,Decreased
+Chuck Akre,616,ORLY,8.31%,Decreased
+Chuck Akre,616,KMX,0.1%,Decreased
+Chuck Akre,616,SOPH,0.11%,Increased
+Chuck Akre,616,DBRG,N/A,Unknown
+Chuck Akre,616,BRK.B,0.07%,Decreased
+Chuck Akre,616,FICO,0.16%,Increased
+Pat Dorsey,4269,SEMR,1.85%,Increased
+Pat Dorsey,4269,DHR,16.42%,Increased
+Pat Dorsey,4269,PYPL,N/A,Unknown
+Pat Dorsey,4269,META,16.22%,Decreased
+Pat Dorsey,4269,AER,14.28%,Increased
+Pat Dorsey,4269,AZO,11.87%,Decreased
+Pat Dorsey,4269,BKNG,9.49%,Increased
+Pat Dorsey,4269,ENOV,7.18%,Increased
+Pat Dorsey,4269,WIX,2.09%,Decreased
+Pat Dorsey,4269,GOOG,10.53%,Increased
+Pat Dorsey,4269,SPT,N/A,Unknown
+Pat Dorsey,4269,ASML,10.06%,Increased
+Fred Martin,2095,SN,0.88%,Increased
+Fred Martin,2095,RCL,100%,Decreased
+Fred Martin,2095,SSD,0.79%,Decreased
+Fred Martin,2095,MTLS,0.2%,Increased
+Fred Martin,2095,UAA,0.69%,Decreased
+Fred Martin,2095,SFIX,1.31%,Decreased
+Fred Martin,2095,DV,0.58%,Decreased
+Fred Martin,2095,LGIH,0.85%,Decreased
+Fred Martin,2095,PRO,0.42%,Increased
+Fred Martin,2095,STRA,N/A,Unknown
+Fred Martin,2095,MCHP,3.51%,Decreased
+Fred Martin,2095,SSTI,0.11%,Decreased
+Fred Martin,2095,EXE,5.87%,Decreased
+Fred Martin,2095,SMCI,9.12%,Increased
+Fred Martin,2095,GGG,0.66%,Decreased
+Fred Martin,2095,FOXF,0.07%,Decreased
+Fred Martin,2095,FND,1.69%,Decreased
+Fred Martin,2095,TREX,1.13%,Decreased
+Fred Martin,2095,AKAM,2.8%,Decreased
+Fred Martin,2095,TTWO,1.49%,Decreased
+Fred Martin,2095,DLB,2.19%,Decreased
+Fred Martin,2095,CLB,1.2%,Decreased
+Fred Martin,2095,MSM,N/A,Unknown
+Fred Martin,2095,AVGO,0.01%,Increased
+Fred Martin,2095,CTRA,3.35%,Decreased
+Fred Martin,2095,ANET,3.97%,Increased
+Fred Martin,2095,GEOS,0.34%,Decreased
+Fred Martin,2095,LSTR,0.82%,Decreased
+Fred Martin,2095,ALRM,3.78%,Increased
+Fred Martin,2095,VRNT,0.15%,Decreased
+Fred Martin,2095,IPGP,0.76%,Decreased
+Fred Martin,2095,SRDX,0.06%,Decreased
+Fred Martin,2095,EGAN,0.11%,Decreased
+Fred Martin,2095,BAC,N/A,Unknown
+Fred Martin,2095,GNRC,1.75%,Decreased
+Fred Martin,2095,PAYX,0.44%,Decreased
+Fred Martin,2095,CGNX,2.89%,Increased
+Fred Martin,2095,ADSK,2.02%,Decreased
+Fred Martin,2095,SMTC,2.5%,Increased
+Fred Martin,2095,POWI,2.2%,Decreased
+Fred Martin,2095,SPSC,1.11%,Increased
+Fred Martin,2095,CELH,0.64%,Decreased
+Fred Martin,2095,PLXS,4.26%,Decreased
+Fred Martin,2095,MYGN,0.08%,Decreased
+Fred Martin,2095,AAPL,0.01%,Increased
+Fred Martin,2095,CTLP,0.67%,Increased
+Fred Martin,2095,IDCC,4.12%,Decreased
+Fred Martin,2095,CEVA,0.26%,Increased
+Fred Martin,2095,PRLB,2.08%,Increased
+Fred Martin,2095,MLKN,0.21%,Increased
+Fred Martin,2095,GNTX,2.07%,Decreased
+Fred Martin,2095,ISRG,1.19%,Decreased
+Fred Martin,2095,VSAT,1.63%,Increased
+Fred Martin,2095,PGNY,0.27%,Decreased
+Fred Martin,2095,INMD,0.08%,Increased
+Fred Martin,2095,AXGN,0.03%,Increased
+Fred Martin,2095,AIOT,0.66%,Decreased
+Fred Martin,2095,THRM,N/A,Unknown
+Fred Martin,2095,MDXG,0.04%,Increased
+Fred Martin,2095,SRI,0.03%,Decreased
+Fred Martin,2095,SNA,2.32%,Decreased
+Fred Martin,2095,ALGN,3.06%,Increased
+Fred Martin,2095,GRMN,5.67%,Increased
+Fred Martin,2095,INTU,1.58%,Decreased
+Fred Martin,2095,KRNT,0.75%,Decreased
+Fred Martin,2095,MSFT,0.01%,Held
+Fred Martin,2095,PSTG,6.01%,Decreased
+Fred Martin,2095,ZIP,0.43%,Increased
+Glenn Greenberg,833,LAD,100%,Decreased
+Glenn Greenberg,833,AN,5.53%,Increased
+Glenn Greenberg,833,TXN,N/A,Unknown
+Glenn Greenberg,833,MCO,0.01%,Held
+Glenn Greenberg,833,META,0.01%,Increased
+Glenn Greenberg,833,MAR,0.01%,Held
+Glenn Greenberg,833,V,0.01%,Held
+Glenn Greenberg,833,UNH,0.01%,Increased
+Glenn Greenberg,833,RYAAY,7.11%,Decreased
+Glenn Greenberg,833,OMF,10.28%,Increased
+Glenn Greenberg,833,SNX,11.72%,Decreased
+Glenn Greenberg,833,LEN,5.47%,Decreased
+Glenn Greenberg,833,SPGI,N/A,Unknown
+Glenn Greenberg,833,FG,3.83%,Decreased
+Glenn Greenberg,833,FNF,4.48%,Decreased
+Glenn Greenberg,833,CMCSA,0.03%,Held
+Glenn Greenberg,833,BAC,0.03%,Increased
+Glenn Greenberg,833,JPM,0.04%,Held
+Glenn Greenberg,833,BLDR,4.89%,Increased
+Glenn Greenberg,833,PRI,5.17%,Decreased
+Glenn Greenberg,833,ELV,9.89%,Decreased
+Glenn Greenberg,833,MA,0.01%,Held
+Glenn Greenberg,833,MRP,5.14%,Decreased
+Glenn Greenberg,833,AM,0.82%,Decreased
+Glenn Greenberg,833,USB,0.02%,Increased
+Glenn Greenberg,833,MPLX,5.05%,Decreased
+Glenn Greenberg,833,ALLY,N/A,Unknown
+Glenn Greenberg,833,HCA,0.03%,Increased
+Glenn Greenberg,833,DHI,3.42%,Decreased
+Glenn Greenberg,833,SLM,7.92%,Increased
+Glenn Greenberg,833,AMZN,0.01%,Held
+Glenn Greenberg,833,GOOGL,0.09%,Held
+Glenn Greenberg,833,GOOG,0.02%,Held
+Glenn Greenberg,833,MSFT,0.01%,Decreased
+Glenn Greenberg,833,PGR,0.01%,Held
+Glenn Greenberg,833,ICLR,0.02%,Held
+Glenn Greenberg,833,COF,8.94%,Decreased
+Terry Smith,808,PG,3.16%,Decreased
+Terry Smith,808,TXN,2.45%,Decreased
+Terry Smith,808,CHH,0.4%,Held
+Terry Smith,808,META,11.44%,Decreased
+Terry Smith,808,MAR,5.03%,Decreased
+Terry Smith,808,V,5.95%,Decreased
+Terry Smith,808,ZTS,1.95%,Increased
+Terry Smith,808,MEDP,0.17%,Held
+Terry Smith,808,GGG,0.34%,Decreased
+Terry Smith,808,MANH,0.25%,Increased
+Terry Smith,808,MTD,3.01%,Decreased
+Terry Smith,808,IDXX,6.15%,Decreased
+Terry Smith,808,VRSK,0.24%,Decreased
+Terry Smith,808,EFX,N/A,Unknown
+Terry Smith,808,MSFT,10.68%,Decreased
+Terry Smith,808,SYK,8.04%,Decreased
+Terry Smith,808,VRT,0.4%,Increased
+Terry Smith,808,HD,0.13%,Decreased
+Terry Smith,808,EXPO,0.24%,Decreased
+Terry Smith,808,CHD,2.85%,Decreased
+Terry Smith,808,QLYS,0.45%,Held
+Terry Smith,808,PAYC,0.42%,Held
+Terry Smith,808,DOCS,0.36%,Increased
+Terry Smith,808,PM,7.18%,Decreased
+Terry Smith,808,CPRX,0.26%,Increased
+Terry Smith,808,FTNT,3.87%,Decreased
+Terry Smith,808,MA,0.07%,Decreased
+Terry Smith,808,NKE,1.89%,Decreased
+Terry Smith,808,MSCI,0.42%,Held
+Terry Smith,808,SABR,0.3%,Held
+Terry Smith,808,WAT,5.47%,Decreased
+Terry Smith,808,OTIS,2.5%,Decreased
+Terry Smith,808,VRSN,0.34%,Decreased
+Terry Smith,808,ADP,5.84%,Decreased
+Terry Smith,808,GOOGL,5.21%,Decreased
+Terry Smith,808,ODD,0.46%,Decreased
+Terry Smith,808,INTU,1.26%,Increased
+Terry Smith,808,ROL,0.36%,Decreased
+Terry Smith,808,NSSC,0.12%,Increased
+Terry Smith,808,CLX,0.32%,Held
+Terry Smith,808,BF.B,N/A,Unknown
+Francis Chou,3437,POOL,1.7%,Held
+Francis Chou,3437,MCO,1.62%,Held
+Francis Chou,3437,SYF,7.87%,Held
+Francis Chou,3437,PYPL,1.67%,Held
+Francis Chou,3437,VTS,0.02%,Held
+Francis Chou,3437,OXY,7.19%,Increased
+Francis Chou,3437,CYD,0.31%,Decreased
+Francis Chou,3437,RYAAY,0.19%,Held
+Francis Chou,3437,WFC,2.61%,Held
+Francis Chou,3437,MX,0.36%,Increased
+Francis Chou,3437,BABA,2.6%,Held
+Francis Chou,3437,BRK.A,34.28%,Held
+Francis Chou,3437,LBTYA,N/A,Unknown
+Francis Chou,3437,IMO,0.22%,Held
+Francis Chou,3437,AGO,0.52%,Held
+Francis Chou,3437,MBI,0.76%,Held
+Francis Chou,3437,STLA,3.8%,Decreased
+Francis Chou,3437,SIRI,8.82%,Held
+Francis Chou,3437,BAC,1.29%,Held
+Francis Chou,3437,AAPL,4.94%,Held
+Francis Chou,3437,SNRE,0.07%,Held
+Francis Chou,3437,CASH,1.19%,Held
+Francis Chou,3437,ALLY,4.8%,Held
+Francis Chou,3437,GM,1.4%,Held
+Francis Chou,3437,JEF,0.33%,Held
+Francis Chou,3437,C,2.69%,Held
+Francis Chou,3437,CACC,0.07%,Held
+Francis Chou,3437,LEA,0.21%,Held
+Francis Chou,3437,GOOG,7.99%,Held
+Francis Chou,3437,MG,0.21%,Held
+Francis Chou,3437,LPX,0.28%,Held
+Mohnish Pabrai,831,AN,4.46%,Increased
+Mohnish Pabrai,831,AMR,19.06%,Increased
+Mohnish Pabrai,831,NE,16.9%,Held
+Mohnish Pabrai,831,HCC,30.37%,Increased
+Mohnish Pabrai,831,VAL,29.21%,Increased
+Seth Klarman,2085,QSR,6.5%,Increased
+Seth Klarman,2085,DG,7.39%,Increased
+Seth Klarman,2085,LBTYA,1.23%,Held
+Seth Klarman,2085,LBRDA,0.02%,Held
+Seth Klarman,2085,WTW,9.75%,Decreased
+Seth Klarman,2085,FI,3.74%,Increased
+Seth Klarman,2085,LBRDK,1.78%,Increased
+Seth Klarman,2085,CRH,8.5%,Increased
+Seth Klarman,2085,FIS,7.47%,Increased
+Seth Klarman,2085,TBN,0.29%,Held
+Seth Klarman,2085,ELV,5.8%,Increased
+Seth Klarman,2085,GDS,2.41%,Decreased
+Seth Klarman,2085,LBTYK,6.16%,Held
+Seth Klarman,2085,CLVT,N/A,Unknown
+Seth Klarman,2085,AMCR,1.22%,Increased
+Seth Klarman,2085,SGI,N/A,Unknown
+Seth Klarman,2085,WCC,9.9%,Increased
+Seth Klarman,2085,VSAT,3.25%,Decreased
+Seth Klarman,2085,SOLV,N/A,Unknown
+Seth Klarman,2085,FERG,5.97%,Held
+Seth Klarman,2085,EXP,3.31%,Decreased
+Seth Klarman,2085,GOOG,11.31%,Increased
+Seth Klarman,2085,HLF,1.62%,Increased
+Seth Klarman,2085,PAGS,0.58%,Increased
+Seth Klarman,2085,ICLR,1.43%,Held
+Ako Capital Llp,714,MCO,5.24%,Increased
+Ako Capital Llp,714,CPRT,3.31%,Increased
+Ako Capital Llp,714,BKNG,5.05%,Decreased
+Ako Capital Llp,714,ZTS,2.97%,Decreased
+Ako Capital Llp,714,V,7.36%,Decreased
+Ako Capital Llp,714,CRM,1.61%,Increased
+Ako Capital Llp,714,CNR,0.03%,Held
+Ako Capital Llp,714,ICE,5.07%,Decreased
+Ako Capital Llp,714,GE,6.7%,Decreased
+Ako Capital Llp,714,LIN,0.49%,Decreased
+Ako Capital Llp,714,MMC,4.92%,Decreased
+Ako Capital Llp,714,ADI,3.81%,Increased
+Ako Capital Llp,714,EFX,2.98%,Increased
+Ako Capital Llp,714,ILMN,0.64%,Decreased
+Ako Capital Llp,714,TMO,0.14%,Decreased
+Ako Capital Llp,714,BAH,0.12%,Decreased
+Ako Capital Llp,714,ACN,N/A,Unknown
+Ako Capital Llp,714,CDNS,0.51%,Decreased
+Ako Capital Llp,714,WAT,3.47%,Decreased
+Ako Capital Llp,714,AMZN,4.04%,Increased
+Ako Capital Llp,714,FICO,3.54%,Increased
+Ako Capital Llp,714,INTU,6.72%,Increased
+Ako Capital Llp,714,MSFT,7.99%,Increased
+Ako Capital Llp,714,FLUT,10.7%,Increased
+Wallace Weitz,464,TXN,1.84%,Decreased
+Wallace Weitz,464,CSGP,3.31%,Decreased
+Wallace Weitz,464,RAL,0.04%,Increased
+Wallace Weitz,464,META,4.59%,Decreased
+Wallace Weitz,464,FTV,0.13%,Increased
+Wallace Weitz,464,V,5.69%,Decreased
+Wallace Weitz,464,LH,1.99%,Decreased
+Wallace Weitz,464,TECH,2.22%,Increased
+Wallace Weitz,464,CRM,1.28%,Held
+Wallace Weitz,464,DEO,0.15%,Held
+Wallace Weitz,464,LIN,0.17%,Held
+Wallace Weitz,464,DHR,5.6%,Increased
+Wallace Weitz,464,IDXX,1.74%,Held
+Wallace Weitz,464,ADI,1.8%,Held
+Wallace Weitz,464,EFX,2.93%,Held
+Wallace Weitz,464,GPN,2.41%,Decreased
+Wallace Weitz,464,SPGI,0.2%,Held
+Wallace Weitz,464,LBRDA,0.74%,Held
+Wallace Weitz,464,SIRI,1.71%,Decreased
+Wallace Weitz,464,MLM,1.22%,Held
+Wallace Weitz,464,AON,4.09%,Held
+Wallace Weitz,464,ODFL,1.82%,Held
+Wallace Weitz,464,ROP,0.96%,Held
+Wallace Weitz,464,LBRDK,2.65%,Decreased
+Wallace Weitz,464,CMCSA,0.87%,Held
+Wallace Weitz,464,IEX,3.84%,Increased
+Wallace Weitz,464,ADBE,N/A,Unknown
+Wallace Weitz,464,HEI.A,2.27%,Held
+Wallace Weitz,464,MA,4.99%,Decreased
+Wallace Weitz,464,TMO,3.28%,Increased
+Wallace Weitz,464,PRM,1.47%,Decreased
+Wallace Weitz,464,KMX,2.35%,Decreased
+Wallace Weitz,464,ACN,2%,Decreased
+Wallace Weitz,464,VMC,2.97%,Held
+Wallace Weitz,464,CHTR,2.08%,Decreased
+Wallace Weitz,464,LKQ,0.91%,Held
+Wallace Weitz,464,CCRD,0.8%,Held
+Wallace Weitz,464,BRK.B,7.49%,Held
+Wallace Weitz,464,VLTO,0.2%,Held
+Wallace Weitz,464,AMZN,2.62%,Held
+Wallace Weitz,464,GOOG,4.25%,Held
+Wallace Weitz,464,ACIW,0.76%,Decreased
+Wallace Weitz,464,IT,1.91%,Held
+Wallace Weitz,464,ORCL,2%,Held
+Wallace Weitz,464,MSFT,3.46%,Decreased
+Chris Davis,1443,REG,0.05%,Increased
+Chris Davis,1443,TXN,2.64%,Decreased
+Chris Davis,1443,CCK,N/A,Unknown
+Chris Davis,1443,DAR,0.5%,Decreased
+Chris Davis,1443,AVB,0.06%,Increased
+Chris Davis,1443,AMT,0.11%,Increased
+Chris Davis,1443,EQR,0.04%,Increased
+Chris Davis,1443,HUM,2.16%,Decreased
+Chris Davis,1443,EG,0.07%,Decreased
+Chris Davis,1443,ARE,0.06%,Increased
+Chris Davis,1443,INTC,N/A,Unknown
+Chris Davis,1443,SPG,0.05%,Decreased
+Chris Davis,1443,JCI,0.14%,Decreased
+Chris Davis,1443,CHCT,0.03%,Increased
+Chris Davis,1443,DEI,0.02%,Increased
+Chris Davis,1443,CUZ,0.07%,Increased
+Chris Davis,1443,BAC,0.29%,Decreased
+Chris Davis,1443,AMH,0.05%,Increased
+Chris Davis,1443,PLD,0.07%,Decreased
+Chris Davis,1443,CI,1.16%,Decreased
+Chris Davis,1443,EQIX,0.07%,Increased
+Chris Davis,1443,YOU,N/A,Unknown
+Chris Davis,1443,TSM,0.01%,Increased
+Chris Davis,1443,SKX,N/A,Unknown
+Chris Davis,1443,REXR,0.07%,Increased
+Chris Davis,1443,MAA,0.04%,Increased
+Chris Davis,1443,WCC,0.29%,Increased
+Chris Davis,1443,CPT,0.05%,Increased
+Chris Davis,1443,SOLV,2.23%,Increased
+Chris Davis,1443,TRNO,0.03%,Increased
+Chris Davis,1443,AMZN,3.83%,Decreased
+Chris Davis,1443,COP,0.76%,Increased
+Chris Davis,1443,NVDA,0.08%,Increased
+Chris Davis,1443,ORCL,0.15%,Decreased
+Chris Davis,1443,DOC,0.04%,Increased
+Chris Davis,1443,YMM,0.73%,Increased
+Chris Davis,1443,TFC,0.04%,Decreased
+Chris Davis,1443,DGX,1.3%,Decreased
+Chris Davis,1443,ESS,0.04%,Increased
+Chris Davis,1443,UNH,1.89%,Increased
+Chris Davis,1443,BK,0.92%,Decreased
+Chris Davis,1443,BEKE,0.18%,Decreased
+Chris Davis,1443,RH,N/A,Unknown
+Chris Davis,1443,MGM,4.38%,Increased
+Chris Davis,1443,BRK.A,4.15%,Decreased
+Chris Davis,1443,AMAT,4.85%,Decreased
+Chris Davis,1443,TSN,2.68%,Increased
+Chris Davis,1443,CB,1.66%,Decreased
+Chris Davis,1443,CTRA,1.27%,Increased
+Chris Davis,1443,CDP,0.02%,Increased
+Chris Davis,1443,JD,0.06%,Decreased
+Chris Davis,1443,SAP,0.08%,Decreased
+Chris Davis,1443,AGCO,1%,Decreased
+Chris Davis,1443,FITB,0.55%,Increased
+Chris Davis,1443,BRK.B,1.44%,Decreased
+Chris Davis,1443,O,0.02%,Increased
+Chris Davis,1443,CCI,0.02%,Increased
+Chris Davis,1443,GOOG,0.62%,Increased
+Chris Davis,1443,HPP,0.03%,Decreased
+Chris Davis,1443,RNR,0.19%,Decreased
+Chris Davis,1443,MSFT,0.66%,Decreased
+Chris Davis,1443,EXR,0.04%,Decreased
+Chris Davis,1443,COF,10.19%,Decreased
+Chris Davis,1443,SE,0.38%,Decreased
+Chris Davis,1443,IAC,0.46%,Decreased
+Chris Davis,1443,PNC,0.5%,Increased
+Chris Davis,1443,MTB,0.05%,Decreased
+Chris Davis,1443,MKL,3.96%,Decreased
+Chris Davis,1443,XOM,N/A,Unknown
+Chris Davis,1443,OC,1.3%,Decreased
+Chris Davis,1443,AXP,0.46%,Decreased
+Chris Davis,1443,LRCX,0.01%,Held
+Chris Davis,1443,VALE,0.15%,Increased
+Chris Davis,1443,UDR,0.04%,Increased
+Chris Davis,1443,FRT,100%,Decreased
+Chris Davis,1443,BRX,0.07%,Increased
+Chris Davis,1443,VTRS,3.17%,Increased
+Chris Davis,1443,AAPL,100%,Decreased
+Chris Davis,1443,SUI,0.03%,Increased
+Chris Davis,1443,NTES,0.43%,Decreased
+Chris Davis,1443,USB,4.68%,Increased
+Chris Davis,1443,SHO,0.05%,Increased
+Chris Davis,1443,ANGI,0.1%,Increased
+Chris Davis,1443,HIW,N/A,Unknown
+Chris Davis,1443,SCHW,0.14%,Decreased
+Chris Davis,1443,GOOGL,2.69%,Decreased
+Chris Davis,1443,APP,0.4%,Increased
+Chris Davis,1443,QSR,1.21%,Increased
+Chris Davis,1443,CPNG,0.92%,Decreased
+Chris Davis,1443,META,8.32%,Decreased
+Chris Davis,1443,VTR,0.07%,Decreased
+Chris Davis,1443,L,0.29%,Decreased
+Chris Davis,1443,WFC,3.5%,Decreased
+Chris Davis,1443,EGP,0.04%,Increased
+Chris Davis,1443,BXP,0.08%,Increased
+Chris Davis,1443,NOAH,0.07%,Decreased
+Chris Davis,1443,NTST,0.02%,Increased
+Chris Davis,1443,RKT,0.24%,Decreased
+Chris Davis,1443,DLR,0.06%,Increased
+Chris Davis,1443,JPM,0.99%,Decreased
+Chris Davis,1443,CVS,4.27%,Increased
+Chris Davis,1443,TCOM,1.55%,Increased
+Chris Davis,1443,VICI,0.03%,Increased
+Chris Davis,1443,STT,0.04%,Decreased
+Chris Davis,1443,PSA,0.06%,Decreased
+Donald Yacktman,5140,JNJ,2.99%,Decreased
+Donald Yacktman,5140,CRMT,0.01%,Decreased
+Donald Yacktman,5140,PG,4.74%,Decreased
+Donald Yacktman,5140,LMT,1.42%,Decreased
+Donald Yacktman,5140,AWI,1.61%,Decreased
+Donald Yacktman,5140,CSCO,0.36%,Decreased
+Donald Yacktman,5140,BKNG,0.07%,Decreased
+Donald Yacktman,5140,DAR,0.65%,Increased
+Donald Yacktman,5140,SYY,1.33%,Decreased
+Donald Yacktman,5140,MAS,0.24%,Decreased
+Donald Yacktman,5140,MCO,0.05%,Held
+Donald Yacktman,5140,GS,0.06%,Decreased
+Donald Yacktman,5140,HSY,0.06%,Increased
+Donald Yacktman,5140,BK,0.63%,Decreased
+Donald Yacktman,5140,TLN,1.17%,Held
+Donald Yacktman,5140,MO,N/A,Unknown
+Donald Yacktman,5140,V,N/A,Unknown
+Donald Yacktman,5140,FANG,2.21%,Decreased
+Donald Yacktman,5140,DIS,1.92%,Decreased
+Donald Yacktman,5140,CNQ,11.04%,Decreased
+Donald Yacktman,5140,WBD,1.08%,Increased
+Donald Yacktman,5140,WFC,0.15%,Decreased
+Donald Yacktman,5140,PEP,4.17%,Increased
+Donald Yacktman,5140,CL,0.99%,Held
+Donald Yacktman,5140,XOM,0.03%,Held
+Donald Yacktman,5140,BRK.A,0.15%,Held
+Donald Yacktman,5140,NWSA,3.05%,Decreased
+Donald Yacktman,5140,MSFT,5.94%,Decreased
+Donald Yacktman,5140,FOX,4.55%,Decreased
+Donald Yacktman,5140,DVN,0.32%,Increased
+Donald Yacktman,5140,LHX,1.51%,Decreased
+Donald Yacktman,5140,TSN,2.2%,Decreased
+Donald Yacktman,5140,UL,0.2%,Decreased
+Donald Yacktman,5140,AON,0.06%,Held
+Donald Yacktman,5140,GLW,N/A,Unknown
+Donald Yacktman,5140,OLN,1.28%,Increased
+Donald Yacktman,5140,RS,2.9%,Decreased
+Donald Yacktman,5140,CATO,N/A,Unknown
+Donald Yacktman,5140,CMCSA,0.6%,Decreased
+Donald Yacktman,5140,NOC,1.58%,Decreased
+Donald Yacktman,5140,EMBC,0.4%,Decreased
+Donald Yacktman,5140,PM,0.02%,Held
+Donald Yacktman,5140,KVUE,2.61%,Decreased
+Donald Yacktman,5140,ELV,1.96%,Increased
+Donald Yacktman,5140,MA,0.08%,Held
+Donald Yacktman,5140,EBAY,1.92%,Decreased
+Donald Yacktman,5140,MSCI,0.05%,Held
+Donald Yacktman,5140,NTRS,0.01%,Held
+Donald Yacktman,5140,VZ,0.03%,Held
+Donald Yacktman,5140,EAF,0.12%,Increased
+Donald Yacktman,5140,FOXA,1.3%,Decreased
+Donald Yacktman,5140,BRK.B,2.64%,Decreased
+Donald Yacktman,5140,EOG,2.24%,Decreased
+Donald Yacktman,5140,AMRK,N/A,Unknown
+Donald Yacktman,5140,SCHW,4.85%,Decreased
+Donald Yacktman,5140,NWS,N/A,Unknown
+Donald Yacktman,5140,COP,2.33%,Decreased
+Donald Yacktman,5140,GOOG,2.88%,Decreased
+Donald Yacktman,5140,CTSH,3.52%,Decreased
+Donald Yacktman,5140,AMPY,0.01%,Decreased
+Donald Yacktman,5140,INGR,2.84%,Decreased
+Donald Yacktman,5140,STT,1.46%,Decreased
+Donald Yacktman,5140,ORCL,0.2%,Decreased
+Donald Yacktman,5140,TDY,0.03%,Held
+Donald Yacktman,5140,CLX,0.06%,Increased
+Donald Yacktman,5140,UHAL,0.29%,Decreased
+Donald Yacktman,5140,LEGH,0.02%,Decreased
+Donald Yacktman,5140,KO,2.11%,Decreased
+Donald Yacktman,5140,RDI,0.01%,Held
+Harry Burn,5119,ZBH,3.17%,Increased
+Harry Burn,5119,BMY,3.04%,Increased
+Harry Burn,5119,CHKP,2.16%,Decreased
+Harry Burn,5119,PYPL,2.83%,Increased
+Harry Burn,5119,BKR,N/A,Unknown
+Harry Burn,5119,BBWI,N/A,Unknown
+Harry Burn,5119,DIS,3.22%,Increased
+Harry Burn,5119,CSX,3.21%,Increased
+Harry Burn,5119,INCY,3.17%,Increased
+Harry Burn,5119,WFC,3.14%,Decreased
+Harry Burn,5119,NXPI,2.01%,Decreased
+Harry Burn,5119,LEN,1.88%,Increased
+Harry Burn,5119,PRGO,3.23%,Increased
+Harry Burn,5119,WTW,2.73%,Decreased
+Harry Burn,5119,AVTR,2.37%,Decreased
+Harry Burn,5119,CTRA,3.97%,Decreased
+Harry Burn,5119,FDX,N/A,Unknown
+Harry Burn,5119,CF,2.76%,Increased
+Harry Burn,5119,PVH,1.99%,Decreased
+Harry Burn,5119,OGN,2.6%,Increased
+Harry Burn,5119,VST,N/A,Unknown
+Harry Burn,5119,MHK,2.14%,Increased
+Harry Burn,5119,FIS,3.4%,Increased
+Harry Burn,5119,LUV,3.36%,Increased
+Harry Burn,5119,FLEX,2.01%,Decreased
+Harry Burn,5119,ABX,2.62%,Increased
+Harry Burn,5119,PEG,2.23%,Increased
+Harry Burn,5119,GM,1.61%,Decreased
+Harry Burn,5119,NEM,0.49%,Increased
+Harry Burn,5119,TEVA,2.94%,Increased
+Harry Burn,5119,BRK.B,2.65%,Decreased
+Harry Burn,5119,C,3.38%,Increased
+Harry Burn,5119,BAX,3.39%,Increased
+Harry Burn,5119,EOG,3.25%,Increased
+Harry Burn,5119,KMI,2.4%,Increased
+Harry Burn,5119,HOLX,2.99%,Increased
+Harry Burn,5119,AES,2.65%,Increased
+Harry Burn,5119,MTCH,2.2%,Increased
+Harry Burn,5119,GEHC,2.21%,Increased
+Harry Burn,5119,COF,3.77%,Decreased
+Harry Burn,5119,KR,2.84%,Decreased
+William Von Mueffling,5752,MCO,1.3%,Decreased
+William Von Mueffling,5752,AMT,2.35%,Decreased
+William Von Mueffling,5752,V,4.02%,Decreased
+William Von Mueffling,5752,ZTS,1.1%,Decreased
+William Von Mueffling,5752,IQV,1.38%,Decreased
+William Von Mueffling,5752,CME,2.51%,Decreased
+William Von Mueffling,5752,ICE,3.55%,Decreased
+William Von Mueffling,5752,ECL,1.71%,Decreased
+William Von Mueffling,5752,YUM,1.77%,Increased
+William Von Mueffling,5752,SSNC,2.05%,Decreased
+William Von Mueffling,5752,ENTG,1.15%,Decreased
+William Von Mueffling,5752,ADI,2.99%,Decreased
+William Von Mueffling,5752,AMAT,3.16%,Decreased
+William Von Mueffling,5752,SPGI,5.37%,Decreased
+William Von Mueffling,5752,IBKR,4.1%,Decreased
+William Von Mueffling,5752,EFX,2.59%,Decreased
+William Von Mueffling,5752,TW,0.96%,Decreased
+William Von Mueffling,5752,AVGO,8.73%,Decreased
+William Von Mueffling,5752,CBRE,3.63%,Decreased
+William Von Mueffling,5752,AON,2.57%,Decreased
+William Von Mueffling,5752,UBER,2.78%,Decreased
+William Von Mueffling,5752,A,2.13%,Decreased
+William Von Mueffling,5752,ADBE,1.92%,Increased
+William Von Mueffling,5752,TMO,2.05%,Decreased
+William Von Mueffling,5752,TME,2.11%,Decreased
+William Von Mueffling,5752,TSM,3.72%,Decreased
+William Von Mueffling,5752,FAST,2.26%,Decreased
+William Von Mueffling,5752,LYV,2.45%,Decreased
+William Von Mueffling,5752,CP,1.93%,Increased
+William Von Mueffling,5752,TCOM,1.39%,Increased
+William Von Mueffling,5752,BLK,3.13%,Increased
+William Von Mueffling,5752,FERG,2.51%,Decreased
+William Von Mueffling,5752,GOOGL,4.31%,Decreased
+William Von Mueffling,5752,ORCL,1.09%,Decreased
+William Von Mueffling,5752,MSFT,3.64%,Decreased
+William Von Mueffling,5752,FLUT,3.75%,Decreased
+William Von Mueffling,5752,ICLR,0.39%,Increased
+Tweedy Browne Co.,5221,OEC,0.02%,Increased
+Tweedy Browne Co.,5221,AN,0.05%,Increased
+Tweedy Browne Co.,5221,AZO,2.08%,Decreased
+Tweedy Browne Co.,5221,CCSI,0.02%,Increased
+Tweedy Browne Co.,5221,HP,0.02%,Increased
+Tweedy Browne Co.,5221,LGND,0.03%,Increased
+Tweedy Browne Co.,5221,BABA,0.04%,Decreased
+Tweedy Browne Co.,5221,DVN,0.02%,Increased
+Tweedy Browne Co.,5221,SIRI,0.03%,Increased
+Tweedy Browne Co.,5221,TDW,0.03%,Increased
+Tweedy Browne Co.,5221,BAC,1.69%,Decreased
+Tweedy Browne Co.,5221,HTLD,0.03%,Increased
+Tweedy Browne Co.,5221,EMBC,0.02%,Increased
+Tweedy Browne Co.,5221,KVUE,0.09%,Decreased
+Tweedy Browne Co.,5221,LW,0.03%,Increased
+Tweedy Browne Co.,5221,SEE,1.49%,Decreased
+Tweedy Browne Co.,5221,EMR,0.12%,Decreased
+Tweedy Browne Co.,5221,GM,0.05%,Increased
+Tweedy Browne Co.,5221,PSEC,0.02%,Increased
+Tweedy Browne Co.,5221,COP,0.18%,Decreased
+Tweedy Browne Co.,5221,HLF,0.02%,Increased
+Tweedy Browne Co.,5221,TFC,2.31%,Decreased
+Tweedy Browne Co.,5221,ALV,4.5%,Decreased
+Tweedy Browne Co.,5221,CSCO,0.37%,Decreased
+Tweedy Browne Co.,5221,ATMU,0.3%,Held
+Tweedy Browne Co.,5221,UNH,0.03%,Increased
+Tweedy Browne Co.,5221,BK,1.21%,Decreased
+Tweedy Browne Co.,5221,DEO,1.22%,Decreased
+Tweedy Browne Co.,5221,PSNY,N/A,Unknown
+Tweedy Browne Co.,5221,WTFC,0.05%,Increased
+Tweedy Browne Co.,5221,BRK.A,10.34%,Decreased
+Tweedy Browne Co.,5221,HCI,0.07%,Increased
+Tweedy Browne Co.,5221,GSK,0.31%,Decreased
+Tweedy Browne Co.,5221,TSN,0.04%,Increased
+Tweedy Browne Co.,5221,KT,0.06%,Increased
+Tweedy Browne Co.,5221,NTR,0.04%,Increased
+Tweedy Browne Co.,5221,PSX,0.14%,Decreased
+Tweedy Browne Co.,5221,SFNC,0.04%,Increased
+Tweedy Browne Co.,5221,NVS,0.87%,Decreased
+Tweedy Browne Co.,5221,CNH,16%,Decreased
+Tweedy Browne Co.,5221,AGCO,0.05%,Increased
+Tweedy Browne Co.,5221,FITB,N/A,Unknown
+Tweedy Browne Co.,5221,BRK.B,4.57%,Increased
+Tweedy Browne Co.,5221,ACDC,0.02%,Increased
+Tweedy Browne Co.,5221,BAX,0.03%,Decreased
+Tweedy Browne Co.,5221,CVE,0.03%,Increased
+Tweedy Browne Co.,5221,LPG,0.02%,Increased
+Tweedy Browne Co.,5221,GOOG,0.22%,Decreased
+Tweedy Browne Co.,5221,UNP,0.44%,Decreased
+Tweedy Browne Co.,5221,FIBK,0.04%,Increased
+Tweedy Browne Co.,5221,DINO,0.03%,Increased
+Tweedy Browne Co.,5221,CROX,0.04%,Increased
+Tweedy Browne Co.,5221,AXP,2.01%,Decreased
+Tweedy Browne Co.,5221,VRTX,1.54%,Decreased
+Tweedy Browne Co.,5221,NVST,2.65%,Decreased
+Tweedy Browne Co.,5221,UL,0.36%,Decreased
+Tweedy Browne Co.,5221,HLN,0.07%,Decreased
+Tweedy Browne Co.,5221,CMCSA,0.1%,Decreased
+Tweedy Browne Co.,5221,OBDC,0.04%,Increased
+Tweedy Browne Co.,5221,IONS,10.6%,Decreased
+Tweedy Browne Co.,5221,HPK,0.02%,Increased
+Tweedy Browne Co.,5221,CNC,0.03%,Increased
+Tweedy Browne Co.,5221,USB,0.85%,Decreased
+Tweedy Browne Co.,5221,VZ,0.1%,Held
+Tweedy Browne Co.,5221,BFH,0.04%,Increased
+Tweedy Browne Co.,5221,FMC,0.92%,Decreased
+Tweedy Browne Co.,5221,EIG,0.04%,Increased
+Tweedy Browne Co.,5221,REZI,0.04%,Increased
+Tweedy Browne Co.,5221,ARW,0.04%,Increased
+Tweedy Browne Co.,5221,KOF,10.92%,Decreased
+Tweedy Browne Co.,5221,GOOGL,5.25%,Decreased
+Tweedy Browne Co.,5221,EPD,0.31%,Decreased
+Tweedy Browne Co.,5221,JNJ,3.47%,Decreased
+Tweedy Browne Co.,5221,BZH,0.03%,Increased
+Tweedy Browne Co.,5221,BMY,0.03%,Increased
+Tweedy Browne Co.,5221,CNXC,0.07%,Decreased
+Tweedy Browne Co.,5221,WFC,4.45%,Decreased
+Tweedy Browne Co.,5221,MTDR,0.03%,Increased
+Tweedy Browne Co.,5221,ZION,0.05%,Increased
+Tweedy Browne Co.,5221,TTE,0.76%,Decreased
+Tweedy Browne Co.,5221,FDX,2.4%,Decreased
+Tweedy Browne Co.,5221,GL,0.35%,Decreased
+Tweedy Browne Co.,5221,ARLP,0.05%,Increased
+Tweedy Browne Co.,5221,NE,0.04%,Increased
+Tweedy Browne Co.,5221,CVS,0.03%,Increased
+Tweedy Browne Co.,5221,CLF,0.02%,Increased
+Tweedy Browne Co.,5221,AAP,0.03%,Increased
+Tweedy Browne Co.,5221,BSM,0.03%,Increased
+Tweedy Browne Co.,5221,PGR,0.34%,Held
+Ronald Muhlenkamp,4747,MCK,6.19%,Decreased
+Ronald Muhlenkamp,4747,UNH,N/A,Unknown
+Ronald Muhlenkamp,4747,SLB,3.37%,Increased
+Ronald Muhlenkamp,4747,EQT,8.21%,Increased
+Ronald Muhlenkamp,4747,MCHP,4.42%,Increased
+Ronald Muhlenkamp,4747,RGLD,4.86%,Increased
+Ronald Muhlenkamp,4747,BGC,5.59%,Increased
+Ronald Muhlenkamp,4747,RIG,0.86%,Increased
+Ronald Muhlenkamp,4747,DOW,1.89%,Increased
+Ronald Muhlenkamp,4747,NMIH,6.13%,Increased
+Ronald Muhlenkamp,4747,JD,2.08%,Increased
+Ronald Muhlenkamp,4747,AAPL,4.01%,Increased
+Ronald Muhlenkamp,4747,TRV,0.55%,Held
+Ronald Muhlenkamp,4747,CE,2.61%,Increased
+Ronald Muhlenkamp,4747,URI,3.65%,Increased
+Ronald Muhlenkamp,4747,AEM,5.61%,Increased
+Ronald Muhlenkamp,4747,NEM,5.16%,Increased
+Ronald Muhlenkamp,4747,BRK.B,5.81%,Increased
+Ronald Muhlenkamp,4747,RUSHB,0.16%,Held
+Ronald Muhlenkamp,4747,RUSHA,6.01%,Increased
+Ronald Muhlenkamp,4747,MTZ,5.64%,Increased
+Ronald Muhlenkamp,4747,TMHC,3.01%,Increased
+Ronald Muhlenkamp,4747,WAB,4.11%,Increased
+Ronald Muhlenkamp,4747,MSFT,5.01%,Increased
+Ronald Muhlenkamp,4747,EPD,0.24%,Held
+Norbert Lou,3482,SWBI,2.79%,Held
+Norbert Lou,3482,PDD,16.76%,Increased
+Norbert Lou,3482,BRK.A,53.44%,Decreased
+Lindsell Train Ltd,3207,TKO,14.35%,Decreased
+Lindsell Train Ltd,3207,PYPL,7.53%,Decreased
+Lindsell Train Ltd,3207,EL,0.03%,Held
+Lindsell Train Ltd,3207,HSY,0.02%,Held
+Lindsell Train Ltd,3207,V,0.11%,Held
+Lindsell Train Ltd,3207,CME,0.06%,Held
+Lindsell Train Ltd,3207,DIS,11.69%,Decreased
+Lindsell Train Ltd,3207,PEP,10.18%,Decreased
+Lindsell Train Ltd,3207,CL,0.05%,Held
+Lindsell Train Ltd,3207,TROW,0.03%,Held
+Lindsell Train Ltd,3207,MSGS,0.02%,Held
+Lindsell Train Ltd,3207,AXP,0.09%,Held
+Lindsell Train Ltd,3207,EFX,0.07%,Held
+Lindsell Train Ltd,3207,SPGI,0.08%,Held
+Lindsell Train Ltd,3207,VRSK,0.06%,Held
+Lindsell Train Ltd,3207,BF.A,2.55%,Decreased
+Lindsell Train Ltd,3207,ADBE,0.04%,Held
+Lindsell Train Ltd,3207,TMO,7.01%,Increased
+Lindsell Train Ltd,3207,EBAY,6.32%,Decreased
+Lindsell Train Ltd,3207,NKE,0.04%,Held
+Lindsell Train Ltd,3207,MANU,1.83%,Decreased
+Lindsell Train Ltd,3207,MDLZ,11.3%,Decreased
+Lindsell Train Ltd,3207,CP,0.02%,Increased
+Lindsell Train Ltd,3207,FICO,12.26%,Decreased
+Lindsell Train Ltd,3207,GOOGL,0.08%,Increased
+Lindsell Train Ltd,3207,GOOG,N/A,Unknown
+Lindsell Train Ltd,3207,INTU,12.59%,Decreased
+Lindsell Train Ltd,3207,ORCL,0.07%,Held
+Lindsell Train Ltd,3207,BF.B,1.48%,Decreased
+Lindsell Train Ltd,3207,KO,0.04%,Held
+David Abrams,279,NUVB,0.12%,Held
+David Abrams,279,LAD,12.73%,Increased
+David Abrams,279,CPNG,5.07%,Held
+David Abrams,279,META,4.04%,Decreased
+David Abrams,279,ABG,8.26%,Held
+David Abrams,279,GOOGL,5.83%,Held
+David Abrams,279,ET,2.05%,Decreased
+David Abrams,279,WTW,4.32%,Held
+David Abrams,279,LOAR,46.92%,Held
+David Abrams,279,UHAL,0.04%,Held
+David Abrams,279,CTLP,1%,Held
+David Abrams,279,SGI,6.21%,Increased

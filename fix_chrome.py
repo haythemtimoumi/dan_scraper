@@ -1,80 +1,60 @@
-#!/usr/bin/env python3
-import os
+#!/usr/bin/env python
+"""
+Quick fix for Chrome browser initialization issues
+"""
 import subprocess
-import tempfile
 import time
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
+import os
+import shutil
 
-def fix_chrome_and_run():
-    """Fix Chrome issues and run the scraper"""
+def fix_chrome_issues():
+    """Fix common Chrome initialization issues"""
     
-    print("Fixing Chrome configuration...")
+    print("🔧 Fixing Chrome browser issues...")
     
-    # 1. Kill all Chrome processes aggressively
+    # 1. Kill all Chrome processes
+    print("Killing existing Chrome processes...")
     subprocess.run(["pkill", "-9", "-f", "chrome"], capture_output=True)
-    subprocess.run(["pkill", "-9", "-f", "chromedriver"], capture_output=True)
+    subprocess.run(["pkill", "-9", "-f", "chromium"], capture_output=True)
     time.sleep(2)
     
-    # 2. Remove all Chrome-related files and directories
-    chrome_dirs = [
-        "~/.config/google-chrome",
-        "~/.cache/google-chrome", 
-        "/tmp/.com.google.Chrome*",
-        "/tmp/.org.chromium.Chromium*",
+    # 2. Clean up temp directories
+    print("Cleaning temp directories...")
+    temp_patterns = [
+        "/tmp/tmp*",
+        "/tmp/.com.google.Chrome.*", 
+        "/tmp/.org.chromium.Chromium.*",
         "/tmp/chrome_*",
-        "/tmp/tmp*chrome*"
+        "/tmp/scoped_dir*"
     ]
     
-    for dir_pattern in chrome_dirs:
-        subprocess.run(f"rm -rf {dir_pattern}", shell=True, capture_output=True)
+    for pattern in temp_patterns:
+        subprocess.run(f"rm -rf {pattern}", shell=True, capture_output=True)
     
-    # 3. Create a completely unique temp directory
-    unique_dir = tempfile.mkdtemp(prefix=f"chrome_fix_{int(time.time())}_")
-    os.chmod(unique_dir, 0o755)
+    # 3. Clear Chrome user data
+    print("Clearing Chrome user data...")
+    chrome_dirs = [
+        "~/.cache/google-chrome",
+        "~/.config/google-chrome", 
+        "~/.local/share/undetected_chromedriver"
+    ]
     
-    print(f"Using unique Chrome directory: {unique_dir}")
+    for dir_path in chrome_dirs:
+        expanded = os.path.expanduser(dir_path)
+        if os.path.exists(expanded):
+            shutil.rmtree(expanded, ignore_errors=True)
     
-    # 4. Set up Chrome options with the unique directory
-    options = Options()
-    options.add_argument(f"--user-data-dir={unique_dir}")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--remote-debugging-port=9222")
-    options.add_argument("--disable-extensions")
-    options.add_argument("--disable-plugins")
-    options.add_argument("--no-first-run")
-    options.add_argument("--disable-default-apps")
+    # 4. Free up ports
+    print("Freeing up Chrome debugging ports...")
+    for port in [9222, 9223, 9224, 9225]:
+        subprocess.run(["fuser", "-k", f"{port}/tcp"], capture_output=True)
     
-    try:
-        service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=options)
-        print("Chrome fixed and initialized successfully!")
-        
-        # Test basic functionality
-        driver.get("https://www.google.com")
-        print(f"Chrome is working! Title: {driver.title}")
-        
-        driver.quit()
-        
-        # Clean up the temp directory
-        subprocess.run(f"rm -rf {unique_dir}", shell=True, capture_output=True)
-        
-        print("Chrome is now ready. You can run your scraper.")
-        return True
-        
-    except Exception as e:
-        print(f"Chrome fix failed: {e}")
-        # Clean up the temp directory
-        subprocess.run(f"rm -rf {unique_dir}", shell=True, capture_output=True)
-        return False
+    # 5. Check available memory
+    print("Checking system resources...")
+    result = subprocess.run(["free", "-h"], capture_output=True, text=True)
+    print(result.stdout)
+    
+    print("✅ Chrome fix completed!")
 
 if __name__ == "__main__":
-    if fix_chrome_and_run():
-        print("Running the scraper...")
-        os.system("python3 dan_watchlist_to_db.py")
-    else:
-        print("Chrome fix failed. Please reboot the system.")
+    fix_chrome_issues()
