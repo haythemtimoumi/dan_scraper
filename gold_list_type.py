@@ -179,9 +179,9 @@ def scrape_company_data(driver):
             pass
         
         # Get financial metrics
-        cash_flow_growth = ""
+        fd_mcap_growth = ""
         try:
-            cash_flow_growth = driver.find_element(By.CSS_SELECTOR, "#fv-33 td.current").text.strip()
+            fd_mcap_growth = driver.find_element(By.CSS_SELECTOR, "#fv-30 td.current").text.strip()
         except:
             pass
         
@@ -218,7 +218,7 @@ def scrape_company_data(driver):
             'ticker': ticker,
             'currency': currency,
             'price': price,
-            'cash_flow_growth': cash_flow_growth,
+            'fd_mcap_growth': fd_mcap_growth,
             'free_cash_multiple': free_cash_multiple,
             'company_url': company_url,
             'company_email': company_email
