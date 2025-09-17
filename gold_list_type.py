@@ -12,6 +12,17 @@ from config.settings import DB_CONFIG
 
 load_dotenv()
 
+def normalize_ticker(ticker):
+    """Remove exchange suffixes to get clean ticker symbol"""
+    # Remove common exchange suffixes
+    if ticker.endswith('.V'):  # Vancouver
+        return ticker[:-2]
+    elif ticker.endswith('.TO'):  # Toronto
+        return ticker[:-3]
+    elif ticker.endswith('.L'):  # London
+        return ticker[:-2]
+    return ticker
+
 def login_goldstockdata():
     """Login to goldstockdata.com"""
     
@@ -218,7 +229,7 @@ def scrape_company_data(driver):
             'ticker': ticker,
             'currency': currency,
             'price': price,
-            'fd_mcap_growth': fd_mcap_growth,
+            'cash_flow_growth': fd_mcap_growth,
             'free_cash_multiple': free_cash_multiple,
             'company_url': company_url,
             'company_email': company_email
@@ -240,19 +251,23 @@ def process_companies_with_category(driver, companies, category_name):
         print(f"Scraping {company['ticker']} ({i+1}/{len(companies)})")
         
         try:
+            # Normalize ticker symbol
+            clean_ticker = normalize_ticker(company['ticker'])
+            print(f"  Original ticker: {company['ticker']} → Normalized: {clean_ticker}")
+            
             # Check if ticker exists
-            cursor.execute("SELECT id FROM scraper_tasks WHERE symbol = %s", (company['ticker'],))
+            cursor.execute("SELECT id FROM scraper_tasks WHERE symbol = %s", (clean_ticker,))
             result = cursor.fetchone()
             
             if result:
                 ticker_id = result[0]
             else:
-                # Create new ticker entry
+                # Create new ticker entry with clean symbol
                 cursor.execute("""
                     INSERT INTO scraper_tasks (symbol, guru_id, scrape_type, active)
                     VALUES (%s, %s, 'daily', false)
                     RETURNING id
-                """, (company['ticker'], dan_guru_id))
+                """, (clean_ticker, dan_guru_id))
                 ticker_id = cursor.fetchone()[0]
             
             # Add category
@@ -274,7 +289,7 @@ def process_companies_with_category(driver, companies, category_name):
                 print(f"  Category: {company_data['category']}")
                 print(f"  Upside: {company_data['upside']}, Downside: {company_data['downside']}")
                 print(f"  Quality: {company_data['quality']}, Risk: {company_data['risk']}")
-                print(f"  Cash Flow Growth: {company_data['cash_flow_growth']}")
+                print(f"  FD MCap Growth: {company_data['cash_flow_growth']}")
                 print(f"  Free Cash Multiple: {company_data['free_cash_multiple']}")
                 print(f"  Website: {company_data['company_url']}")
                 print(f"  Email: {company_data['company_email']}")

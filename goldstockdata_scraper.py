@@ -11,6 +11,17 @@ from config.settings import DB_CONFIG
 
 load_dotenv()
 
+def normalize_ticker(ticker):
+    """Remove exchange suffixes to get clean ticker symbol"""
+    # Remove common exchange suffixes
+    if ticker.endswith('.V'):  # Vancouver
+        return ticker[:-2]
+    elif ticker.endswith('.TO'):  # Toronto
+        return ticker[:-3]
+    elif ticker.endswith('.L'):  # London
+        return ticker[:-2]
+    return ticker
+
 def login_goldstockdata():
     """Login to goldstockdata.com"""
     
@@ -191,7 +202,7 @@ def scrape_rating_data(driver):
             'ticker': ticker,
             'currency': currency,
             'price': price,
-            'fd_mcap_growth': fd_mcap_growth,
+            'cash_flow_growth': fd_mcap_growth,
             'free_cash_multiple': free_cash_multiple,
             'company_url': company_url,
             'company_email': company_email
@@ -218,13 +229,17 @@ def visit_all_companies(driver, companies):
         rating_data = scrape_rating_data(driver)
         if rating_data and rating_data['ticker']:
             try:
-                # Insert or get existing ticker
+                # Normalize ticker symbol
+                clean_ticker = normalize_ticker(rating_data['ticker'])
+                print(f"  Original ticker: {rating_data['ticker']} → Normalized: {clean_ticker}")
+                
+                # Insert or get existing ticker with clean symbol
                 cursor.execute("""
                     INSERT INTO scraper_tasks (symbol, guru_id, list_type, scrape_type)
                     VALUES (%s, %s, 'gold', 'daily')
                     ON CONFLICT (symbol) DO UPDATE SET last_updated_at = CURRENT_TIMESTAMP
                     RETURNING id
-                """, (rating_data['ticker'], dan_guru_id))
+                """, (clean_ticker, dan_guru_id))
                 ticker_id = cursor.fetchone()[0]
                 
                 # Insert company data
@@ -237,17 +252,11 @@ def visit_all_companies(driver, companies):
                     ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """, (
                     ticker_id, rating_data['company_name'], rating_data['symbol'],
-                    rating_data['exchange'], rating_data['currency'],
-                    float(rating_data['price'].replace(',', '')) if rating_data['price'] else None,
-                    rating_data['category'], 
-                    float(rating_data['upside'].replace(',', '')) if rating_data['upside'] else None,
-                    float(rating_data['downside'].replace(',', '')) if rating_data['downside'] else None,
-                    rating_data['quality'], rating_data['risk'],
-                    rating_data['cash_flow_growth'],
-                    float(rating_data['free_cash_multiple'].replace(',', '')) if rating_data['free_cash_multiple'] else None,
-                    company['url'],
-                    rating_data['company_url'],
-                    rating_data['company_email']
+                    rating_data['exchange'], rating_data['currency'], rating_data['price'],
+                    rating_data['category'], rating_data['upside'], rating_data['downside'],
+                    rating_data['quality'], rating_data['risk'], rating_data['cash_flow_growth'],
+                    rating_data['free_cash_multiple'], company['url'],
+                    rating_data['company_url'], rating_data['company_email']
                 ))
                 
                 conn.commit()
