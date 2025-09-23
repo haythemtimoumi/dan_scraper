@@ -265,6 +265,28 @@ def main():
         print(f"\n✅ Successfully saved {success_count} records to database")
         print("Note: Each ticker variant gets its own separate record")
         
+        # Send notifications
+        try:
+            from utils.email_notifier import send_completion_email
+            send_completion_email(
+                recipient_email="dan.moore@tundraeng.com",
+                success_count=success_count,
+                total_count=len(tickers),
+                process_name="Active Ticker Scraping"
+            )
+        except:
+            pass
+        
+        try:
+            from firebase_notifier import FirebaseNotifier
+            FirebaseNotifier.send_notification(
+                title="Daily Scraper Complete",
+                body=f"Active ticker scraper finished: {success_count}/{len(tickers)} records",
+                data={"script": "test", "success_count": str(success_count), "total_count": str(len(tickers)), "timestamp": str(datetime.now())}
+            )
+        except:
+            pass
+        
     finally:
         driver.quit()
         cursor.close()
