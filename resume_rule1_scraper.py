@@ -2,20 +2,27 @@
 import psycopg2
 from datetime import datetime
 from config.settings import DB_CONFIG
+import signal
 
-def scrape_rule1_only():
-    """Scrape Rule1 data for all active tickers and update rule1_scraped_at"""
+def resume_rule1_scraping():
+    """Resume Rule1 scraping from where it left off"""
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
     
-    cursor.execute("SELECT id, symbol, guru_id, list_type, last_action, per_portfolio FROM scraper_tasks WHERE active = true")
-    active_tickers = cursor.fetchall()
+    # Get tickers that haven't been scraped yet (rule1_scraped_at IS NULL)
+    cursor.execute("""
+        SELECT id, symbol, guru_id, list_type, last_action, per_portfolio 
+        FROM scraper_tasks 
+        WHERE active = true AND rule1_scraped_at IS NULL
+        ORDER BY id
+    """)
+    remaining_tickers = cursor.fetchall()
     
-    if not active_tickers:
-        print("❌ No active tickers found")
+    if not remaining_tickers:
+        print("✅ All active tickers already scraped for Rule1")
         return 0
     
-    print(f"🎯 Rule1 scraping for {len(active_tickers)} tickers")
+    print(f"🎯 Resuming Rule1 scraping for {len(remaining_tickers)} remaining tickers")
     
     from scrapers.scores_scraper import TickerSearcher
     
@@ -30,11 +37,11 @@ def scrape_rule1_only():
         now = datetime.now()
         success_count = 0
         
-        for i, (ticker_id, symbol, guru_id, list_type, last_action, per_portfolio) in enumerate(active_tickers, 1):
-            print(f"\n🔍 [{i}/{len(active_tickers)}] Rule1 scraping {symbol}...")
+        for i, (ticker_id, symbol, guru_id, list_type, last_action, per_portfolio) in enumerate(remaining_tickers, 1):
+            print(f"\n🔍 [{i}/{len(remaining_tickers)}] Rule1 scraping {symbol}...")
             
             try:
-                rule1_data = scrape_rule1_data(rule1_searcher, symbol)
+                rule1_data = scrape_rule1_data_with_timeout(rule1_searcher, symbol)
                 if rule1_data:
                     # Save to stock_analysis
                     cursor.execute("""
@@ -61,16 +68,27 @@ def scrape_rule1_only():
                     success_count += 1
                     print(f"✅ Rule1 data saved for {symbol}")
                 else:
-                    print(f"⚠️ Rule1 scraping failed for {symbol} - skipping")
+                    # Mark as attempted even if failed
+                    cursor.execute("""
+                        UPDATE scraper_tasks 
+                        SET rule1_scraped_at = %s 
+                        WHERE id = %s
+                    """, (now, ticker_id))
+                    print(f"⚠️ Rule1 scraping failed for {symbol} - marked as attempted")
                     
             except Exception as e:
-                print(f"❌ Error processing {symbol}: {e} - skipping")
+                # Mark as attempted even if error
+                cursor.execute("""
+                    UPDATE scraper_tasks 
+                    SET rule1_scraped_at = %s 
+                    WHERE id = %s
+                """, (now, ticker_id))
+                print(f"❌ Error processing {symbol}: {e} - marked as attempted")
             
-            # Commit after each ticker to avoid losing progress
+            # Commit after each ticker
             conn.commit()
         
-        conn.commit()
-        print(f"\n🎉 Rule1 complete: {success_count}/{len(active_tickers)} successful")
+        print(f"\n🎉 Rule1 resume complete: {success_count}/{len(remaining_tickers)} successful")
         
     finally:
         if rule1_searcher:
@@ -80,19 +98,20 @@ def scrape_rule1_only():
     conn.close()
     return success_count
 
-def scrape_rule1_data(searcher, symbol):
-    """Extract Rule1 data for a ticker with timeout"""
+def scrape_rule1_data_with_timeout(searcher, symbol, timeout_seconds=45):
+    """Extract Rule1 data with strict timeout"""
     import signal
     
     def timeout_handler(signum, frame):
-        raise TimeoutError("Rule1 scraping timeout")
+        raise TimeoutError(f"Rule1 scraping timeout for {symbol}")
     
     try:
-        # Set 30 second timeout per ticker
+        # Set timeout
         signal.signal(signal.SIGALRM, timeout_handler)
-        signal.alarm(30)
+        signal.alarm(timeout_seconds)
         
-        success = searcher._process_single_ticker(symbol)
+        # Try only once with reduced retries
+        success = searcher._process_single_ticker(symbol, max_retries=1)
         signal.alarm(0)  # Cancel timeout
         
         if not success:
@@ -121,13 +140,13 @@ def scrape_rule1_data(searcher, symbol):
                 }
         return None
     except TimeoutError:
-        print(f"⚠️ Rule1 scraping timeout for {symbol}")
+        print(f"⏰ Timeout reached for {symbol}")
         signal.alarm(0)
         return None
     except Exception as e:
-        print(f"⚠️ Rule1 data extraction error for {symbol}: {e}")
+        print(f"⚠️ Error for {symbol}: {e}")
         signal.alarm(0)
         return None
 
 if __name__ == "__main__":
-    scrape_rule1_only()
+    resume_rule1_scraping()

@@ -21,21 +21,20 @@ def run_sequential_scraping():
     cursor = conn.cursor()
     
     try:
-        # Get target tickers with guru-specific data from guru_ticker_map (one per ticker)
+        # Get all tickers with guru-specific data from guru_ticker_map (one per ticker)
         cursor.execute("""
             SELECT DISTINCT ON (st.id) st.id, st.symbol, st.guru_id, st.list_type, gtm.last_act, gtm.per_port 
             FROM scraper_tasks st 
             JOIN guru_ticker_map gtm ON st.id = gtm.scraper_task_id 
-            WHERE st.target = true AND st.scrape_status = 'pending'
             ORDER BY st.id, gtm.id
         """)
         target_tickers = cursor.fetchall()
         
         if not target_tickers:
-            print("No target tickers found")
+            print("No tickers found")
             return 0
         
-        print(f"Processing {len(target_tickers)} target tickers...\n")
+        print(f"Processing {len(target_tickers)} tickers...\n")
         
         # Initialize scrapers with error handling
         from scrapers.scores_scraper import TickerSearcher
