@@ -5,39 +5,32 @@ Main scraper controller that runs either sequential or daily process based on co
 
 import sys
 import os
-import json
 from datetime import datetime
 
 # Add parent directory to path
 sys.path.append('/root/dan_scraper')
 
-CONFIG_FILE = '/root/dan_scraper/pro-api/scraper_config.json'
-
-def load_config():
-    """Load scraper configuration"""
-    try:
-        with open(CONFIG_FILE, 'r') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        # Default config
-        return {'script': 'run_sequential_scraping'}
-
 def run_main():
-    """Run the configured scraper script"""
-    config = load_config()
-    script = config.get('script', 'run_sequential_scraping')
-    
+    """Run the three scripts in sequence"""
     print(f"Starting main scraper at {datetime.now()}")
-    print(f"Running script: {script}")
     
-    if script == 'run_sequential_scraping':
-        from run_sequential_scraping import run_sequential_scraping
-        run_sequential_scraping()
-    elif script == 'scrape_all_active_ticker':
-        from scrape_all_active_ticker import run_active_process
-        run_active_process()
-    else:
-        print(f"Unknown script: {script}")
+    try:
+        # Step 1: Run gold_list_type.py
+        print("\n🔸 Step 1: Running gold_list_type.py")
+        os.system('cd /root/dan_scraper && python gold_list_type.py')
+        
+        # Step 2: Run goldstockdata_scraper.py
+        print("\n🔸 Step 2: Running goldstockdata_scraper.py")
+        os.system('cd /root/dan_scraper && python goldstockdata_scraper.py')
+        
+        # Step 3: Run test.py
+        print("\n🔸 Step 3: Running test.py")
+        os.system('cd /root/dan_scraper && python test.py')
+        
+        print("\n✅ All scripts completed successfully")
+        
+    except Exception as e:
+        print(f"❌ Error running scripts: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":
